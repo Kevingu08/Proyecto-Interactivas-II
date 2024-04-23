@@ -83,7 +83,7 @@ export function Sidebar(){
                       </svg>
                        Configuration</a>
                     </li>
-                    <span className='block h-[1.2px] w-[80%] bg-gray m-auto my-2 bg-white'></span>
+                    <span className='block h-[1.2px] w-[80%] m-auto my-2 bg-white'></span>
                     <li>
                         <a className="flex gap-6 px-8 py-5 hover:bg-gradient-light-li" href="#">
                             <svg class="w-[24px] h-[24px] text-gray-800 dark:text-black rotate-180" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
