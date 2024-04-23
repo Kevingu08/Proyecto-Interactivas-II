@@ -1,4 +1,4 @@
-import '../../index.css'
+import '../index.css'
 
 export function Sidebar(){
     return(
@@ -95,7 +95,6 @@ export function Sidebar(){
                 </div>
                 <img className='w-[32px] h-[32px] mb-4' src="../../src/assets/imgs/Jint-logo.svg" alt="" />
             </nav>
-            
         </>
     )
 }
