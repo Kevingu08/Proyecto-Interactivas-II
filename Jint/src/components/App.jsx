@@ -4,6 +4,7 @@ import viteLogo from '/vite.svg'
 import './index.css'
 import { Sidebar } from './Sidebar.jsx'
 import { Tasks } from './Tasks.jsx'
+import { Historic } from './Historic Resume/History.jsx'
 
 export function App() {
   const task = [
@@ -14,7 +15,7 @@ export function App() {
   return (
     <>
       <Sidebar/>
-      <Tasks/>
+      <Historic/>
     </>
   )
 }
