@@ -46,3 +46,39 @@
     background-color: rgb(146, 12, 187);
     opacity: 1;
   }
+
+
+.cont-notifications{
+    width: 13rem; /*13rem */
+    background-color: white;
+    height: 56rem;
+    position: relative;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    border-left: 5px solid transparent;
+    transition: all 400ms ease;
+}
+
+#btn-menu:checked ~ .cont-notifications{
+    transform: translateX(14rem);
+}
+
+.cont-notifications nav{
+    transform: translateY(15%);
+}
+
+.cont-notifications nav div{
+    display: block;
+    padding: 40px;
+    color: black;
+    transition: all 10ms ease;
+}
+
+
+.cont-notifications nav a:hover{
+    border-left: 5px solid rgb(194, 87, 194);
+}
+
+
+
+

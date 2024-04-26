@@ -9,6 +9,7 @@ import { WelcomeCard } from "./WelcomeCard.jsx";
 import { HorizontalCard } from "./HorizontalCard.jsx";
 import { Slider } from "./Slider.jsx";
 import { Calendar } from "./Calendar.jsx";
+import { SidebarRight } from './SidebarRight.jsx'
 
 function App() {
     return (
