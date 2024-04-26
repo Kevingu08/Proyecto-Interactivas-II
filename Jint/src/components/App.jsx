@@ -1,23 +1,58 @@
-import { useState } from 'react'
-import reactLogo from '../assets/react.svg'
-import viteLogo from '/vite.svg'
-import './index.css'
-import { Sidebar } from './Sidebar.jsx'
-import { Tasks } from './Tasks.jsx'
-import { Historic } from './Historic Resume/History.jsx'
+import { useState } from "react";
+import reactLogo from "../assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./index.css";
+import { Sidebar } from "./Sidebar.jsx";
+import { Tasks } from "./Tasks.jsx";
+import { Card } from "./Card.jsx";
+import { WelcomeCard } from "./WelcomeCard.jsx";
+import { HorizontalCard } from "./HorizontalCard.jsx";
+import { Slider } from "./Slider.jsx";
+import { Calendar } from "./Calendar.jsx";
 
-export function App() {
-  const task = [
-    { "id":1, "image": "https://unavatar.io/Kevingu08", "title":"Task 1", "description": "Description 1", "time": "23:59", "status":"../../src/assets/imgs/finished.png"},
-    { "id": 2,  "image": "https://unavatar.io/Kevingu08", "title": "Task 2", "description": "Description 2", "time": "23:59", "status":"../../src/assets/imgs/finished.png"},
-    { "id":3, "image": "https://unavatar.io/Kevingu08", "title": "Task 3", "description": "Description 3", "time": "23:59", "status":"../../src/assets/imgs/finished.png"}
-]
-  return (
-    <>
-      <Sidebar/>
-      <Historic/>
-    </>
-  )
+function App() {
+    return (
+        <>
+            <Sidebar />
+            <section className="grid grid-cols-1 sm:grid-cols-4 sm:ml-[15rem] p-4 gap-6">
+                <div className="grid col-span-3 mt-5">
+                    <WelcomeCard />
+                    <h2 className="font-bold text-xl mt-5">My task Today</h2>
+
+                    <div className="w-[58rem] mt-5">
+                        <Slider />
+                    </div> 
+                    
+                    <h2 className="font-bold text-xl mt-5">My Courses</h2>
+                    <div className="grid grid-cols-[repeat(auto-fit,_minmax(350px,_1fr))] mt-5 gap-8">
+                        <HorizontalCard />
+                        <HorizontalCard />
+                        <HorizontalCard />
+                        <HorizontalCard />
+                        <HorizontalCard />
+                        <HorizontalCard />
+                    </div>
+                </div>
+
+                <div className="flex flex-col mt-5 gap-4">
+                    <Calendar/>
+                    <section className="grid gap-5">
+                        <div className="shadow-main rounded-xl grid gap-4 p-4">
+                            <h3 className="font-bold text-lg">Pendings of the week</h3>
+                            <p className="font-bold">Task: <span className="text-primary ml-4 text-xl">7</span></p>
+                            <p className="font-bold">Event: <span className="text-primary ml-4 text-xl">2</span></p>
+                        </div>
+                        <div className="shadow-main rounded-xl grid gap-4 p-4">
+                            <h3 className="font-bold text-lg">Week's tasks completed</h3>
+                            <p className="font-bold">Task: <span className="text-primary ml-4 text-xl">3</span></p>
+                            <p className="font-bold">Event: <span className="text-primary ml-4 text-xl">0</span></p>
+                        </div>
+                    </section>
+                </div>
+            </section>
+            {/* <Tasks/> */}
+        </>
+    );
 }
 
-export default App
+export default App;

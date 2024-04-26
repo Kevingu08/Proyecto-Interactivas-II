@@ -5,3 +5,44 @@
 *{
     font-family: 'Montserrat', sans-serif;
 }
+
+.swiper-wrapper{
+    padding-bottom: 1.5rem;
+}
+
+.container {
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+}
+
+.swiperContainer {
+    overflow-x: hidden;
+    gap: 2rem;
+  }
+
+.swiper-slider{
+    width: fit-content;
+}
+
+  .pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .pagination .swiper-pagination-bullet {
+    background-color: white;
+    border: solid 2px rgb(146, 12, 187);
+    height: .8rem;
+    width: .8rem;
+    margin-right: 6px;
+    opacity: 1;
+    cursor: pointer;
+    border-radius: 100%;
+  }
+
+  .pagination .swiper-pagination-bullet-active {
+    background-color: rgb(146, 12, 187);
+    opacity: 1;
+  }

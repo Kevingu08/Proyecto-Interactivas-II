@@ -3,7 +3,7 @@ import './index.css'
 export function Sidebar(){
     return(
         <>
-            <nav className="bg-gradient-light fixed h-screen rounded-r-xl flex flex-col justify-between items-center">
+            <nav className="hidden sm:flex bg-gradient-light fixed h-screen rounded-r-xl flex flex-col justify-between items-center">
                 <div>
                 <div className="grid mb-6 gap-2 items-center text-center mt-4">
                     <img
@@ -93,7 +93,9 @@ export function Sidebar(){
                     </li>
                 </ul>
                 </div>
-                <img className='w-[32px] h-[32px] mb-4' src="../../src/assets/imgs/Jint-logo.svg" alt="" />
+                
+                    <img className='w-[32px] h-[32px] mb-4' src="../../src/assets/imgs/Jint-logo.svg" alt="" />
+                
             </nav>
         </>
     )
