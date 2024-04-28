@@ -15,12 +15,12 @@ function App() {
     return (
         <>
             <Sidebar />
-            <section className="grid grid-cols-1 sm:grid-cols-4 sm:ml-[15rem] p-4 gap-6">
-                <div className="grid col-span-3 mt-5">
+            <section className="grid grid-cols-1 lg:grid-cols-4  xl:ml-[15rem] p-4 gap-6">
+                <div className="grid col-span-3 mt-5 lg:col-span-4 xl:col-span-3">
                     <WelcomeCard />
                     <h2 className="font-bold text-xl mt-5">My task Today</h2>
 
-                    <div className="w-[58rem] mt-5">
+                    <div className="w-full mt-5 overflow-hidden">
                         <Slider />
                     </div> 
                     
@@ -35,8 +35,7 @@ function App() {
                     </div>
                 </div>
 
-                <div className="flex flex-col mt-5 gap-4">
-                    <Calendar/>
+                <div className="flex flex-col mt-5 gap-4 col-span-4 xl:col-auto">
                     <section className="grid gap-5">
                         <div className="shadow-main rounded-xl grid gap-4 p-4">
                             <h3 className="font-bold text-lg">Pendings of the week</h3>
@@ -49,6 +48,7 @@ function App() {
                             <p className="font-bold">Event: <span className="text-primary ml-4 text-xl">0</span></p>
                         </div>
                     </section>
+                    <Calendar/>
                 </div>
             </section>
             {/* <Tasks/> */}

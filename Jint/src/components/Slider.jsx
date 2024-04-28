@@ -32,7 +32,7 @@ export function Slider() {
                 className="mySwiper"
 
                 breakpoints={{
-                    390: {
+                    300: {
                         slidesPerView: 1,
                         spaceBetween: 10,
                     },

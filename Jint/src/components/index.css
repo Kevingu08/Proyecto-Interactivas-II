@@ -2,16 +2,15 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    font-family: 'Montserrat', sans-serif;
+* {
+    font-family: "Montserrat", sans-serif;
 }
 
-.swiper-wrapper{
+.swiper-wrapper {
     padding-bottom: 1.5rem;
 }
 
 .container {
-    height: fit-content;
     display: flex;
     flex-direction: column;
 }
@@ -19,30 +18,31 @@
 .swiperContainer {
     overflow-x: hidden;
     gap: 2rem;
-  }
+    width: 100%;
+}
 
-.swiper-slider{
+.swiper-slider {
     width: fit-content;
 }
 
-  .pagination {
+.pagination {
     display: flex;
     align-items: center;
     justify-content: center;
-  }
+}
 
-  .pagination .swiper-pagination-bullet {
+.pagination .swiper-pagination-bullet {
     background-color: white;
     border: solid 2px rgb(146, 12, 187);
-    height: .8rem;
-    width: .8rem;
+    height: 0.8rem;
+    width: 0.8rem;
     margin-right: 6px;
     opacity: 1;
     cursor: pointer;
     border-radius: 100%;
-  }
+}
 
-  .pagination .swiper-pagination-bullet-active {
+.pagination .swiper-pagination-bullet-active {
     background-color: rgb(146, 12, 187);
     opacity: 1;
   }
@@ -80,5 +80,6 @@
 }
 
 
-
-
+.calendar-month{
+    width: auto;
+}
