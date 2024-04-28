@@ -3,7 +3,7 @@ import './index.css'
 export function Sidebar(){
     return(
         <>
-            <nav className="hidden sm:flex bg-gradient-light fixed h-screen rounded-r-xl flex flex-col justify-between items-center">
+            <nav className="hidden sm:flex bg-gradient-light fixed h-screen rounded-r-xl flex-col justify-between items-center">
                 <div>
                 <div className="grid mb-6 gap-2 items-center text-center mt-4">
                     <img
