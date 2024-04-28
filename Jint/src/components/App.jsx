@@ -15,7 +15,7 @@ function App() {
     return (
         <>
             <Sidebar />
-            <section className="grid grid-cols-1 lg:grid-cols-4  xl:ml-[15rem] p-4 gap-6">
+            <section className="grid grid-cols-1 lg:grid-cols-4  xl:ml-[15rem] px-4 gap-6">
                 <div className="grid col-span-3 mt-5 lg:col-span-4 xl:col-span-3">
                     <WelcomeCard />
                     <h2 className="font-bold text-xl mt-5">My task Today</h2>

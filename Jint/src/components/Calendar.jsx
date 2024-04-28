@@ -3,7 +3,8 @@ import "cally";
 
 export function Calendar() {
     return (
-        <div className="p-4 shadow-main rounded-xl h-fit">
+        <div className="p-4 shadow-main rounded-xl">
+            
             <calendar-range months="1">
                 <svg
                     class="w-6 h-6 text-gray-800 dark:text-black bg-white"    
@@ -42,7 +43,7 @@ export function Calendar() {
                     />
                 </svg>
                 <div>
-                    <calendar-month ></calendar-month>
+                    <calendar-month></calendar-month>
                     {/* <calendar-month offset="1"></calendar-month> */}
                 </div>
             </calendar-range>
