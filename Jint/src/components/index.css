@@ -41,25 +41,20 @@
 .cont-notifications {
     width: 13rem; /*13rem */
     background-color: white;
-    height: 56rem;
+    /* height: 100vh; */
+    height: calc(100vh - 4rem);
     position: relative;
+    /* position: fixed; */
+    z-index: 10;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
     border-left: 5px solid transparent;
     transition: all 400ms ease;
+    
 }
 
-#btn-menu:checked ~ .cont-notifications {
-    transform: translateX(14rem);
-}
-
-.cont-notifications nav {
-    transform: translateY(15%);
-}
 
 .cont-notifications nav div {
-    display: block;
-    padding: 40px;
     color: black;
     transition: all 10ms ease;
 }
