@@ -11,12 +11,17 @@ import { Slider } from "./Slider.jsx";
 import { Calendar } from "./Calendar.jsx";
 import { Search } from "./Search.jsx";
 import { Filter } from "./Filter.jsx";
+import { Login } from "./Login.jsx";
+import { SingUp } from "./SingUp.jsx";
 
 
 function App() {
     return (
         <>
-            <Sidebar />
+            <Login/>
+            {/* <SingUp/> */}
+
+            {/* <Sidebar /> */}
             {/* LandingPage */}
             {/* <section className="grid grid-cols-1 lg:grid-cols-4  xl:ml-[15rem] px-4 gap-6">
                 <div className="grid col-span-3 mt-5 lg:col-span-4 xl:col-span-3">
@@ -56,7 +61,7 @@ function App() {
             </section> */}
 
             {/* TaskPage */}
-            <section className="md:ml-[15rem] p-4">
+            {/* <section className="md:ml-[15rem] p-4">
                 <h2 className="font-bold text-xl">My Tasks</h2>
                 <div className="flex flex-col sm:flex-row gap-4  mt-5">
                     <Search/>
@@ -67,7 +72,7 @@ function App() {
                         <Card key={i} />
                     ))}
                 </div>
-            </section>
+            </section> */}
             
             {/* <Tasks/> */}
         </>
