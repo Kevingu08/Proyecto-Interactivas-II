@@ -9,13 +9,16 @@ import { WelcomeCard } from "./WelcomeCard.jsx";
 import { HorizontalCard } from "./HorizontalCard.jsx";
 import { Slider } from "./Slider.jsx";
 import { Calendar } from "./Calendar.jsx";
+import { Search } from "./Search.jsx";
+import { Filter } from "./Filter.jsx";
 
 
 function App() {
     return (
         <>
             <Sidebar />
-            <section className="grid grid-cols-1 lg:grid-cols-4  xl:ml-[15rem] px-4 gap-6">
+            {/* LandingPage */}
+            {/* <section className="grid grid-cols-1 lg:grid-cols-4  xl:ml-[15rem] px-4 gap-6">
                 <div className="grid col-span-3 mt-5 lg:col-span-4 xl:col-span-3">
                     <WelcomeCard />
                     <h2 className="font-bold text-xl mt-5">My task Today</h2>
@@ -50,7 +53,22 @@ function App() {
                     </section>
                     <Calendar/>
                 </div>
+            </section> */}
+
+            {/* TaskPage */}
+            <section className="md:ml-[15rem] p-4">
+                <h2 className="font-bold text-xl">My Tasks</h2>
+                <div className="flex flex-col sm:flex-row gap-4  mt-5">
+                    <Search/>
+                    <Filter/>
+                </div>
+                <div className="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-5 mt-5">
+                    {Array.from({ length: 10 }).map((_, i) => (
+                        <Card key={i} />
+                    ))}
+                </div>
             </section>
+            
             {/* <Tasks/> */}
         </>
     );
