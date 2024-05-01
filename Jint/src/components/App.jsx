@@ -13,12 +13,14 @@ import { Search } from "./Search.jsx";
 import { Filter } from "./Filter.jsx";
 import { Login } from "./Login.jsx";
 import { SingUp } from "./SingUp.jsx";
+import { Welcome } from "./Welcome.jsx";
 
 
 function App() {
     return (
         <>
-            <Login/>
+            {/* <Login/> */}
+            <Welcome/>
             {/* <SingUp/> */}
 
             {/* <Sidebar /> */}
