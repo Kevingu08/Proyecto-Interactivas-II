@@ -14,16 +14,18 @@ import { Filter } from "./Filter.jsx";
 import { Login } from "./Login.jsx";
 import { SingUp } from "./SingUp.jsx";
 import { Welcome } from "./Welcome.jsx";
+import { AdminView} from "./AdminView.jsx";
 
 
 function App() {
     return (
         <>
             {/* <Login/> */}
-            <Welcome/>
+            {/* <Welcome/> */}
             {/* <SingUp/> */}
 
             {/* <Sidebar /> */}
+            <AdminView />
             {/* LandingPage */}
             {/* <section className="grid grid-cols-1 lg:grid-cols-4  xl:ml-[15rem] px-4 gap-6">
                 <div className="grid col-span-3 mt-5 lg:col-span-4 xl:col-span-3">
