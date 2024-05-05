@@ -2,11 +2,11 @@ import "./index.css";
 
 export function Search() {
     return (
-        <form className="w-full sm:w-fit flex gap-2 shadow-main px-4 py-2 rounded-xl items-center" action="">
-            <input className="p-1 w-[90%]" type="text" placeholder="Search..." />
+        <form className="w-full sm:w-fit flex gap-2 shadow-main px-4 py-2 rounded-xl items-center dark:bg-dark-secondary" action="">
+            <input className="p-1 w-[90%] dark:bg-dark-secondary" type="text" placeholder="Search..." />
             <button type="submit" className="w-fit">
                 <svg
-                    className="w-6 h-6 text-gray-800 dark:text-black"
+                    className="w-6 h-6 text-gray-800 dark:text-white"
                     aria-hidden="true"
                     xmlns="http://www.w3.org/2000/svg"
                     width="24"

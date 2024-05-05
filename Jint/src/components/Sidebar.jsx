@@ -1,5 +1,6 @@
 import "./index.css";
 import { useState, useEffect } from "react";
+import { Link} from "react-router-dom";
 
 export function Sidebar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -26,9 +27,10 @@ export function Sidebar() {
 
     return (
         <>
+            
             <div className="md:hidden">
                 <button onClick={() => setIsOpen(!isOpen)} className={`translate-x-5 p-2 md:hidden`}>
-                <svg className="w-[30px] h-[30px] text-gray-800 dark:text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <svg className="w-[30px] h-[30px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M5 7h14M5 12h14M5 17h14"/>
                 </svg>
 
@@ -41,7 +43,7 @@ export function Sidebar() {
                 
                 <div className="relative">
                 <button onClick={() => setIsOpen(!isOpen)} className="p-4 absolute translate-x-[14rem] md:hidden">
-                <svg className="w-[24px] h-[24px] text-gray-800 dark:text-black" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <svg className="w-[24px] h-[24px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18 17.94 6M18 18 6.06 6"/>
                 </svg>
 
@@ -64,27 +66,27 @@ export function Sidebar() {
                     </div>
                     <ul className="flex flex-col m-auto text-start">
                         <li>
-                            <a
+                            <Link
                                 className="flex gap-6 px-8 py-5 hover:bg-gradient-light-li dark:text-white"
-                                href="#"
+                                to="/"
                             >
                                 <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m4 12 8-8 8 8M6 10.5V19a1 1 0 0 0 1 1h3v-3a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v3h3a1 1 0 0 0 1-1v-8.5"/>
                                 </svg>
 
                                 Home
-                            </a>
+                            </Link>
                         </li>
                         <li>
-                            <a
+                            <Link
                                 className="flex gap-6 px-8 py-5 hover:bg-gradient-light-li dark:text-white"
-                                href="#"
+                                to="/task"
                             >
                                 <svg className="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                     <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M15 4h3a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1H6a1 1 0 0 1-1-1V5a1 1 0 0 1 1-1h3m0 3h6m-6 5h6m-6 4h6M10 3v4h4V3h-4Z"/>
                                 </svg>
                                 Task
-                            </a>
+                            </Link>
                         </li>
                         <li>
                             <a
@@ -224,5 +226,10 @@ export function Sidebar() {
                 </div>
                  )}
             </nav>
+
+            
+            
+            
+            
         </>
     )}
