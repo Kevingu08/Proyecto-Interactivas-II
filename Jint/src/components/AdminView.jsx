@@ -21,23 +21,23 @@ export function AdminView() {
                             <div className='flex flex-col items-center justify-center'>
                                 <h2 class="text-3xl font-bold">Specifications</h2>
                                 <div className='flex flex-col justify-center items-center font- text-3xl gap-5 mt-3'>
-                                <Dropdown name="Group" options={['Option 1', 'Option 2', 'Option 3']} />
-                                <Dropdown name="Course" options={['Option 1', 'Option 2', 'Option 3']} />
-                                <Dropdown name="Filter" options={['Option 1', 'Option 2', 'Option 3']} />
+                                <Dropdown name="Group" options={['Option 1', 'Option 2', 'Option 3']} fontSize="text-xl"/>
+                                <Dropdown name="Course" options={['Option 1', 'Option 2', 'Option 3']} fontSize="text-xl"/>
+                                <Dropdown name="Filter" options={['Option 1', 'Option 2', 'Option 3']} fontSize="text-xl"/>
                                 </div>
                             </div>
                             <div className='flex flex-col items-center  justify-center'>
                                 <h2 class="text-3xl font-bold">Date</h2>
                                 <div className='container m-auto flex flex-col justify-center  items-center font- text-3xl gap-5 mt-3'>
-                                <Dropdown name="Hour" options={['Option 1', 'Option 2', 'Option 3','5']} />
-                                <Dropdown name="Day" options={['Option 1', 'Option 2', 'Option 3']} />
-                                <Dropdown name="Month" options={['Option 1', 'Option 2', 'Option 3']} />
+                                <Dropdown name="Hour" options={['Option 1', 'Option 2', 'Option 3','5']} fontSize="text-xl"/>
+                                <Dropdown name="Day" options={['Option 1', 'Option 2', 'Option 3']} fontSize="text-xl"/>
+                                <Dropdown name="Month" options={['Option 1', 'Option 2', 'Option 3']} fontSize="text-xl"/>
                                 </div>
                                 
                             </div>
                         </div>
                     </div>
-                    <div className='container rounded-2xl max-w-[500px] min-w-2 max-h-96 min-h-[300px] shadow-2xl text-justify p-4 m-16'>
+                    <div className='container rounded-2xl max-w-[500px] min-w-2 max-h-96 min-h-[300px] shadow-2xl text-justify p-4 m-12'>
                         <h2 className='text-sm font-regular text-gray'>Add a description:</h2>
                     </div>
                 </div>

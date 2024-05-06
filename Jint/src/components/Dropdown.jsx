@@ -1,7 +1,7 @@
 import './index.css';
 import React, { useState } from 'react';
 
-const Dropdown = ({ name, options }) => {
+const Dropdown = ({ name, options, fontSize }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const toggleDropdown = () => {
@@ -17,10 +17,13 @@ const Dropdown = ({ name, options }) => {
                 {name}
             </button>
             {isOpen && (
-                <div className="flex flex-col justify-center items-center absolute right-0 mt-2 w-48 rounded-lg shadow-xl">
+                <div className="flex flex-col justify-center items-center  right-0 mt-2 w-48 rounded-lg shadow-xl">
                     <ul className='container bg-opacity-100 flex flex-col justify-center items-center'>
-                        {options.map((option) => (
-                            <li className="px-4 py-2 hover:bg-gray-200">
+                        {options.map((option, index) => (
+                            <li
+                                key={index}
+                                className={`py-2 bg-opacity-100 hover:bg-gray-200 ${fontSize}`}
+                            >
                                 {option}
                             </li>
                         ))}
