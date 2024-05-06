@@ -3,7 +3,7 @@ import './index.css'
 export function Welcome(){
     return(
         <>
-        <div className='h-screen bg-gradient-to-b from-violet-c to-violet-500'>
+        <div className='h-screen bg-violet-500'>
         <div>
         <p className='font-primary font-bold text-7xl text-primary pt-5 px-10'>J</p> 
         </div>

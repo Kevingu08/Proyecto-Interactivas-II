@@ -14,7 +14,10 @@ import { Filter } from "./Filter.jsx";
 import { Login } from "./Login.jsx";
 import { SingUp } from "./SingUp.jsx";
 import { Welcome } from "./Welcome.jsx";
-import { AdminView} from "./AdminView.jsx";
+import { AdminView } from "./AdminView.jsx";
+import Menu from "./Dropdown.jsx";
+import Dropdown from "./Dropdown.jsx";
+
 
 
 function App() {
@@ -23,7 +26,6 @@ function App() {
             {/* <Login/> */}
             {/* <Welcome/> */}
             {/* <SingUp/> */}
-
             {/* <Sidebar /> */}
             <AdminView />
             {/* LandingPage */}
@@ -77,7 +79,7 @@ function App() {
                     ))}
                 </div>
             </section> */}
-            
+
             {/* <Tasks/> */}
         </>
     );
