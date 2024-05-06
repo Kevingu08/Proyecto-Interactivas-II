@@ -17,8 +17,8 @@ const Dropdown = ({ name, options }) => {
                 {name}
             </button>
             {isOpen && (
-                <div className="flex flex-col justify-center items-center right-0 mt-2 w-48 bg-white rounded-lg shadow-lg">
-                    <ul>
+                <div className="flex flex-col justify-center items-center absolute right-0 mt-2 w-48 rounded-lg shadow-xl">
+                    <ul className='container bg-opacity-100 flex flex-col justify-center items-center'>
                         {options.map((option) => (
                             <li className="px-4 py-2 hover:bg-gray-200">
                                 {option}
