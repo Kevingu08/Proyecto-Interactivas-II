@@ -4,6 +4,7 @@ export default {
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}"
   ],
+  darkMode: 'selector',
   theme: {
     extend: {
         colors:{
@@ -23,9 +24,11 @@ export default {
         },
         boxShadow:{
             'main': '10px 5px 30px 0px rgba(0,0,0,0.20)',
-        }
+        },
+        
     },
   },
   plugins: [],
 }
+
 
