@@ -11,6 +11,8 @@ import { Slider } from "./Slider.jsx";
 import { Calendar } from "./Calendar.jsx";
 import { Search } from "./Search.jsx";
 import { Filter } from "./Filter.jsx";
+import { Configuration } from "./Configuration.jsx";
+
 
 
 function App() {
@@ -56,20 +58,26 @@ function App() {
             </section> */}
 
             {/* TaskPage */}
-            <section className="md:ml-[15rem] p-4">
+            {/* <section className="md:ml-[15rem] p-4">
                 <h2 className="font-bold text-xl">My Tasks</h2>
                 <div className="flex flex-col sm:flex-row gap-4  mt-5">
                     <Search/>
                     <Filter/>
                 </div>
-                <div className="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-5 mt-5">
+                <div className="grid-col grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-5 mt-5">
                     {Array.from({ length: 10 }).map((_, i) => (
                         <Card key={i} />
                     ))}
                 </div>
-            </section>
+            </section> */}
             
             {/* <Tasks/> */}
+
+           <Configuration/>
+
+
+            
+            
         </>
     );
 }

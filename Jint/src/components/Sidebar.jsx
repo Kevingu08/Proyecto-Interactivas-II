@@ -8,7 +8,7 @@ export function Sidebar() {
 
     const toggleNotifications = () => {
         setShowNotifications(!showNotifications);
-       
+
     };
     
 
@@ -154,7 +154,7 @@ export function Sidebar() {
                                 </svg>
                             </div> 
                         </div>
-                            <a href="#" className='shadow h-36 p-2 bg-white'>
+                            <a href="#" className='shadow border-separate h-36 p-2 bg-white'>
                                 <div className="grid grid-cols-2 gap-16">
                                     <a className="font-bold" href="#">Notification</a>
                                     <span className="text-end text-xs">Fri 12:30PM</span>
