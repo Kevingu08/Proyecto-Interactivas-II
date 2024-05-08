@@ -5,7 +5,7 @@ import { Link} from "react-router-dom";
 export function Sidebar() {
     const [isOpen, setIsOpen] = useState(false);
 
-    const [showNotifications, setShowNotifications] = useState(true);
+    const [showNotifications, setShowNotifications] = useState(false);
 
     const toggleNotifications = () => {
         setShowNotifications(!showNotifications);
@@ -24,7 +24,7 @@ export function Sidebar() {
 
 
 
-
+ 
     return (
         <>
             
@@ -157,8 +157,8 @@ export function Sidebar() {
                 />
 
             {/* NOTIFICATIONS */}
-            {showNotifications && (
-                <div className='absolute z-10 overflow-y-auto'>
+            
+                <div className={`notification-panel ${showNotifications ? 'active' : ''} absolute z-10 overflow-y-auto`}>
                     <div className='cont-notifications shadow '> 
                         <nav className='grid justify-center'>
                         <div className="grid grid-cols-2 gap-36">
@@ -169,49 +169,49 @@ export function Sidebar() {
                                 </svg>
                             </div> 
                         </div>
-                            <a href="#" className='shadow border-separate h-36 p-2 bg-white'>
+                            <a href="#" className='shadow border-separate h-36 p-2 bg-{rgb(252, 251, 251)}'>
                                 <div className="grid grid-cols-2 gap-16">
                                     <a className="font-bold" href="#">Notification</a>
                                     <span className="text-end text-xs">Fri 12:30PM</span>
                                 </div>
                                 <p className="mt-3 max-w-44">Description of the task Description of the task Description of the task</p>
                             </a>
-                            <a href="#" className='shadow h-36 p-2 bg-white'>
+                            <a href="#" className='shadow h-36 p-2 bg-{rgb(252, 251, 251)}'>
                                 <div className="grid grid-cols-2 gap-16">
                                     <a className="font-bold" href="#">Notification</a>
                                     <span className="text-end text-xs">Fri 12:30PM</span>
                                 </div>
                                 <p className="mt-3 max-w-44">Description of the task Description of the task Description of the task</p>
                             </a>
-                            <a href="#" className='shadow h-36 p-2 bg-white'>
+                            <a href="#" className='shadow h-36 p-2 bg-{rgb(252, 251, 251)}'>
                                 <div className="grid grid-cols-2 gap-16">
                                     <a className="font-bold" href="#">Notification</a>
                                     <span className="text-end text-xs">Fri 12:30PM</span>
                                 </div>
                                 <p className="mt-3 max-w-44">Description of the task Description of the task Description of the task</p>
                             </a>
-                            <a href="#" className='shadow h-36 p-2 bg-white'>
+                            <a href="#" className='shadow h-36 p-2 bg-{rgb(252, 251, 251)}'>
                                 <div className="grid grid-cols-2 gap-16">
                                     <a className="font-bold" href="#">Notification</a>
                                     <span className="text-end text-xs">Fri 12:30PM</span>
                                 </div>
                                 <p className="mt-3 max-w-44">Description of the task Description of the task Description of the task</p>
                             </a>
-                            <a href="#" className='shadow h-36 p-2 bg-white'>
+                            <a href="#" className='shadow h-36 p-2 bg-{rgb(252, 251, 251)}'>
                                 <div className="grid grid-cols-2 gap-16">
                                     <a className="font-bold" href="#">Notification</a>
                                     <span className="text-end text-xs">Fri 12:30PM</span>
                                 </div>
                                 <p className="mt-3 max-w-44">Description of the task Description of the task Description of the task</p>
                             </a>
-                            <a href="#" className='shadow h-36 p-2 bg-white'>
+                            <a href="#" className='shadow h-36 p-2 bg-{rgb(252, 251, 251)}'>
                                 <div className="grid grid-cols-2 gap-16">
                                     <a className="font-bold" href="#">Notification</a>
                                     <span className="text-end text-xs">Fri 12:30PM</span>
                                 </div>
                                 <p className="mt-3 max-w-44">Description of the task Description of the task Description of the task</p>
                             </a>
-                            <a href="#" className='shadow h-36 p-2 bg-white'>
+                            <a href="#" className='shadow h-36 p-2 bg-{rgb(252, 251, 251)}'>
                                 <div className="grid grid-cols-2 gap-16">
                                     <a className="font-bold" href="#">Notification</a>
                                     <span className="text-end text-xs">Fri 12:30PM</span>
@@ -224,7 +224,7 @@ export function Sidebar() {
                     </div>
                     
                 </div>
-                 )}
+                
             </nav>
 
             
