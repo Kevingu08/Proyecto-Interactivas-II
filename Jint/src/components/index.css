@@ -10,12 +10,6 @@
     padding-bottom: 1.5rem;
 }
 
-/* .swiperContainer {
-    overflow-x: hidden;
-    gap: 2rem;
-    width: 100%;
-} */
-
 .pagination {
     display: flex;
     align-items: center;
