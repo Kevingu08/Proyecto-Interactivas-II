@@ -68,6 +68,10 @@ calendar-month {
     width: 100%;
 }
 
+.MuiGauge-valueText{
+    color: white;
+    background: white;
+}
 
 
 
