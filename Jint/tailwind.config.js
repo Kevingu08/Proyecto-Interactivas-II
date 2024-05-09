@@ -13,6 +13,7 @@ export default {
             'dark': '#1D1D1D',
             'dark-secondary': '#353535',
             'gray': '#8A8A8A',
+            'input-bg': '#F7F7F7',
         },
         fontFamily: {
             'primary': ['Montserrat', 'sans-serif'],

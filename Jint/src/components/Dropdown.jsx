@@ -1,37 +1,14 @@
-import './index.css';
-import React, { useState } from 'react';
+import './index.css'
 
-const Dropdown = ({ name, options, fontSize }) => {
-    const [isOpen, setIsOpen] = useState(false);
+export function Dropdown(){
+    return(
+        <form className='flex gap-4 items-center' action="">
+            <select className="w-96 border border-gray border-opacity-90 px-4 py-2 rounded-md bg-input-bg bg-opacity-50 dark:bg-dark-secondary dark:text-white">
+                <option value="all">All</option>
+                <option value="task">Task</option>
+                <option value="event">Event</option>
+            </select>
+        </form>
+    )
+}
 
-    const toggleDropdown = () => {
-        setIsOpen(!isOpen);
-    };
-
-    return (
-        <div className="relative">
-            <button
-                onClick={toggleDropdown}
-                className="shadow-2xl hover:bg-gray hover:bg-opacity-10 text-gray font-light py-2 px-4 rounded focus:outline-none"
-            >
-                {name}
-            </button>
-            {isOpen && (
-                <div className="flex flex-col justify-center items-center  right-0 mt-2 w-48 rounded-lg shadow-xl">
-                    <ul className='container bg-opacity-100 flex flex-col justify-center items-center'>
-                        {options.map((option, index) => (
-                            <li
-                                key={index}
-                                className={`py-2 bg-opacity-100 hover:bg-gray-200 ${fontSize}`}
-                            >
-                                {option}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-            )}
-        </div>
-    );
-};
-
-export default Dropdown;
