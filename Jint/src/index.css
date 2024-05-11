@@ -3,12 +3,12 @@
 @tailwind utilities;
 
 * {
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 nav {
-    z-index: 60; 
-  }
+    z-index: 60;
+}
 
 .swiper-wrapper {
     padding-bottom: 1.5rem;
@@ -93,6 +93,10 @@ calendar-month {
     width: 100%;
 }
 
+.MuiGauge-valueText {
+    color: white;
+    background: white;
+}
 
 .border-extra-thin {
     border: 0.5px solid black; /* Grosor del borde */
