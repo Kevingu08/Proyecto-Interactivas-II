@@ -1,4 +1,3 @@
-import "./index.css";
 import { useState } from "react";
 
 
@@ -26,7 +25,7 @@ export function Notification({title, description, time, img, day}){
                     </div>
                     <p className="w-44 opacity-60 dark:text-white"></p>
                     {showFullDescription ? description : `${description.slice(0, 40)}...`}
-                        
+   
                 </div>
                 
             </div>
