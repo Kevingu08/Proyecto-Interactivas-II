@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 * {
-    font-family: "Montserrat", sans-serif;
+    font-family: 'Montserrat', sans-serif;
 }
 
 .swiper-wrapper {
@@ -44,9 +44,7 @@
     border-bottom-right-radius: 1rem;
     border-left: 5px solid transparent;
     transition: all 400ms ease;
-    
 }
-
 
 .cont-notifications nav div {
     color: black;
@@ -68,16 +66,11 @@ calendar-month {
     width: 100%;
 }
 
-.MuiGauge-valueText{
+.MuiGauge-valueText {
     color: white;
     background: white;
 }
 
 .border-extra-thin {
     border: 0.5px solid black; /* Grosor del borde */
-  }
-
-
-
-
-
+}

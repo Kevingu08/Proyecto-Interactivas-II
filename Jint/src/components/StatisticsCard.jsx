@@ -1,5 +1,4 @@
-import "./index.css";
-import { Gauge } from '@mui/x-charts/Gauge';
+import { Gauge } from '@mui/x-charts/Gauge'
 
 export function StatisticsCard() {
     return (
@@ -27,5 +26,5 @@ export function StatisticsCard() {
                 </div>
             </div>
         </div>
-    );
+    )
 }
