@@ -1,6 +1,7 @@
 import "./index.css";
 import { useState, useEffect } from "react";
 import { Link} from "react-router-dom";
+import { Notification } from "./Notification.jsx";
 
 export function Sidebar() {
     const [isOpen, setIsOpen] = useState(false);
@@ -27,14 +28,23 @@ export function Sidebar() {
  
     return (
         <>
-            
-            <div className="md:hidden">
-                <button onClick={() => setIsOpen(!isOpen)} className={`translate-x-5 p-2 md:hidden`}>
-                <svg className="w-[30px] h-[30px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                    <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M5 7h14M5 12h14M5 17h14"/>
-                </svg>
+            <div className="flex">
+                <div className="md:hidden">
+                    <button onClick={() => setIsOpen(!isOpen)} className={`translate-x-5 p-2 md:hidden`}>
+                    <svg className="w-[30px] h-[30px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M5 7h14M5 12h14M5 17h14"/>
+                    </svg>
 
-                </button>
+                    </button>
+                </div>
+                <div onClick={() => setShowNotifications(!showNotifications)} className="md:hidden">
+                    <button className={`translate-x-5 p-2 md:hidden`}>
+                    <svg className="w-7 h-7 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5.365V3m0 2.365a5.338 5.338 0 0 1 5.133 5.368v1.8c0 2.386 1.867 2.982 1.867 4.175 0 .593 0 1.292-.538 1.292H5.538C5 18 5 17.301 5 16.708c0-1.193 1.867-1.789 1.867-4.175v-1.8A5.338 5.338 0 0 1 12 5.365ZM8.733 18c.094.852.306 1.54.944 2.112a3.48 3.48 0 0 0 4.646 0c.638-.572 1.236-1.26 1.33-2.112h-6.92Z"/>
+                    </svg>
+
+                    </button>
+                </div>
             </div>
 
             <div onClick={() => setIsOpen(!isOpen)} className={`${isOpen ? 'block' : 'hidden'} bg-black/30 h-screen w-screen fixed z-10 top-0 left-0 right-0 backdrop-blur-sm md:hidden`}></div>
@@ -99,7 +109,7 @@ export function Sidebar() {
                                 Calendar
                             </a>
                         </li>
-                        <li>
+                        <li className="hidden md:flex">
                             <a
                                 className="flex gap-6 px-8 py-5 hover:bg-gradient-light-li dark:text-white"
                                 href="#"
@@ -154,78 +164,40 @@ export function Sidebar() {
                     className="w-[32px] h-[32px] mb-4"
                     src="../../src/assets/imgs/Jint-logo.svg"
                     alt=""
+            
                 />
 
             {/* NOTIFICATIONS */}
             
-                <div className={`notification-panel ${showNotifications ? 'active' : ''} absolute z-10 overflow-y-auto`}>
-                    <div className='cont-notifications shadow '> 
+                
+            </nav>
+
+            <div className={`notification-panel ${showNotifications ? 'active' : ''}   `}>
+                    <div className='cont-notifications gap-5 bg-slate-50 dark:bg-dark-secondary overflow-y-auto'> 
                         <nav className='grid justify-center'>
-                        <div className="grid grid-cols-2 gap-36">
-                            <h1 className='font-bold text-2xl p-2 mt-4'>Notifications</h1>
+                        <div className="grid grid-cols-2 gap-72">
+                            <h1 className='font-bold text-2xl p-2 mt-4 dark:text-white'>Notifications</h1>
                             <div onClick={toggleNotifications} className="cursor-pointer">
                                 <svg class="w-6 h-6 text-gray-800 dark:text-white mt-7" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/>
                                 </svg>
                             </div> 
                         </div>
-                            <a href="#" className='shadow border-separate h-36 p-2 bg-{rgb(252, 251, 251)}'>
-                                <div className="grid grid-cols-2 gap-16">
-                                    <a className="font-bold" href="#">Notification</a>
-                                    <span className="text-end text-xs">Fri 12:30PM</span>
-                                </div>
-                                <p className="mt-3 max-w-44">Description of the task Description of the task Description of the task</p>
-                            </a>
-                            <a href="#" className='shadow h-36 p-2 bg-{rgb(252, 251, 251)}'>
-                                <div className="grid grid-cols-2 gap-16">
-                                    <a className="font-bold" href="#">Notification</a>
-                                    <span className="text-end text-xs">Fri 12:30PM</span>
-                                </div>
-                                <p className="mt-3 max-w-44">Description of the task Description of the task Description of the task</p>
-                            </a>
-                            <a href="#" className='shadow h-36 p-2 bg-{rgb(252, 251, 251)}'>
-                                <div className="grid grid-cols-2 gap-16">
-                                    <a className="font-bold" href="#">Notification</a>
-                                    <span className="text-end text-xs">Fri 12:30PM</span>
-                                </div>
-                                <p className="mt-3 max-w-44">Description of the task Description of the task Description of the task</p>
-                            </a>
-                            <a href="#" className='shadow h-36 p-2 bg-{rgb(252, 251, 251)}'>
-                                <div className="grid grid-cols-2 gap-16">
-                                    <a className="font-bold" href="#">Notification</a>
-                                    <span className="text-end text-xs">Fri 12:30PM</span>
-                                </div>
-                                <p className="mt-3 max-w-44">Description of the task Description of the task Description of the task</p>
-                            </a>
-                            <a href="#" className='shadow h-36 p-2 bg-{rgb(252, 251, 251)}'>
-                                <div className="grid grid-cols-2 gap-16">
-                                    <a className="font-bold" href="#">Notification</a>
-                                    <span className="text-end text-xs">Fri 12:30PM</span>
-                                </div>
-                                <p className="mt-3 max-w-44">Description of the task Description of the task Description of the task</p>
-                            </a>
-                            <a href="#" className='shadow h-36 p-2 bg-{rgb(252, 251, 251)}'>
-                                <div className="grid grid-cols-2 gap-16">
-                                    <a className="font-bold" href="#">Notification</a>
-                                    <span className="text-end text-xs">Fri 12:30PM</span>
-                                </div>
-                                <p className="mt-3 max-w-44">Description of the task Description of the task Description of the task</p>
-                            </a>
-                            <a href="#" className='shadow h-36 p-2 bg-{rgb(252, 251, 251)}'>
-                                <div className="grid grid-cols-2 gap-16">
-                                    <a className="font-bold" href="#">Notification</a>
-                                    <span className="text-end text-xs">Fri 12:30PM</span>
-                                </div>
-                                <p className="mt-3 max-w-44">Description of the task Description of the task Description of the task</p>
-                            </a>
-                            
+                            <Notification/>
+                            <Notification/>
+                            <Notification/>
+                            <Notification/>
+                            <Notification/>
+                            <Notification/>
+                            <Notification/>
+                            <Notification/>
+                            <Notification/>
+                            <Notification/>  
                         </nav>
                        
                     </div>
                     
                 </div>
-                
-            </nav>
 
             
             

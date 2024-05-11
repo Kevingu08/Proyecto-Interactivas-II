@@ -6,6 +6,10 @@
     font-family: "Montserrat", sans-serif;
 }
 
+nav {
+    z-index: 60; 
+  }
+
 .swiper-wrapper {
     padding-bottom: 1.5rem;
 }
@@ -33,33 +37,30 @@
 }
 
 .cont-notifications {
-    width: 13rem; /*13rem */
-    background-color: rgb(252, 251, 251);
-    /* height: 100vh; */
-    height: calc(100vh - 4rem);
+    width: 25rem; /*13rem */
+    height: 100%;
     position: relative;
-    /* position: fixed; */
-    z-index: 10;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
     border-left: 5px solid transparent;
     border: #000000;
-    /* transition: all 400ms ease; */ 
 }
 
 
 
 .notification-panel {
-    background-color: rgb(252, 251, 251);
-    position: absolute;
+    /* background-color: rgb(252, 251, 251); */
     top: 0;
-    left: -100%;
-    width: 100%;
+    left: -40%;
+    width: 140%;
+    position: absolute;
+    z-index: 40;
     height: 100%;
     transition: left 0.3s ease;
   }
+
   .notification-panel.active {
-    left: 0;
+    left: 13rem;
   }
 
 
@@ -69,7 +70,7 @@
 }
 
 .cont-notifications nav a:hover {
-    border-left: 5px solid rgb(194, 87, 194);
+    border-left: 3px solid rgb(194, 87, 194);
 }
 
 /* Clases del Componente calendario */
@@ -87,6 +88,22 @@ calendar-month {
 .border-extra-thin {
     border: 0.5px solid black; /* Grosor del borde */
   }
+
+
+
+
+
+ @media (max-width: 768px) {
+    .notification-panel {
+        width: 100%; 
+        left: -100%; 
+
+    }
+
+    .notification-panel.active {
+        left: 0;
+      }
+}
 
 
 
