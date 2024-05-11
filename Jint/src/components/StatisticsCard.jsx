@@ -5,7 +5,7 @@ export function StatisticsCard() {
         <div className="grid grid-cols-[repeat(auto-fit,_minmax(190px,_1fr))] p-4 shadow-main rounded-xl w-fit dark:bg-dark-secondary dark:text-white">
             <img
                 className="w-[50rem] aspect-video"
-                src="../../src/assets/imgs/Los-6-mejores-cursos-gratuitos.jpg"
+                src="/Los-6-mejores-cursos-gratuitos.jpg"
                 alt=""
             />
             <div className="flex flex-col justify-between p-4 text-center gap-4">

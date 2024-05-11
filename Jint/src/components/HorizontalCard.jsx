@@ -4,7 +4,7 @@ export function HorizontalCard() {
             <article className="rounded-xl overflow-hidden shadow-main w-fit grid dark:bg-dark-secondary">
                 <img
                     className="object-cover aspect-[5/2]"
-                    src="../../src/assets/imgs/Los-6-mejores-cursos-gratuitos.jpg"
+                    src="/Los-6-mejores-cursos-gratuitos.jpg"
                     alt=""
                 />
                 <div className="p-4">

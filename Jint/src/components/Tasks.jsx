@@ -32,7 +32,7 @@ export function Tasks() {
                                 <span className="ml-12">23:59</span>
                                 <img
                                     className="mt-9"
-                                    src="../../src/assets/imgs/finished.png"
+                                    src="/finished.png"
                                     alt=""
                                 />
                             </div>
@@ -60,7 +60,7 @@ export function Tasks() {
                                 <span className="ml-12">23:59</span>
                                 <img
                                     className="mt-9"
-                                    src="../../src/assets/imgs/finished.png"
+                                    src="/finished.png"
                                     alt=""
                                 />
                             </div>
@@ -88,7 +88,7 @@ export function Tasks() {
                                 <span className="ml-12">23:59</span>
                                 <img
                                     className="mt-9"
-                                    src="../../src/assets/imgs/finished.png"
+                                    src="/finished.png"
                                     alt=""
                                 />
                             </div>
@@ -125,7 +125,7 @@ export function Tasks() {
                                 <span className="ml-12">23:59</span>
                                 <img
                                     className="mt-9"
-                                    src="../../src/assets/imgs/finished.png"
+                                    src="/finished.png"
                                     alt=""
                                 />
                             </div>
@@ -153,7 +153,7 @@ export function Tasks() {
                                 <span className="ml-12">23:59</span>
                                 <img
                                     className="mt-9"
-                                    src="../../src/assets/imgs/finished.png"
+                                    src="/finished.png"
                                     alt=""
                                 />
                             </div>
@@ -181,7 +181,7 @@ export function Tasks() {
                                 <span className="ml-12">23:59</span>
                                 <img
                                     className="mt-9"
-                                    src="../../src/assets/imgs/finished.png"
+                                    src="/finished.png"
                                     alt=""
                                 />
                             </div>
@@ -209,7 +209,7 @@ export function Tasks() {
                                 <span className="ml-12">23:59</span>
                                 <img
                                     className="mt-9"
-                                    src="../../src/assets/imgs/finished.png"
+                                    src="/finished.png"
                                     alt=""
                                 />
                             </div>

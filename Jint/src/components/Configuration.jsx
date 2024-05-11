@@ -13,7 +13,7 @@ export function Configuration() {
             <section className="grid p-14 ml-60 text-2xl font-semibold text">
                 <div className="grid gap-7 ">
                     <sub>Profile</sub>
-                    <img src="../../src/assets/imgs/line.png" alt="" />
+                    <img src="/line.png" alt="" />
                     <section className="flex flex-wrap gap-16">
                         <div>
                             <img
@@ -59,7 +59,7 @@ export function Configuration() {
             <section className="grid p-14 ml-60 text-2xl gap-7 font-semibold">
                 <div className="grid gap-7">
                     <sub>My Account</sub>
-                    <img src="../../src/assets/imgs/line.png" alt="" />
+                    <img src="/line.png" alt="" />
                     <div className="text-base font-thin grid gap-2">
                         <span>Email</span>
                         <div className="grid gap-5">
@@ -79,7 +79,7 @@ export function Configuration() {
             <section className="grid p-14 ml-60 text-2xl gap-7 font-semibold">
                 <div className="grid gap-7">
                     <sub>Personal Data</sub>
-                    <img src="../../src/assets/imgs/line.png" alt="" />
+                    <img src="/line.png" alt="" />
                     <div className="flex gap-24">
                         <div className="text-base font-thin grid gap-2">
                             <span>Age</span>
@@ -119,7 +119,7 @@ export function Configuration() {
             <section className="grid p-14 ml-60 text-2xl gap-7 font-semibold mb-16">
                 <div className="grid gap-7">
                     <sub>Preferences</sub>
-                    <img src="../../src/assets/imgs/line.png" alt="" />
+                    <img src="/line.png" alt="" />
                     <div className="flex text-base font-thin gap-28">
                         <div className="grid gap-1">
                             <span>Theme</span>
@@ -134,7 +134,7 @@ export function Configuration() {
                                 onClick={toggleTheme}
                             >
                                 <img
-                                    src="./../src/assets/imgs/arrow-down.png"
+                                    src="/arrow-down.png"
                                     alt=""
                                 />
                             </div>

@@ -4,7 +4,7 @@ export function Card({
     title = 'Card Title',
     date = 'May 5',
     time = '11:59 pm',
-    img = '../../src/assets/imgs/Los-6-mejores-cursos-gratuitos.jpg',
+    img = '/Los-6-mejores-cursos-gratuitos.jpg',
 }) {
     return (
         <article className="rounded-xl shadow-main w-fit overflow-hidden dark:bg-dark-secondary">
