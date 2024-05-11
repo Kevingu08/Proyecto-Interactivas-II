@@ -73,6 +73,15 @@ nav {
     border-left: 3px solid rgb(194, 87, 194);
 }
 
+.search{
+    width: 21rem;
+}
+
+.search-icon{
+    margin-left: 19rem;
+
+}
+
 /* Clases del Componente calendario */
 calendar-range {
     width: 100%;
@@ -101,8 +110,17 @@ calendar-month {
     }
 
     .notification-panel.active {
-        left: 0;
-      }
+        left: -.7rem;
+    }
+
+    .search{
+        width: 22rem;
+    }
+
+    .search-icon{
+        margin-left: 20rem;
+    
+    }
 }
 
 

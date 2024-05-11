@@ -176,13 +176,17 @@ export function Sidebar() {
                     <div className='cont-notifications gap-5 bg-slate-50 dark:bg-dark-secondary overflow-y-auto'> 
                         <nav className='grid justify-center'>
                         <div className="grid grid-cols-2 gap-72">
-                            <h1 className='font-bold text-2xl p-2 mt-4 dark:text-white'>Notifications</h1>
+                            <h1 className='font-bold text-2xl p-2 mt-4 ml-4 dark:text-white'>Notifications</h1>
                             <div onClick={toggleNotifications} className="cursor-pointer">
                                 <svg class="w-6 h-6 text-gray-800 dark:text-white mt-7" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
                                 <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/>
                                 </svg>
                             </div> 
                         </div>
+                        {/* <div className="realtive">
+                            <img className="absolute mt-11 search-icon w-9 h-8 cursor-pointer" src="../../src/assets/imgs/search.png" alt="" />
+                            <input className="search bg-zinc-20 h-14 rounded-xl shadow-inner shadow-slate-500 ml-5 mt-8 mb-4 pl-5 outline-none" type="text"  placeholder="Search..."/>
+                        </div> */}
                             <Notification/>
                             <Notification/>
                             <Notification/>
