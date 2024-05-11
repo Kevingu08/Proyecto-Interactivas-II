@@ -11,6 +11,8 @@ import { Slider } from "./Slider.jsx";
 import { Calendar } from "./Calendar.jsx";
 import { Search } from "./Search.jsx";
 import { Filter } from "./Filter.jsx";
+import { Configuration } from "./Configuration.jsx";
+
 import { Login } from "./Login.jsx";
 import { SingUp } from "./SingUp.jsx";
 import { Statistics } from "./Statistics.jsx";

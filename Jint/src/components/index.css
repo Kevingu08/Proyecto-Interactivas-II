@@ -73,6 +73,11 @@ calendar-month {
     background: white;
 }
 
+.border-extra-thin {
+    border: 0.5px solid black; /* Grosor del borde */
+  }
+
+
 
 
 
