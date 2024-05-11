@@ -18,7 +18,7 @@ export function TaskCard() {
                     <span className=" ml-8">23:59</span>
                     <img
                         className="mt-9 w-36"
-                        src="../../src/assets/imgs/finished.png"
+                        src="/finished.png"
                         alt=""
                     />
                 </div>
