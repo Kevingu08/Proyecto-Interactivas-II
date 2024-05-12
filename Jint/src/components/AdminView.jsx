@@ -6,7 +6,6 @@ import { Dropdown } from './Dropdown';
 
 export function AdminView() {
     return (
-        <>
             <section className='grid xl:grid-cols-2 xl:ml-[15rem] sm:p-10 sm:grid-cols-1  gap-2 dark:bg-dark-primary dark:text-white'>
                 <div className='m-4 sm:m-12'>
                     <h1 className='text-4xl font-medium'>ASSIGN NEW TASK</h1>
@@ -70,6 +69,5 @@ export function AdminView() {
 
             </section>
 
-        </>
     )
 }
