@@ -16,11 +16,7 @@ export function TaskCard() {
                 </div>
                 <div className="grid">
                     <span className=" ml-8">23:59</span>
-                    <img
-                        className="mt-9 w-36"
-                        src="/finished.png"
-                        alt=""
-                    />
+                    <img className="mt-9 w-36" src="/finished.png" alt="" />
                 </div>
             </div>
         </div>

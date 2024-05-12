@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-export function Configuration() {
+export function ConfigurationPage() {
     const [showTheme, setShowTheme] = useState(false)
 
     const toggleTheme = () => {
@@ -133,10 +133,7 @@ export function Configuration() {
                                 className="cursor-pointer"
                                 onClick={toggleTheme}
                             >
-                                <img
-                                    src="/arrow-down.png"
-                                    alt=""
-                                />
+                                <img src="/arrow-down.png" alt="" />
                             </div>
                             <ul
                                 className={`w-24 h-16 shadow grid items-center rounded-lg absolute mt-8 ${

@@ -46,8 +46,6 @@ nav {
     border: #000000;
 }
 
-
-
 .notification-panel {
     /* background-color: rgb(252, 251, 251); */
     top: 0;
@@ -57,12 +55,11 @@ nav {
     z-index: 40;
     height: 100%;
     transition: left 0.3s ease;
-  }
+}
 
-  .notification-panel.active {
+.notification-panel.active {
     left: 13rem;
-  }
-
+}
 
 .cont-notifications nav div {
     color: black;
@@ -73,13 +70,12 @@ nav {
     border-left: 3px solid rgb(194, 87, 194);
 }
 
-.search{
+.search {
     width: 21rem;
 }
 
-.search-icon{
+.search-icon {
     margin-left: 19rem;
-
 }
 
 /* Clases del Componente calendario */
@@ -100,34 +96,23 @@ calendar-month {
 
 .border-extra-thin {
     border: 0.5px solid black; /* Grosor del borde */
-  }
+}
 
-
-
-
-
- @media (max-width: 768px) {
+@media (max-width: 768px) {
     .notification-panel {
-        width: 100%; 
-        left: -100%; 
-
+        width: 100%;
+        left: -100%;
     }
 
     .notification-panel.active {
-        left: -.7rem;
+        left: -0.7rem;
     }
 
-    .search{
+    .search {
         width: 22rem;
     }
 
-    .search-icon{
+    .search-icon {
         margin-left: 20rem;
-    
     }
 }
-
-
-
-
-

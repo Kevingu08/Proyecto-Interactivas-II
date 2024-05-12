@@ -118,7 +118,6 @@ export function Sidebar() {
                         <p className="text-xs dark:text-white">
                             kevinguidou@gmail.com
                         </p>
-                        
                     </div>
                     <ul className="flex flex-col m-auto text-start">
                         <li>
@@ -250,9 +249,9 @@ export function Sidebar() {
                             </NavLink>
                         </li>
                         <li>
-                            <a
+                            <NavLink
                                 className="flex gap-6 px-8 py-5 hover:bg-gradient-light-li dark:text-white"
-                                href="#"
+                                to="/configuration"
                             >
                                 <svg
                                     className="w-6 h-6 text-gray-800 dark:text-white"
@@ -279,13 +278,12 @@ export function Sidebar() {
                                     />
                                 </svg>
                                 Configuration
-                            </a>
+                            </NavLink>
                         </li>
                     </ul>
-                    
                 </div>
-                <div className='w-full'>
-                <span className="block h-[1.2px] w-[80%] m-auto my-2 bg-white"></span>
+                <div className="w-full">
+                    <span className="block h-[1.2px] w-[80%] m-auto my-2 bg-white"></span>
                     <a
                         className="flex gap-6 px-8 py-5 hover:bg-gradient-light-li dark:text-white rounded-br-xl"
                         href="#"
