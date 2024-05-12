@@ -1,7 +1,12 @@
 import { useState } from "react";
 
 
-export function Notification({title, description, time, img, day}){
+export function Notification({
+    title ='Notification', 
+    description ='This is the description of the notification This is the description of the notification ', 
+    time ='12:30PM', 
+    img ='https://static-00.iconduck.com/assets.00/profile-circle-icon-2048x2048-cqe5466q.png', 
+    day ='Fri'}){
 
     const [showFullDescription, setShowFullDescription] = useState(false);
 
@@ -17,7 +22,7 @@ export function Notification({title, description, time, img, day}){
                 </div>
                 <div>
                     <div className="grid grid-cols-2 gap-28 mt-2">
-                        <a className="font-bold dark:text-white" href="#">{title}</a>
+                        <strong className="font-bold dark:text-white" href="#">{title}</strong>
                         <div className="flex gap-1">
                             <span className="text-end text-xs dark:text-white">{day}</span>
                             <span className="text-end text-xs dark:text-white">{time}</span>
@@ -35,10 +40,3 @@ export function Notification({title, description, time, img, day}){
 
 }
 
-Notification.defaultProps = {
-    title: 'Notification',
-    description:'This is the description of the notification This is the description of the notification ',
-    day: 'Fri',
-    time: '12:30PM',
-    img: 'https://static-00.iconduck.com/assets.00/profile-circle-icon-2048x2048-cqe5466q.png'
-}

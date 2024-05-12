@@ -163,9 +163,9 @@ export function Sidebar() {
                             </NavLink>
                         </li>
                         <li>
-                            <a
+                            <NavLink
                                 className="flex gap-6 px-8 py-5 hover:bg-gradient-light-li dark:text-white"
-                                href="#"
+                                to="/AdminView"
                             >
                                 <svg
                                     className="w-6 h-6 text-gray-800 dark:text-white"
@@ -185,7 +185,7 @@ export function Sidebar() {
                                     />
                                 </svg>
                                 Calendar
-                            </a>
+                            </NavLink>
                         </li>
                         <li className="hidden md:flex">
                             <a
@@ -325,7 +325,7 @@ export function Sidebar() {
                             <h1 className='font-bold text-2xl p-2 mt-4 ml-4 dark:text-white'>Notifications</h1>
                             <div onClick={toggleNotifications} className="cursor-pointer">
                                 <svg class="w-6 h-6 text-gray-800 dark:text-white mt-7" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/>
+                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18 17.94 6M18 18 6.06 6"/>
                                 </svg>
                             </div> 
                         </div>
