@@ -1,4 +1,4 @@
-import { Route, Router, Routes } from 'react-router-dom'
+import { Route, Routes } from 'react-router-dom'
 import { Sidebar } from './components/Sidebar'
 import { WelcomeCard } from './components/WelcomeCard'
 import { Slider } from './components/Slider'
