@@ -1,12 +1,11 @@
-
-import { useState, useEffect } from "react";
-import { Notification } from "./Notification.jsx";
+import { useState, useEffect } from 'react'
+import { Notification } from './Notification.jsx'
 import { NavLink } from 'react-router-dom'
 
 export function Sidebar() {
     const [isOpen, setIsOpen] = useState(false)
 
-    const [showNotifications, setShowNotifications] = useState(false);
+    const [showNotifications, setShowNotifications] = useState(false)
 
     const toggleNotifications = () => {
         setShowNotifications(!showNotifications)
@@ -20,28 +19,56 @@ export function Sidebar() {
         } else {
             document.querySelector('html').classList.add('dark')
         }
-    }, [theme]);
+    }, [theme])
 
-
-
- 
     return (
         <>
             <div className="flex">
                 <div className="md:hidden">
-                    <button onClick={() => setIsOpen(!isOpen)} className={`translate-x-5 p-2 md:hidden`}>
-                    <svg className="w-[30px] h-[30px] text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" strokeLinecap="round" strokeWidth="2" d="M5 7h14M5 12h14M5 17h14"/>
-                    </svg>
-
+                    <button
+                        onClick={() => setIsOpen(!isOpen)}
+                        className={`translate-x-5 p-2 md:hidden`}
+                    >
+                        <svg
+                            className="w-[30px] h-[30px] text-gray-800 dark:text-white"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke="currentColor"
+                                strokeLinecap="round"
+                                strokeWidth="2"
+                                d="M5 7h14M5 12h14M5 17h14"
+                            />
+                        </svg>
                     </button>
                 </div>
-                <div onClick={() => setShowNotifications(!showNotifications)} className="md:hidden">
+                <div
+                    onClick={() => setShowNotifications(!showNotifications)}
+                    className="md:hidden"
+                >
                     <button className={`translate-x-5 p-2 md:hidden`}>
-                    <svg className="w-7 h-7 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                        <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 5.365V3m0 2.365a5.338 5.338 0 0 1 5.133 5.368v1.8c0 2.386 1.867 2.982 1.867 4.175 0 .593 0 1.292-.538 1.292H5.538C5 18 5 17.301 5 16.708c0-1.193 1.867-1.789 1.867-4.175v-1.8A5.338 5.338 0 0 1 12 5.365ZM8.733 18c.094.852.306 1.54.944 2.112a3.48 3.48 0 0 0 4.646 0c.638-.572 1.236-1.26 1.33-2.112h-6.92Z"/>
-                    </svg>
-
+                        <svg
+                            className="w-7 h-7 text-gray-800 dark:text-white"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke="currentColor"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M12 5.365V3m0 2.365a5.338 5.338 0 0 1 5.133 5.368v1.8c0 2.386 1.867 2.982 1.867 4.175 0 .593 0 1.292-.538 1.292H5.538C5 18 5 17.301 5 16.708c0-1.193 1.867-1.789 1.867-4.175v-1.8A5.338 5.338 0 0 1 12 5.365ZM8.733 18c.094.852.306 1.54.944 2.112a3.48 3.48 0 0 0 4.646 0c.638-.572 1.236-1.26 1.33-2.112h-6.92Z"
+                            />
+                        </svg>
                     </button>
                 </div>
             </div>
@@ -81,7 +108,7 @@ export function Sidebar() {
                             />
                         </svg>
                     </button>
-                    <div className="grid mb-6 gap-2 items-center text-center mt-4">
+                    <div className="grid mb-6 gap-2 items-center text-center mt-8">
                         <img
                             className="w-16 m-auto rounded-full"
                             src="https://unavatar.io/Kevingu08"
@@ -91,25 +118,7 @@ export function Sidebar() {
                         <p className="text-xs dark:text-white">
                             kevinguidou@gmail.com
                         </p>
-                        <a className="m-auto" href="#">
-                            <svg
-                                className="w-[24px] h-[24px] text-gray-800 dark:text-white"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="m14.304 4.844 2.852 2.852M7 7H4a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h11a1 1 0 0 0 1-1v-4.5m2.409-9.91a2.017 2.017 0 0 1 0 2.853l-6.844 6.844L8 14l.713-3.565 6.844-6.844a2.015 2.015 0 0 1 2.852 0Z"
-                                />
-                            </svg>
-                        </a>
+                        
                     </div>
                     <ul className="flex flex-col m-auto text-start">
                         <li>
@@ -187,7 +196,7 @@ export function Sidebar() {
                                 Calendar
                             </NavLink>
                         </li>
-                        <li className="hidden md:flex">
+                        <li className="hidden md:block">
                             <a
                                 className="flex gap-6 px-8 py-5 hover:bg-gradient-light-li dark:text-white"
                                 href="#"
@@ -272,19 +281,59 @@ export function Sidebar() {
                                 Configuration
                             </a>
                         </li>
-                        <span className="block h-[1.2px] w-[80%] m-auto my-2 bg-white"></span>
-                        <li>
-                            <a
-                                className="flex gap-6 px-8 py-5 hover:bg-gradient-light-li dark:text-white"
-                                href="#"
-                                onClick={() =>
-                                    theme === 'light'
-                                        ? setTheme('dark')
-                                        : setTheme('light')
-                                }
+                    </ul>
+                    
+                </div>
+                <div className='w-full'>
+                <span className="block h-[1.2px] w-[80%] m-auto my-2 bg-white"></span>
+                    <a
+                        className="flex gap-6 px-8 py-5 hover:bg-gradient-light-li dark:text-white rounded-br-xl"
+                        href="#"
+                        onClick={() =>
+                            theme === 'light'
+                                ? setTheme('dark')
+                                : setTheme('light')
+                        }
+                    >
+                        <svg
+                            className="w-6 h-6 text-gray-800 dark:text-white"
+                            aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            fill="none"
+                            viewBox="0 0 24 24"
+                        >
+                            <path
+                                stroke="currentColor"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                                strokeWidth="2"
+                                d="M16 12H4m12 0-4 4m4-4-4-4m3-4h2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-2"
+                            />
+                        </svg>
+                        Log Out
+                    </a>
+                </div>
+
+                {/* NOTIFICATIONS */}
+            </nav>
+
+            <div
+                className={`notification-panel ${showNotifications ? 'active' : ''}   `}
+            >
+                <div className="cont-notifications gap-5 bg-slate-50 dark:bg-dark-secondary overflow-y-auto">
+                    <nav className="grid justify-center">
+                        <div className="grid grid-cols-2 gap-72">
+                            <h1 className="font-bold text-2xl p-2 mt-4 ml-4 dark:text-white">
+                                Notifications
+                            </h1>
+                            <div
+                                onClick={toggleNotifications}
+                                className="cursor-pointer"
                             >
                                 <svg
-                                    className="w-6 h-6 text-gray-800 dark:text-white"
+                                    className="w-6 h-6 text-gray-800 dark:text-white mt-7"
                                     aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -297,62 +346,28 @@ export function Sidebar() {
                                         strokeLinecap="round"
                                         strokeLinejoin="round"
                                         strokeWidth="2"
-                                        d="M16 12H4m12 0-4 4m4-4-4-4m3-4h2a3 3 0 0 1 3 3v10a3 3 0 0 1-3 3h-2"
+                                        d="M6 18 17.94 6M18 18 6.06 6"
                                     />
                                 </svg>
-                                Log Out
-                            </a>
-                        </li>
-                    </ul>
-                </div>
-
-                <img
-                    className="w-[32px] h-[32px] mb-4"
-                    src="../../src/assets/imgs/Jint-logo.svg"
-                    alt=""
-            
-                />
-
-            {/* NOTIFICATIONS */}
-            
-                
-            </nav>
-
-            <div className={`notification-panel ${showNotifications ? 'active' : ''}   `}>
-                    <div className='cont-notifications gap-5 bg-slate-50 dark:bg-dark-secondary overflow-y-auto'> 
-                        <nav className='grid justify-center'>
-                        <div className="grid grid-cols-2 gap-72">
-                            <h1 className='font-bold text-2xl p-2 mt-4 ml-4 dark:text-white'>Notifications</h1>
-                            <div onClick={toggleNotifications} className="cursor-pointer">
-                                <svg class="w-6 h-6 text-gray-800 dark:text-white mt-7" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
-                                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18 17.94 6M18 18 6.06 6"/>
-                                </svg>
-                            </div> 
+                            </div>
                         </div>
                         {/* <div className="realtive">
                             <img className="absolute mt-11 search-icon w-9 h-8 cursor-pointer" src="../../src/assets/imgs/search.png" alt="" />
                             <input className="search bg-zinc-20 h-14 rounded-xl shadow-inner shadow-slate-500 ml-5 mt-8 mb-4 pl-5 outline-none" type="text"  placeholder="Search..."/>
                         </div> */}
-                            <Notification/>
-                            <Notification/>
-                            <Notification/>
-                            <Notification/>
-                            <Notification/>
-                            <Notification/>
-                            <Notification/>
-                            <Notification/>
-                            <Notification/>
-                            <Notification/>  
-                        </nav>
-                       
-                    </div>
-                    
+                        <Notification />
+                        <Notification />
+                        <Notification />
+                        <Notification />
+                        <Notification />
+                        <Notification />
+                        <Notification />
+                        <Notification />
+                        <Notification />
+                        <Notification />
+                    </nav>
                 </div>
-
-            
-            
-            
-            
+            </div>
         </>
     )
 }
