@@ -1,7 +1,6 @@
 import { Calendar } from './Calendar';
 import { Dropdown } from './Dropdown';
-import svgImage from "../assets/imgs/elipse.svg";
-import './index.css'
+
 
 //responsive prueba
 

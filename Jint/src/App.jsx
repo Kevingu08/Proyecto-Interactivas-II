@@ -8,6 +8,7 @@ import { Search } from './components/Search'
 import { Filter } from './components/Filter'
 import { Card } from './components/Card'
 import { StatisticsCard } from './components/StatisticsCard'
+import { AdminView } from './components/AdminView'
 
 function App() {
     return (
@@ -119,6 +120,9 @@ function App() {
                         </div>
                     }
                 />
+                <Route path="/AdminView" element={<section>
+                        <AdminView/>
+                    </section>}/>
             </Routes>
         </>
     )
