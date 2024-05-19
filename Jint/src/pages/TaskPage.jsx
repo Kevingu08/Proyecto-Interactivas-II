@@ -10,8 +10,8 @@ export function TaskPage() {
                 <Search />
                 <Filter />
             </div>
-            <div className="grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-5 mt-5">
-                {Array.from({ length: 10 }).map((_, i) => (
+            <div className="grid grid-cols-[repeat(auto-fill,_minmax(250px,_1fr))] gap-5 mt-5">
+                {Array.from({ length: 3 }).map((_, i) => (
                     <Card key={i} />
                 ))}
             </div>

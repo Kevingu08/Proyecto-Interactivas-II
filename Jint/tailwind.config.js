@@ -24,6 +24,9 @@ export default {
             boxShadow: {
                 main: '10px 5px 30px 0px rgba(0,0,0,0.20)',
             },
+            height:{
+                'screen': ['100vh', '100dvh'],
+            }
         },
     },
     plugins: [],
