@@ -83,7 +83,7 @@ export function Sidebar() {
             <nav
                 className={`${
                     isOpen ? 'translate-x-0' : 'translate-x-[-50rem]'
-                } top-0  z-50 xl:translate-x-0 bg-gradient-light fixed h-screen rounded-r-xl flex flex-col justify-between items-center transition-all duration-200 dark:bg-gradient-dark`}
+                } top-0  z-40 xl:translate-x-0 bg-gradient-light fixed h-screen rounded-r-xl flex flex-col justify-between items-center transition-all duration-200 dark:bg-gradient-dark`}
             >
                 <div className="relative">
                     <button

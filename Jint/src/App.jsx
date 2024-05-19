@@ -5,10 +5,13 @@ import { Home } from './pages/Home'
 import { TaskPage } from './pages/TaskPage'
 import { StatisticsPage } from './pages/StatisticsPage'
 import { ConfigurationPage } from './pages/ConfigurationPage'
+import { ModalContextProvider } from './context/modalContext'
+import { CardModal } from './components/CardModal'
 
 function App() {
     return (
-        <>
+        <ModalContextProvider>
+            <CardModal />
             <Sidebar />
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -18,7 +21,7 @@ function App() {
                 <Route path="/configuration" element={<ConfigurationPage />} />
                 <Route path="/*" element={<Navigate to="/" />} />
             </Routes>
-        </>
+        </ModalContextProvider>
     )
 }
 

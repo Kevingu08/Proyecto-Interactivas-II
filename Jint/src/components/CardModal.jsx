@@ -1,13 +1,17 @@
 import { PropTypes } from 'prop-types'
+import { modalContext } from '../context/modalContext'
+import { useContext } from 'react';
 
-export function CardModal({ isOpen, onClose }) {
+export function CardModal() {
+    const { isOpen, setIsOpen } = useContext(modalContext);
+
     return (
         <dialog
-            className={`open:flex w-screen min-h-screen justify-center items-center z-50 top-0 bg-black/80 backdrop-blur-sm p-4`}
+            className={`open:flex w-screen min-h-screen justify-center items-center z-50 top-0 bg-black/80 backdrop-blur-sm p-4 sticky`}
             open={isOpen}
             onClick={(e) => {
                 if (e.target.tagName !== 'DIALOG') return
-                onClose()
+                () => setIsOpen(false);
             }}
         >
             <div className="max-w-screen-lg">
@@ -71,7 +75,7 @@ export function CardModal({ isOpen, onClose }) {
                     </div>
 
                     <button
-                        onClick={onClose}
+                        onClick={() => setIsOpen(false)}
                         className="text-primary absolute right-2 top-2 hover:scale-125 transition-transform border-solid border-2 border-primary rounded-full bg-white dark:bg-dark-secondary dark:text-white"
                     >
                         <svg

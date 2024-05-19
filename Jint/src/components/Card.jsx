@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
-import { CardModal } from './CardModal'
-import { useState } from 'react'
+import { useContext, useState } from 'react'
+import { modalContext } from '../context/modalContext'
 
 export function Card({
     title = 'Card Title',
@@ -9,6 +9,7 @@ export function Card({
     img = '/Los-6-mejores-cursos-gratuitos.jpg',
 }) {
     const [isDialogOpen, setIsDialogOpen] = useState(false)
+    const { setIsOpen } = useContext(modalContext);
 
     return (
         <>
@@ -33,17 +34,17 @@ export function Card({
                         <a
                             className="bg-primary rounded-xl py-2 px-6 text-white"
                             href="#"
-                            onClick={() => setIsDialogOpen(true)}
+                            onClick={() => setIsOpen(true)}
                         >
                             See more
                         </a>
                     </div>
                 </div>
             </article>
-            <CardModal
+            {/* <CardModal
                 isOpen={isDialogOpen}
                 onClose={() => setIsDialogOpen(false)}
-            />
+            /> */}
         </>
     )
 }
