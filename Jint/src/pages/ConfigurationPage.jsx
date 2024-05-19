@@ -1,4 +1,8 @@
 import { useState } from 'react'
+import { HealthCard } from '../components/HealthCard'   
+import { MedCard } from '../components/MedCard'
+
+
 import { useEffect } from 'react'
 export function ConfigurationPage() {
     const [showTheme, setShowTheme] = useState(false)
@@ -126,6 +130,10 @@ export function ConfigurationPage() {
                     </button>
                 </div>
             </section>
+
+            <HealthCard healthTitle="Sleep Schedule" healthText="Input the number of hours slept, and save for daily monitoring of your sleep patterns"/>
+            <HealthCard healthTitle="Exercise" healthText="Log your exercise duration, and save to monitor your daily exercise regimen."/>
+            <MedCard medTitle="Medical Information" medText="Add your Medical Information here, and save to monitor your Conditions."/>
 
             <section className="grid p-14 text-2xl gap-7 font-semibold mb-16">
                 <div className="grid gap-7">
