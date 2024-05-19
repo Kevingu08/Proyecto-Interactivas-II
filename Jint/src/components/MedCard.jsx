@@ -1,7 +1,7 @@
 export function MedCard({medTitle, medText}) {
     return (
         <>
-            <section className="grid p-14 ml-60 text-2xl gap-7 font-semibold">
+            <section className="grid p-14 text-2xl gap-7 font-semibold">
                 <div className="grid gap-7">
                     <sub>{medTitle}</sub>
                     <img src="/line.png" alt="" />
