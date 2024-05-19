@@ -1,4 +1,3 @@
-import { PropTypes } from 'prop-types'
 import { modalContext } from '../context/modalContext'
 import { useContext } from 'react'
 
@@ -7,11 +6,12 @@ export function CardModal() {
 
     return (
         <dialog
-            className={`open:flex w-screen min-h-screen justify-center items-center z-50 top-0 bg-black/80 backdrop-blur-sm p-4 sticky`}
+            className={`open:flex w-screen min-h-screen justify-center items-center z-50 top-0 bg-black/80 backdrop-blur-sm p-4 fixed`}
             open={isOpen}
             onClick={(e) => {
+                console.log(e.target.tagName)
                 if (e.target.tagName !== 'DIALOG') return
-                ;() => setIsOpen(false)
+                ;setIsOpen(false)
             }}
         >
             <div className="max-w-screen-lg">
@@ -27,14 +27,14 @@ export function CardModal() {
                                 alt=""
                             />
                             <div>
-                                <h4 className='dark:text-white'>Kevin Guido</h4>
+                                <h4 className="dark:text-white">Kevin Guido</h4>
                                 <p className="font-semibold dark:text-white">
                                     Desarrollo de Aplicaciones Interactivas II
                                 </p>
                                 <p className="text-gray">Grupo 2</p>
                             </div>
                         </div>
-                        <p className='dark:text-white'>
+                        <p className="dark:text-white">
                             Lorem ipsum, dolor sit amet consectetur adipisicing
                             elit. Ipsum, id cum quos necessitatibus blanditiis
                             laboriosam similique suscipit corrupti tempora
@@ -47,7 +47,9 @@ export function CardModal() {
                         <p className="dark:text-white">
                             <strong>Hour:</strong> 11:59 pm
                         </p>
-                        <p className="font-semibold dark:text-white">Valor: 5%</p>
+                        <p className="font-semibold dark:text-white">
+                            Valor: 5%
+                        </p>
                         <div className="grid grid-cols-[repeat(auto-fill,_minmax(90px,_1fr))] gap-2">
                             <p className="bg-orange-400 rounded-lg p-1 ">
                                 etiqueta
@@ -60,7 +62,12 @@ export function CardModal() {
                             </p>
                         </div>
                         <div className="flex items-center gap-2 mt-4">
-                            <label className='dark:text-white' htmlFor="checkTask">Done: </label>
+                            <label
+                                className="dark:text-white"
+                                htmlFor="checkTask"
+                            >
+                                Done:{' '}
+                            </label>
                             <input
                                 className="w-6 h-6 dark:bg-dark-secondary"
                                 // className="appearance-none w-6 h-6 cursor-pointer bg-white border-2 rounded border-primary outline outline-primary  checked:bg-red-500 checked:before:content-['✓']"
@@ -104,9 +111,4 @@ export function CardModal() {
             </div>
         </dialog>
     )
-}
-
-CardModal.propTypes = {
-    isOpen: PropTypes.bool.isRequired,
-    onClose: PropTypes.func.isRequired,
 }
