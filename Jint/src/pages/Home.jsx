@@ -5,8 +5,9 @@ import { WelcomeCard } from '../components/WelcomeCard'
 
 export function Home() {
     return (
-        <section className="grid grid-cols-1 lg:grid-cols-4  xl:ml-[15rem] px-4 gap-6">
-            <div className="grid col-span-3 mt-5 lg:col-span-4 xl:col-span-3">
+        <section className="grid grid-cols-1 px-4 gap-6 lg:px-[5rem] lg:grid-cols-4 xl:ml-[15rem] xl:px-4">
+
+            <div className="grid mt-5 lg:col-span-4 xl:col-span-3">
                 <WelcomeCard />
                 <h2 className="font-bold text-xl mt-5 dark:text-white">
                     My task Today
@@ -29,8 +30,8 @@ export function Home() {
                 </div>
             </div>
 
-            <div className="flex flex-col mt-5 gap-4 col-span-4 xl:col-auto">
-                <section className="grid gap-5">
+            <div className="flex flex-col mt-5 gap-4 lg:col-span-4 xl:col-auto">
+                <section className="grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-5">
                     <div className="shadow-main rounded-xl grid gap-4 p-4 dark:bg-dark-secondary dark:text-white">
                         <h3 className="font-bold text-lg">
                             Pendings of the week
