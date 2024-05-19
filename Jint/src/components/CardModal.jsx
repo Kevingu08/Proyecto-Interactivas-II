@@ -1,9 +1,9 @@
 import { PropTypes } from 'prop-types'
 import { modalContext } from '../context/modalContext'
-import { useContext } from 'react';
+import { useContext } from 'react'
 
 export function CardModal() {
-    const { isOpen, setIsOpen } = useContext(modalContext);
+    const { isOpen, setIsOpen } = useContext(modalContext)
 
     return (
         <dialog
@@ -11,7 +11,7 @@ export function CardModal() {
             open={isOpen}
             onClick={(e) => {
                 if (e.target.tagName !== 'DIALOG') return
-                () => setIsOpen(false);
+                ;() => setIsOpen(false)
             }}
         >
             <div className="max-w-screen-lg">
@@ -27,25 +27,29 @@ export function CardModal() {
                                 alt=""
                             />
                             <div>
-                                <h4>Kevin Guido</h4>
+                                <h4 className='dark:text-white'>Kevin Guido</h4>
                                 <p className="font-semibold dark:text-white">
                                     Desarrollo de Aplicaciones Interactivas II
                                 </p>
                                 <p className="text-gray">Grupo 2</p>
                             </div>
                         </div>
-                        <p>
+                        <p className='dark:text-white'>
                             Lorem ipsum, dolor sit amet consectetur adipisicing
                             elit. Ipsum, id cum quos necessitatibus blanditiis
                             laboriosam similique suscipit corrupti tempora
                             eaque, perspiciatis recusandae eum nulla voluptates
                             iste nobis quo! Officia, vitae.
                         </p>
-                        <p className=""><strong>Date:</strong> may 5</p>
-                        <p className=""><strong>Hour:</strong> 11:59 pm</p>
-                        <p className="font-semibold">Valor: 5%</p>
-                        <div className="flex gap-4">
-                            <p className="bg-orange-400 rounded-lg p-1">
+                        <p className="dark:text-white">
+                            <strong>Date:</strong> may 5
+                        </p>
+                        <p className="dark:text-white">
+                            <strong>Hour:</strong> 11:59 pm
+                        </p>
+                        <p className="font-semibold dark:text-white">Valor: 5%</p>
+                        <div className="grid grid-cols-[repeat(auto-fill,_minmax(90px,_1fr))] gap-2">
+                            <p className="bg-orange-400 rounded-lg p-1 ">
                                 etiqueta
                             </p>
                             <p className="bg-lime-300 rounded-lg p-1">
@@ -56,9 +60,9 @@ export function CardModal() {
                             </p>
                         </div>
                         <div className="flex items-center gap-2 mt-4">
-                            <label htmlFor="checkTask">Done: </label>
+                            <label className='dark:text-white' htmlFor="checkTask">Done: </label>
                             <input
-                                className="w-6 h-6 checked:bg-red-400"
+                                className="w-6 h-6 dark:bg-dark-secondary"
                                 // className="appearance-none w-6 h-6 cursor-pointer bg-white border-2 rounded border-primary outline outline-primary  checked:bg-red-500 checked:before:content-['✓']"
                                 type="checkbox"
                                 id="checkTask"
@@ -79,7 +83,7 @@ export function CardModal() {
                         className="text-primary absolute right-2 top-2 hover:scale-125 transition-transform border-solid border-2 border-primary rounded-full bg-white dark:bg-dark-secondary dark:text-white"
                     >
                         <svg
-                            className="w-6 h-6 text-gray-800 dark:text-white"
+                            className="w-10 h-10 text-gray-800 dark:text-white  xl:w-6 xl:h-6"
                             aria-hidden="true"
                             xmlns="http://www.w3.org/2000/svg"
                             width="24"

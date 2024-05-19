@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types'
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import { modalContext } from '../context/modalContext'
 
 export function Card({
@@ -8,7 +8,7 @@ export function Card({
     time = '11:59 pm',
     img = '/Los-6-mejores-cursos-gratuitos.jpg',
 }) {
-    const [isDialogOpen, setIsDialogOpen] = useState(false)
+
     const { setIsOpen } = useContext(modalContext);
 
     return (
