@@ -322,8 +322,8 @@ export function Sidebar() {
             >
                 <div className="cont-notifications gap-5 bg-slate-50 dark:bg-dark-secondary overflow-y-auto">
                     <nav className="grid justify-center">
-                        <div className="grid grid-cols-2 gap-72">
-                            <h1 className="font-bold text-2xl p-2 mt-4 ml-4 dark:text-white">
+                        <div className="flex items-center justify-between px-4 pt-6 pb-4">
+                            <h1 className="font-bold text-2xl  dark:text-white">
                                 Notifications
                             </h1>
                             <div
@@ -331,7 +331,7 @@ export function Sidebar() {
                                 className="cursor-pointer"
                             >
                                 <svg
-                                    className="w-6 h-6 text-gray-800 dark:text-white mt-7"
+                                    className="w-6 h-6 text-gray-800 dark:text-white"
                                     aria-hidden="true"
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"

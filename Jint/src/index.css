@@ -47,18 +47,16 @@ nav {
 }
 
 .notification-panel {
-    /* background-color: rgb(252, 251, 251); */
     top: 0;
     left: -40%;
-    width: 140%;
-    position: absolute;
+    position: fixed;
     z-index: 40;
     height: 100%;
     transition: left 0.3s ease;
 }
 
 .notification-panel.active {
-    left: 13rem;
+    left: 14rem;
 }
 
 .cont-notifications nav div {
@@ -105,7 +103,11 @@ calendar-month {
     }
 
     .notification-panel.active {
-        left: -0.7rem;
+        left: 0;
+    }
+
+    .cont-notifications {
+        width: 100%;
     }
 
     .search {
