@@ -1,5 +1,4 @@
 import { Calendar } from '../components/Calendar'
-import { Box, Typography } from '@mui/material'
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
 import { DatePicker } from '@mui/x-date-pickers/DatePicker'
@@ -7,6 +6,12 @@ import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 import { Dropdown } from '../components/Dropdown'
 
 export function AdminView() {
+    const filterOptions = [
+        { value: 'all', label: 'All' },
+        { value: 'task', label: 'Task' },
+        { value: 'event', label: 'Event' },
+        { value: 'more', label: 'More' }
+    ];
     return (
         <section className="grid xl:grid-cols-2 xl:ml-[15rem] sm:p-10 sm:grid-cols-1  gap-2 dark:bg-dark-primary dark:text-white">
             <div className="m-4 sm:m-12">
@@ -59,11 +64,10 @@ export function AdminView() {
                         </div>
                         <div>
                             <h1 className="text-xl font-medium m-4">Filter</h1>
-                            <input
-                                type="text"
-                                className="w-full py-3 px-3 border bg-input-bg bg-opacity-50 border-black border-opacity-25 rounded-md dark:bg-white"
-                                placeholder="Escribe aquí..."
-                            />
+                            <div className='flex flex-col gap-4'>
+                            <Dropdown options={filterOptions} />
+                            </div>
+                            
                         </div>
                     </div>
                 </div>
@@ -73,7 +77,7 @@ export function AdminView() {
                     </h2>
                     <div className='pt-8 '>
                         <LocalizationProvider dateAdapter={AdapterDayjs}>
-                            <DatePicker label="Select Date" />
+                            <DatePicker className='w-full py-3 px-3 border bg-input-bg bg-opacity-50 border-black border-opacity-25 rounded-md dark:bg-white' />
                         </LocalizationProvider>
                     </div>
                     
