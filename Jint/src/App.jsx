@@ -5,6 +5,7 @@ import { Home } from './pages/Home'
 import { TaskPage } from './pages/TaskPage'
 import { StatisticsPage } from './pages/StatisticsPage'
 import { ConfigurationPage } from './pages/ConfigurationPage'
+import { Resume } from './components/Resume.jsx'
 
 function App() {
     return (
@@ -17,8 +18,12 @@ function App() {
                 <Route path="/AdminView" element={<AdminView />} />
                 <Route path="/configuration" element={<ConfigurationPage />} />
                 <Route path="/*" element={<Navigate to="/" />} />
+
             </Routes>
-        </>
+            <Resume/>
+
+        
+        </> 
     )
 }
 

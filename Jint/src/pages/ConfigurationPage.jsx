@@ -1,5 +1,5 @@
 import { useState } from 'react'
-
+import { useEffect } from 'react'
 export function ConfigurationPage() {
     const [showTheme, setShowTheme] = useState(false)
 
@@ -7,10 +7,21 @@ export function ConfigurationPage() {
         setShowTheme(!showTheme)
     }
 
+    const [theme, setTheme] = useState('light')
+
+    useEffect(() => {
+        if (theme === 'light') {
+            document.querySelector('html').classList.remove('dark')
+        } else {
+            document.querySelector('html').classList.add('dark')
+        }
+    }, [theme])
+
     return (
         <>
             {/* CONFIGURATION */}
-            <section className="grid p-14 ml-60 text-2xl font-semibold text">
+            <div className='ml-60 dark:text-white configuration'>
+            <section className="grid p-14  text-2xl font-semibold text">
                 <div className="grid gap-7 ">
                     <sub>Profile</sub>
                     <img src="/line.png" alt="" />
@@ -21,11 +32,11 @@ export function ConfigurationPage() {
                                 src="https://www.pngitem.com/pimgs/m/30-307416_profile-icon-png-image-free-download-searchpng-employee.png"
                                 alt=""
                             />
-                            <span className="text-lg font-thin ml-3">
+                            <span className="text-lg ml-3">
                                 Your Picture
                             </span>
                         </div>
-                        <div className="text-base font-thin grid gap-4">
+                        <div className="text-base grid gap-4">
                             <div className="flex flex-wrap gap-9">
                                 <div className="grid">
                                     <span>First Name</span>
@@ -56,11 +67,11 @@ export function ConfigurationPage() {
                 </div>
             </section>
 
-            <section className="grid p-14 ml-60 text-2xl gap-7 font-semibold">
+            <section className="grid p-14 text-2xl gap-7 font-semibold">
                 <div className="grid gap-7">
                     <sub>My Account</sub>
                     <img src="/line.png" alt="" />
-                    <div className="text-base font-thin grid gap-2">
+                    <div className="text-base grid gap-2">
                         <span>Email</span>
                         <div className="grid gap-5">
                             <input
@@ -68,7 +79,7 @@ export function ConfigurationPage() {
                                 className="w-80 h-7 bg-zinc-50 rounded-lg border border-slate-400"
                                 placeholder="Email"
                             />
-                            <button className="w-48 h-7 bg-white rounded-lg border border-sky-600 text-xs font-semibold grid justify-center items-center">
+                            <button className="w-48 h-7 bg-white rounded-lg border border-sky-600 text-xs font-semibold grid justify-center items-center dark:text-black">
                                 Change Password
                             </button>
                         </div>
@@ -76,12 +87,12 @@ export function ConfigurationPage() {
                 </div>
             </section>
 
-            <section className="grid p-14 ml-60 text-2xl gap-7 font-semibold">
+            <section className="grid p-14 text-2xl gap-7 font-semibold">
                 <div className="grid gap-7">
                     <sub>Personal Data</sub>
                     <img src="/line.png" alt="" />
                     <div className="flex gap-24">
-                        <div className="text-base font-thin grid gap-2">
+                        <div className="text-base grid gap-2">
                             <span>Age</span>
                             <div className="grid gap-5">
                                 <input
@@ -90,7 +101,7 @@ export function ConfigurationPage() {
                                 />
                             </div>
                         </div>
-                        <div className="text-base font-thin grid gap-2">
+                        <div className="text-base grid gap-2">
                             <span>Gender</span>
                             <div className="grid gap-5">
                                 <input
@@ -100,7 +111,7 @@ export function ConfigurationPage() {
                             </div>
                         </div>
                     </div>
-                    <div className="text-base font-thin grid gap-2">
+                    <div className="text-base grid gap-2">
                         <span>Sleep Range</span>
                         <div className="grid gap-5">
                             <input
@@ -116,37 +127,48 @@ export function ConfigurationPage() {
                 </div>
             </section>
 
-            <section className="grid p-14 ml-60 text-2xl gap-7 font-semibold mb-16">
+            <section className="grid p-14 text-2xl gap-7 font-semibold mb-16">
                 <div className="grid gap-7">
                     <sub>Preferences</sub>
                     <img src="/line.png" alt="" />
-                    <div className="flex text-base font-thin gap-28">
+                    <div className="flex text-base gap-28">
                         <div className="grid gap-1">
                             <span>Theme</span>
                             <p className="font-thin text-slate-500 text-xs">
                                 Customize how Jint looks on your device
                             </p>
                         </div>
-                        <div className="ml-96 grid grid-cols-2">
-                            <span>Light</span>
+                        <div className="theme grid grid-cols-2">
+                            <span>{theme === 'light' ? 'Light' : 'Dark'}</span>
                             <div
-                                className="cursor-pointer"
+                                className="img-arrow cursor-pointer"
                                 onClick={toggleTheme}
                             >
                                 <img src="/arrow-down.png" alt="" />
                             </div>
                             <ul
-                                className={`w-24 h-16 shadow grid items-center rounded-lg absolute mt-8 ${
+                                className={`w-24 h-16 shadow grid items-center rounded-lg relative mt-8 ${
                                     showTheme ? 'block' : 'hidden'
                                 }`}
                             >
-                                <li className="ml-2 cursor-pointer">Light</li>
-                                <li className="ml-2 cursor-pointer">Dark</li>
+                                <li className="ml-2 cursor-pointer" onClick={() => {
+                                    setTheme('light');
+                                    setShowTheme(false);
+                                }}>
+                                    Light
+                                </li>
+                                <li className="ml-2 cursor-pointer" onClick={() => {
+                                    setTheme('dark');
+                                    setShowTheme(false);
+                                }}>Dark
+                                </li>
                             </ul>
                         </div>
                     </div>
                 </div>
             </section>
+            </div>
+            
 
             {/* CONFIGURATION */}
         </>

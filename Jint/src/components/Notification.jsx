@@ -19,7 +19,7 @@ export function Notification({
             href="#"
             className="bg-white dark:bg-dark-secondary border-2 border-zinc-100 dark:border-zinc-600 shadow h-28 p-2 mb-6 ml-4 mr-4 bg-gray-200 rounded-3xl"
         >
-            <div className="flex gap-6">
+            <div className="flex gap-6 overflow-x-hidden">
                 <div>
                     <img
                         className="w-16 h-14 rounded-full flex mt-4 border border-zinc-600 dark:text-white"
