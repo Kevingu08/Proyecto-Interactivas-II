@@ -1,7 +1,10 @@
 import { Calendar } from '../components/Calendar'
-import { Dropdown } from '../components/Dropdown'
+import { Box, Typography } from '@mui/material'
+import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
+import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs'
+import { DatePicker } from '@mui/x-date-pickers/DatePicker'
 
-//responsive prueba
+import { Dropdown } from '../components/Dropdown'
 
 export function AdminView() {
     return (
@@ -68,31 +71,25 @@ export function AdminView() {
                     <h2 className="text-xl font-bold mt-10 border-b border-gray border-opacity-90 pb-3 mb-4">
                         Date
                     </h2>
-                    <div className="grid grid-cols-1 sm:grid-cols-1 gap-4 mt-4">
-                        <div>
-                            <h1 className="text-xl font-medium m-4">Day</h1>
-                            <div>
-                                <Dropdown />
-                            </div>
-                        </div>
-                        <div>
-                            <h1 className="text-xl font-medium m-4">Month</h1>
-                            <div>
-                                <Dropdown />
-                            </div>
-                        </div>
-                        <div>
-                            <h1 className="text-xl font-medium m-4">Hour</h1>
-                            <div>
-                                <Dropdown />
-                            </div>
-                        </div>
+                    <div className='pt-8 '>
+                        <LocalizationProvider dateAdapter={AdapterDayjs}>
+                            <DatePicker label="Select Date" />
+                        </LocalizationProvider>
                     </div>
+                    
                 </div>
+                <div className='mt-12'>
+                    <button className="rounded-full bg-violet-500 bg-opacity-80 hover:bg-opacity-50 text-xl text-white px-4 py-2">
+                        Confirm changes
+                    </button>
+            </div>
             </div>
             <div className="p-4 sm:p-24">
                 <Calendar />
             </div>
+           
+         
         </section>
+
     )
 }
