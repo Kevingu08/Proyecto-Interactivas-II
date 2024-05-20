@@ -50,7 +50,7 @@ nav {
     top: 0;
     left: -40%;
     position: fixed;
-    z-index: 40;
+    z-index: 30;
     height: 100%;
     transition: left 0.3s ease;
 }
@@ -76,44 +76,40 @@ nav {
     margin-left: 19rem;
 }
 
-.taskResume{
-    width:40rem;
+.taskResume {
+    width: 40rem;
     overflow-x: hidden;
 }
 
-.tasksResume{
+.tasksResume {
     position: relative;
     left: 16rem;
     overflow-x: hidden;
 }
 
-.descriptionResume{
+.descriptionResume {
     width: 16rem;
 }
 
-.timeResume{
+.timeResume {
     position: relative;
 }
 
-.buttonFinished{
+.buttonFinished {
     position: relative;
 }
 
-.configuration{
+.configuration {
     position: relative;
 }
 
-.theme{
+.theme {
     position: relative;
     left: 28%;
 }
- .img-arrow{
+.img-arrow {
     position: relative;
- }
-
-
-
-
+}
 
 /* Clases del Componente calendario */
 calendar-range {
@@ -134,6 +130,7 @@ calendar-month {
 .border-extra-thin {
     border: 0.5px solid black; /* Grosor del borde */
 }
+
 
 @media (max-width: 768px) {
     .notification-panel {
@@ -157,47 +154,35 @@ calendar-month {
         margin-left: 20rem;
     }
 
-    .notification-panel{
+    .notification-panel {
         left: -120%;
     }
 
-    .taskResume{
+    .taskResume {
         width: 24rem;
         height: 12rem;
     }
 
-    .tasksResume{
+    .tasksResume {
         left: 4%;
         width: 24rem;
-        
     }
 
-    .timeResume{
+    .timeResume {
         right: 13rem;
     }
 
-    .buttonFinished{
-        top:1.9rem;
+    .buttonFinished {
+        top: 1.9rem;
         right: 20rem;
     }
 
-    .configuration{
-        right: 16rem;
-    }
-
-    .theme{
+    .theme {
         left: 5rem;
     }
 
-    .img-arrow{
+    .img-arrow {
         width: 24px;
         left: 2rem;
     }
-    
-    
-    
 }
-
-
-
-

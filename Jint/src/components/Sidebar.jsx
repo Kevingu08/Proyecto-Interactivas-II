@@ -33,18 +33,18 @@ export function Sidebar() {
     return (
         <>
             <div className="flex px-8">
-                <div className="md:hidden w-full flex justify-end">
+                <div className="xl:hidden w-full flex justify-end">
                     <button
                         onClick={() => setShowNotifications(!showNotifications)}
-                        className={`translate-x-5 p-2 md:hidden`}
+                        className={`translate-x-5 p-2 sm:hidden`}
                     >
                         <NotificationIcon width="24" height="24" />
                     </button>
                     <button
                         onClick={() => setIsOpen(!isOpen)}
-                        className={`translate-x-5 p-2 md:hidden`}
+                        className={`translate-x-5 p-2`}
                     >
-                        <HamburgerMenuIcon width="24" height="24" />
+                        <HamburgerMenuIcon width="28" height="28" />
                     </button>
                 </div>
             </div>
@@ -53,7 +53,7 @@ export function Sidebar() {
                 onClick={() => setIsOpen(!isOpen)}
                 className={`${
                     isOpen ? 'block' : 'hidden'
-                } bg-black/30 h-screen w-screen fixed z-10 top-0 left-0 right-0 backdrop-blur-sm md:hidden`}
+                } bg-black/30 h-screen w-screen fixed z-10 top-0 left-0 right-0 backdrop-blur-sm xl:hidden`}
             ></div>
 
             <nav
@@ -144,11 +144,6 @@ export function Sidebar() {
                     <a
                         className="flex gap-6 px-8 py-5 hover:bg-gradient-light-li dark:text-white rounded-br-xl"
                         href="#"
-                        onClick={() =>
-                            theme === 'light'
-                                ? setTheme('dark')
-                                : setTheme('light')
-                        }
                     >
                         <LogOutIcon width="24" height="24" />
                         Log Out

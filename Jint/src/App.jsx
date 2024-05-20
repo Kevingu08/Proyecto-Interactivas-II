@@ -7,8 +7,8 @@ import { StatisticsPage } from './pages/StatisticsPage'
 import { ConfigurationPage } from './pages/ConfigurationPage'
 import { ModalContextProvider } from './context/modalContext'
 import { CardModal } from './components/CardModal'
-import { Login } from './pages/Login';
-import { SingUp } from './pages/SingUp';
+import { Login } from './pages/Login'
+import { SingUp } from './pages/SingUp'
 
 function App() {
     return (
@@ -24,7 +24,6 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/singUp" element={<SingUp />} />
                 <Route path="/*" element={<Navigate to="/" />} />
-
             </Routes>
         </ModalContextProvider>
     )

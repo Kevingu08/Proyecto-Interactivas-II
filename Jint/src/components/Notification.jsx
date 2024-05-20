@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import PropTypes from 'prop-types' 
+import PropTypes from 'prop-types'
 
 export function Notification({
     title = 'Notification',
@@ -58,4 +58,3 @@ Notification.propTypes = {
     img: PropTypes.string,
     day: PropTypes.string,
 }
-

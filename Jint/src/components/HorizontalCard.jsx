@@ -1,7 +1,7 @@
 export function HorizontalCard() {
     return (
         <a href="#">
-            <article className="rounded-xl overflow-hidden shadow-main w-fit grid dark:bg-dark-secondary">
+            <article className="rounded-xl overflow-hidden border border-zinc-400 w-fit grid dark:bg-dark-secondary">
                 <img
                     className="object-cover aspect-[5/2]"
                     src="/Los-6-mejores-cursos-gratuitos.jpg"

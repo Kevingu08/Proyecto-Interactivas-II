@@ -1,6 +1,6 @@
-import { PropTypes } from 'prop-types';
+import { PropTypes } from 'prop-types'
 
-export function HamburgerMenuIcon({width, height}) {
+export function HamburgerMenuIcon({ width, height }) {
     return (
         <svg
             className={`h-[${height}] text-gray-800 dark:text-white`}

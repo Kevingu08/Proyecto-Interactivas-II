@@ -5,8 +5,7 @@ import { WelcomeCard } from '../components/WelcomeCard'
 
 export function Home() {
     return (
-        <section className="grid grid-cols-1 px-4 gap-6 lg:px-[5rem] lg:grid-cols-4 xl:ml-[15rem] xl:px-4">
-
+        <section className="grid grid-cols-1 px-4 gap-6 lg:px-[5rem] lg:grid-cols-4 xl:ml-[15rem] xl:px-4 pb-10">
             <div className="grid mt-5 lg:col-span-4 xl:col-span-3">
                 <WelcomeCard />
                 <h2 className="font-bold text-xl mt-5 dark:text-white">

@@ -1,5 +1,6 @@
 import { modalContext } from '../context/modalContext'
 import { useContext } from 'react'
+import { ExitIcon } from './Icons/ExitIcon'
 
 export function CardModal() {
     const { isOpen, setIsOpen } = useContext(modalContext)
@@ -11,7 +12,7 @@ export function CardModal() {
             onClick={(e) => {
                 console.log(e.target.tagName)
                 if (e.target.tagName !== 'DIALOG') return
-                ;setIsOpen(false)
+                setIsOpen(false)
             }}
         >
             <div className="max-w-screen-lg">
@@ -89,23 +90,7 @@ export function CardModal() {
                         onClick={() => setIsOpen(false)}
                         className="text-primary absolute right-2 top-2 hover:scale-125 transition-transform border-solid border-2 border-primary rounded-full bg-white dark:bg-dark-secondary dark:text-white"
                     >
-                        <svg
-                            className="w-10 h-10 text-gray-800 dark:text-white  xl:w-6 xl:h-6"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M6 18 17.94 6M18 18 6.06 6"
-                            />
-                        </svg>
+                        <ExitIcon />
                     </button>
                 </article>
             </div>
