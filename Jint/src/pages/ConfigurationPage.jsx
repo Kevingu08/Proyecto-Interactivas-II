@@ -1,13 +1,15 @@
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 import { HealthCard } from '../components/HealthCard'
 import { MedCard } from '../components/MedCard'
 import { Dropdown } from '../components/Dropdown'
 import { InputConfig } from '../components/InputConfig'
+import { modalContext } from '../context/modalContext'
 
 import { useEffect } from 'react'
 
 export function ConfigurationPage() {
-    const [theme, setTheme] = useState('light')
+    // const [theme, setTheme] = useState('light')
+    const {theme, setTheme} = useContext(modalContext)
 
     const handleThemeChange = (event) => {
         setTheme(event.target.value)
@@ -109,6 +111,28 @@ export function ConfigurationPage() {
                     </div>
                 </section>
 
+                <section className="grid gap-6 font-semibold">
+                    <div>
+                        <h3 className="text-xl font-semibold">Preferences</h3>
+                        <img className="mt-2" src="/line.png" alt="" />
+                    </div>
+
+                    <div className="text-base gap-8">
+                        <div className="grid gap-1">
+                            <span>Theme</span>
+                            <p className="text-gray text-xs">
+                                Customize how Jint looks on your device
+                            </p>
+                            <Dropdown
+                                options={filterOptions}
+                                selectedValue={theme}
+                                onChangeFunction={handleThemeChange}
+                            />
+                            
+                        </div>
+                    </div>
+                </section>
+
                 <section className="grid gap-7">
                     <div className="grid gap-7">
                         <div>
@@ -153,25 +177,7 @@ export function ConfigurationPage() {
                     medText="Add your Medical Information here, and save to monitor your Conditions."
                 />
 
-                <section className="grid gap-6 font-semibold">
-                    <div>
-                        <h3 className="text-xl font-semibold">Preferences</h3>
-                        <img className="mt-2" src="/line.png" alt="" />
-                    </div>
-
-                    <div className="text-base gap-8">
-                        <div className="grid gap-1">
-                            <span>Theme</span>
-                            <p className="text-gray text-xs">
-                                Customize how Jint looks on your device
-                            </p>
-                            <Dropdown
-                                options={filterOptions}
-                                onChangeFunction={handleThemeChange}
-                            />
-                        </div>
-                    </div>
-                </section>
+                
             </div>
         </>
     )

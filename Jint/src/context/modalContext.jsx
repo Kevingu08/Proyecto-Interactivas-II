@@ -6,9 +6,10 @@ export const modalContext = createContext()
 
 export function ModalContextProvider({ children }) {
     const [isOpen, setIsOpen] = useState(false)
+    const [theme, setTheme] = useState('light')
 
     return (
-        <modalContext.Provider value={{ isOpen, setIsOpen }}>
+        <modalContext.Provider value={{ isOpen, setIsOpen, theme, setTheme }}>
             {children}
         </modalContext.Provider>
     )

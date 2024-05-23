@@ -11,6 +11,7 @@ import { StatisticsIcon } from './Icons/StatisticsIcon'
 import { ConfigurationIcon } from './Icons/ConfigurationIcon'
 import { LogOutIcon } from './Icons/LogOutIcon'
 
+
 export function Sidebar() {
     const [isOpen, setIsOpen] = useState(false)
 

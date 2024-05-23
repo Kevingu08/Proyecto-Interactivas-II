@@ -1,3 +1,5 @@
+import { NavLink } from "react-router-dom";
+
 export function SingUp() {
     return (
         <section className="flex flex-col justify-center items-center h-screen bg-primary">
@@ -104,9 +106,9 @@ export function SingUp() {
                 </form>
                 <p className="text-white">
                     Do you have an account?{' '}
-                    <a className="font-bold underline decoration-2" href="#">
+                    <NavLink className="font-bold underline decoration-2" to="/login">
                         LOGIN
-                    </a>
+                    </NavLink>
                 </p>
             </div>
         </section>

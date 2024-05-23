@@ -1,3 +1,5 @@
+import { NavLink } from 'react-router-dom';
+
 export function Login() {
     return (
         <section className="flex flex-col justify-center items-center h-screen bg-primary">
@@ -63,9 +65,9 @@ export function Login() {
                 </form>
                 <p className="text-white">
                     Don’t you have an account?{' '}
-                    <a className="font-bold underline decoration-2" href="#">
+                    <NavLink className="font-bold underline decoration-2" to="/singUp">
                         REGISTER
-                    </a>
+                    </NavLink>
                 </p>
             </div>
         </section>
