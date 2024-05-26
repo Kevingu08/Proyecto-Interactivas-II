@@ -1,31 +1,32 @@
-import { ResumeTask } from "./ResumeTask.jsx"
+import { ResumeTask } from './ResumeTask.jsx'
 
 export function Resume() {
     return (
-        <section className="tasksResume">
-            {/* EVENTS */}
-            <section className="flex flex-col flex-wrap">
-                {/* EVENTS OF THE DAY */}
-                <section>
-                    <h1 className="font-bold text-3xl mt-11">
-                        Events of the day
-                    </h1>
+        <section className="grid gap-8">
+            {/* EVENTS OF THE DAY */}
+            <section className="flex flex-col gap-4 mt-8">
+                <h2 className="font-bold text-xl dark:text-white">
+                    Completed Today
+                </h2>
+                <div className="grid grid-cols-[repeat(auto-fill,_minmax(350px,_1fr))] gap-6">
+                    <ResumeTask />
+                    <ResumeTask />
+                    <ResumeTask />
+                </div>
+            </section>
 
-                    <ResumeTask/>
-                    <ResumeTask/>
-                    <ResumeTask/>
-
-                </section>
-
-                {/* EVENTS OF THE WEEK */}
-                <section className="mb-8">
-                    <h1 className="font-bold text-3xl mt-20 mb-8">
-                        Events of the week
-                    </h1>        
-                    <ResumeTask/>
-                    <ResumeTask/>
-                    <ResumeTask/>
-                </section>
+            {/* EVENTS OF THE WEEK */}
+            <section className="flex flex-col gap-4">
+                <h2 className="font-bold text-xl mt-5 dark:text-white">
+                    Completed this week
+                </h2>
+                <div className="grid grid-cols-[repeat(auto-fill,_minmax(350px,_1fr))] gap-6">
+                    <ResumeTask />
+                    <ResumeTask />
+                    <ResumeTask />
+                    <ResumeTask />
+                    <ResumeTask />
+                </div>
             </section>
         </section>
     )

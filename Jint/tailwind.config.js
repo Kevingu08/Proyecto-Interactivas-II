@@ -6,12 +6,14 @@ export default {
         extend: {
             colors: {
                 primary: '#966BDD', //Purple
+                'secondary-purple': '#B895FC',
                 dark: '#1D1D1D',
                 'dark-secondary': '#353535',
                 gray: '#8A8A8A',
             },
             fontFamily: {
                 primary: ['Montserrat', 'sans-serif'],
+                secondary: ['Arial', 'sans-serif'],
             },
             backgroundImage: {
                 'gradient-light':
@@ -24,9 +26,9 @@ export default {
             boxShadow: {
                 main: '10px 5px 30px 0px rgba(0,0,0,0.20)',
             },
-            height:{
-                'screen': ['100vh', '100dvh'],
-            }
+            height: {
+                screen: ['100vh', '100dvh'],
+            },
         },
     },
     plugins: [],

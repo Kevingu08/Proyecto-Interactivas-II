@@ -1,17 +1,19 @@
-import { useState } from 'react'
-import { HealthCard } from '../components/HealthCard'   
+import { useState, useContext } from 'react'
+import { HealthCard } from '../components/HealthCard'
 import { MedCard } from '../components/MedCard'
-
+import { Dropdown } from '../components/Dropdown'
+import { InputConfig } from '../components/InputConfig'
+import { modalContext } from '../context/modalContext'
 
 import { useEffect } from 'react'
+
 export function ConfigurationPage() {
-    const [showTheme, setShowTheme] = useState(false)
+    // const [theme, setTheme] = useState('light')
+    const {theme, setTheme} = useContext(modalContext)
 
-    const toggleTheme = () => {
-        setShowTheme(!showTheme)
+    const handleThemeChange = (event) => {
+        setTheme(event.target.value)
     }
-
-    const [theme, setTheme] = useState('light')
 
     useEffect(() => {
         if (theme === 'light') {
@@ -21,164 +23,162 @@ export function ConfigurationPage() {
         }
     }, [theme])
 
+    const filterOptions = [
+        { value: 'light', label: 'Light' },
+        { value: 'dark', label: 'Dark' },
+    ]
+
+    const genderOptions = [
+        { value: 'male', label: 'Male' },
+        { value: 'female', label: 'Female' },
+        { value: 'unknown', label: 'Unknown' },
+    ]
+
+    const sleepRangeOptions = [
+        { value: '0-2', label: '0-2 hour' },
+        { value: '2-4', label: '2-4 hour' },
+        { value: '4-6', label: '4-6 hour' },
+        { value: '6-8', label: '6-8 hour' },
+        { value: '8-10', label: '8-10 hour' },
+    ]
+
     return (
         <>
             {/* CONFIGURATION */}
-            <div className='ml-60 dark:text-white configuration'>
-            <section className="grid p-14  text-2xl font-semibold text">
-                <div className="grid gap-7 ">
-                    <sub>Profile</sub>
-                    <img src="/line.png" alt="" />
-                    <section className="flex flex-wrap gap-16">
+            <div className=" grid gap-16 px-4 pb-20 dark:text-white configuration lg:px-[5rem] xl:ml-[16rem] xl:px-0 xl:pt-6">
+                <section className="grid text">
+                    <div className="grid gap-7 ">
                         <div>
-                            <img
-                                className="w-32 h-32 rounded-full bg-black"
-                                src="https://www.pngitem.com/pimgs/m/30-307416_profile-icon-png-image-free-download-searchpng-employee.png"
-                                alt=""
-                            />
-                            <span className="text-lg ml-3">
-                                Your Picture
-                            </span>
+                            <h3 className="text-xl font-semibold">Profile</h3>
+                            <img className="mt-2" src="/line.png" alt="" />
                         </div>
-                        <div className="text-base grid gap-4">
-                            <div className="flex flex-wrap gap-9">
-                                <div className="grid">
-                                    <span>First Name</span>
-                                    <input
-                                        type="text"
-                                        className="w-40 h-7 bg-zinc-50 rounded-lg border border-slate-400"
-                                    />
-                                </div>
-                                <div className="grid">
-                                    <span>Last Name</span>
-                                    <input
-                                        type="text"
-                                        className="w-40 h-7 bg-zinc-50 rounded-lg border border-slate-400"
-                                    />
-                                </div>
-                            </div>
-                            <div>
-                                <div className="grid">
-                                    <span>Phone Number</span>
-                                    <input
-                                        type="text"
-                                        className="w-40 h-7 bg-zinc-50 rounded-lg border border-slate-400"
-                                    />
-                                </div>
-                            </div>
-                        </div>
-                    </section>
-                </div>
-            </section>
-
-            <section className="grid p-14 text-2xl gap-7 font-semibold">
-                <div className="grid gap-7">
-                    <sub>My Account</sub>
-                    <img src="/line.png" alt="" />
-                    <div className="text-base grid gap-2">
-                        <span>Email</span>
-                        <div className="grid gap-5">
-                            <input
-                                type="text"
-                                className="w-80 h-7 bg-zinc-50 rounded-lg border border-slate-400"
-                                placeholder="Email"
-                            />
-                            <button className="w-48 h-7 bg-white rounded-lg border border-sky-600 text-xs font-semibold grid justify-center items-center dark:text-black">
-                                Change Password
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section className="grid p-14 text-2xl gap-7 font-semibold">
-                <div className="grid gap-7">
-                    <sub>Personal Data</sub>
-                    <img src="/line.png" alt="" />
-                    <div className="flex gap-24">
-                        <div className="text-base grid gap-2">
-                            <span>Age</span>
-                            <div className="grid gap-5">
-                                <input
-                                    type="text"
-                                    className="w-28 h-7 bg-slate-50 rounded-lg border border-slate-400 "
+                        <section className="grid sm:flex gap-8">
+                            <div className="flex flex-col items-center">
+                                <img
+                                    className="w-24 rounded-full bg-black aspect-square"
+                                    src="https://unavatar.io/Kevingu08"
+                                    alt=""
                                 />
+                                <span className="text-lg ml-3">
+                                    Your Picture
+                                </span>
                             </div>
+                            <div className="text-base grid grid-cols-[repeat(auto-fit,_minmax(150px,_1fr))] gap-4 font-medium text-zinc-700">
+                                <div className="flex flex-wrap gap-9">
+                                    <InputConfig
+                                        title="First Name"
+                                        inputId="first-name-input"
+                                        type="text"
+                                    />
+                                    <InputConfig
+                                        title="Last Name"
+                                        inputId="last-name-input"
+                                        type="text"
+                                    />
+                                </div>
+                                <div>
+                                    <InputConfig
+                                        title="Phone Number"
+                                        inputId="phone-number-input"
+                                        type="text"
+                                    />
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                </section>
+
+                <section className="grid text-2xl gap-7">
+                    <div className="grid gap-7">
+                        <div>
+                            <h3 className="text-xl font-semibold">
+                                My Account
+                            </h3>
+                            <img className="mt-2" src="/line.png" alt="" />
                         </div>
                         <div className="text-base grid gap-2">
-                            <span>Gender</span>
                             <div className="grid gap-5">
-                                <input
-                                    type="text"
-                                    className="w-28 h-7 bg-slate-50 rounded-lg border border-slate-400 "
+                                <InputConfig
+                                    title="Email"
+                                    inputId="email-input"
+                                    type="email"
                                 />
+                                <button className="w-48 h-7 rounded-lg border-[.12rem] border-primary text-xs font-semibold grid justify-center items-center transition-all duration-100  hover:bg-primary hover:text-white  dark:bg-dark-secondary">
+                                    Change Password
+                                </button>
                             </div>
                         </div>
                     </div>
-                    <div className="text-base grid gap-2">
-                        <span>Sleep Range</span>
-                        <div className="grid gap-5">
-                            <input
-                                type="text"
-                                className="w-28 h-7 bg-slate-50 rounded-lg border border-slate-400 "
-                            />
-                        </div>
+                </section>
+
+                <section className="grid gap-6 font-semibold">
+                    <div>
+                        <h3 className="text-xl font-semibold">Preferences</h3>
+                        <img className="mt-2" src="/line.png" alt="" />
                     </div>
 
-                    <button className="w-48 h-7 bg-violet-400 rounded-lg border border-sky-600 text-xs font-semibold grid justify-center items-center text-white">
-                        Update Profile
-                    </button>
-                </div>
-            </section>
-
-            <HealthCard healthTitle="Sleep Schedule" healthText="Input the number of hours slept, and save for daily monitoring of your sleep patterns"/>
-            <HealthCard healthTitle="Exercise" healthText="Log your exercise duration, and save to monitor your daily exercise regimen."/>
-            <MedCard medTitle="Medical Information" medText="Add your Medical Information here, and save to monitor your Conditions."/>
-
-            <section className="grid p-14 text-2xl gap-7 font-semibold mb-16">
-                <div className="grid gap-7">
-                    <sub>Preferences</sub>
-                    <img src="/line.png" alt="" />
-                    <div className="flex text-base gap-28">
+                    <div className="text-base gap-8">
                         <div className="grid gap-1">
                             <span>Theme</span>
-                            <p className="font-thin text-slate-500 text-xs">
+                            <p className="text-gray text-xs">
                                 Customize how Jint looks on your device
                             </p>
-                        </div>
-                        <div className="theme grid grid-cols-2">
-                            <span>{theme === 'light' ? 'Light' : 'Dark'}</span>
-                            <div
-                                className="img-arrow cursor-pointer"
-                                onClick={toggleTheme}
-                            >
-                                <img src="/arrow-down.png" alt="" />
-                            </div>
-                            <ul
-                                className={`w-24 h-16 shadow grid items-center rounded-lg relative mt-8 ${
-                                    showTheme ? 'block' : 'hidden'
-                                }`}
-                            >
-                                <li className="ml-2 cursor-pointer" onClick={() => {
-                                    setTheme('light');
-                                    setShowTheme(false);
-                                }}>
-                                    Light
-                                </li>
-                                <li className="ml-2 cursor-pointer" onClick={() => {
-                                    setTheme('dark');
-                                    setShowTheme(false);
-                                }}>Dark
-                                </li>
-                            </ul>
+                            <Dropdown
+                                options={filterOptions}
+                                selectedValue={theme}
+                                onChangeFunction={handleThemeChange}
+                            />
+                            
                         </div>
                     </div>
-                </div>
-            </section>
-            </div>
-            
+                </section>
 
-            {/* CONFIGURATION */}
+                <section className="grid gap-7">
+                    <div className="grid gap-7">
+                        <div>
+                            <h3 className="text-xl font-semibold">
+                                Personal Data
+                            </h3>
+                            <img className="mt-2" src="/line.png" alt="" />
+                        </div>
+                        <div className="grid gap-6">
+                            <InputConfig
+                                title="Age"
+                                inputId="age-input"
+                                type="number"
+                            />
+                            <div>
+                                <span>Gender</span>
+                                <Dropdown options={genderOptions} />
+                            </div>
+
+                            <div className="grid">
+                                <span>Sleep Range</span>
+                                <Dropdown options={sleepRangeOptions} />
+                            </div>
+                        </div>
+
+                        <button className="w-48 h-7 bg-violet-400 rounded-lg border border-sky-600 text-xs font-semibold grid justify-center items-center text-white">
+                            Update Profile
+                        </button>
+                    </div>
+                </section>
+
+                <HealthCard
+                    healthTitle="Sleep Schedule"
+                    healthText="Input the number of hours slept, and save for daily monitoring of your sleep patterns"
+                />
+                <HealthCard
+                    healthTitle="Exercise"
+                    healthText="Log your exercise duration, and save to monitor your daily exercise regimen."
+                />
+                <MedCard
+                    medTitle="Medical Information"
+                    medText="Add your Medical Information here, and save to monitor your Conditions."
+                />
+
+                
+            </div>
         </>
     )
 }

@@ -1,5 +1,5 @@
-import { PropTypes } from 'prop-types';
-export function NotificationIcon({width, height}) {
+import { PropTypes } from 'prop-types'
+export function NotificationIcon({ width, height }) {
     return (
         <svg
             className="w-7 h-7 text-gray-800 dark:text-white"

@@ -1,5 +1,7 @@
 import { modalContext } from '../context/modalContext'
 import { useContext } from 'react'
+import { ExitIcon } from './Icons/ExitIcon'
+import { Tag } from './Tag'
 
 export function CardModal() {
     const { isOpen, setIsOpen } = useContext(modalContext)
@@ -11,7 +13,7 @@ export function CardModal() {
             onClick={(e) => {
                 console.log(e.target.tagName)
                 if (e.target.tagName !== 'DIALOG') return
-                ;setIsOpen(false)
+                setIsOpen(false)
             }}
         >
             <div className="max-w-screen-lg">
@@ -51,15 +53,9 @@ export function CardModal() {
                             Valor: 5%
                         </p>
                         <div className="grid grid-cols-[repeat(auto-fill,_minmax(90px,_1fr))] gap-2">
-                            <p className="bg-orange-400 rounded-lg p-1 ">
-                                etiqueta
-                            </p>
-                            <p className="bg-lime-300 rounded-lg p-1">
-                                etiqueta
-                            </p>
-                            <p className="bg-blue-300 rounded-lg p-1">
-                                etiqueta
-                            </p>
+                            <Tag title={'Curso'} bgColor={'bg-sky-500'}/>
+                            <Tag title={'Carrera'} bgColor={'bg-lime-500'}/>
+                            <Tag title={'Evento'} bgColor={'bg-orange-500'}/>
                         </div>
                         <div className="flex items-center gap-2 mt-4">
                             <label
@@ -89,23 +85,7 @@ export function CardModal() {
                         onClick={() => setIsOpen(false)}
                         className="text-primary absolute right-2 top-2 hover:scale-125 transition-transform border-solid border-2 border-primary rounded-full bg-white dark:bg-dark-secondary dark:text-white"
                     >
-                        <svg
-                            className="w-10 h-10 text-gray-800 dark:text-white  xl:w-6 xl:h-6"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            width="24"
-                            height="24"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                        >
-                            <path
-                                stroke="currentColor"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                strokeWidth="2"
-                                d="M6 18 17.94 6M18 18 6.06 6"
-                            />
-                        </svg>
+                        <ExitIcon />
                     </button>
                 </article>
             </div>

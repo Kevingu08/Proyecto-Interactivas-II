@@ -3,17 +3,16 @@ import { useContext } from 'react'
 import { modalContext } from '../context/modalContext'
 
 export function Card({
-    title = 'Card Title',
+    title = 'Laboratorio 2',
     date = 'May 5',
     time = '11:59 pm',
     img = '/Los-6-mejores-cursos-gratuitos.jpg',
 }) {
-
-    const { setIsOpen } = useContext(modalContext);
+    const { setIsOpen } = useContext(modalContext)
 
     return (
         <>
-            <article className="rounded-xl shadow-main w-fit overflow-hidden dark:bg-dark-secondary">
+            <article className="rounded-xl border border-zinc-400 w-fit overflow-hidden dark:bg-dark-secondary">
                 <div>
                     <img className="" src={img} alt="#" />
                 </div>
@@ -41,10 +40,6 @@ export function Card({
                     </div>
                 </div>
             </article>
-            {/* <CardModal
-                isOpen={isDialogOpen}
-                onClose={() => setIsDialogOpen(false)}
-            /> */}
         </>
     )
 }

@@ -1,5 +1,5 @@
-import { PropTypes } from 'prop-types';
-export function ConfigurationIcon({width, height}) {
+import { PropTypes } from 'prop-types'
+export function ConfigurationIcon({ width, height }) {
     return (
         <svg
             className="w-6 h-6 text-gray-800 dark:text-white"

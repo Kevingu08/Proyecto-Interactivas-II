@@ -21,7 +21,7 @@ nav {
 }
 
 .pagination .swiper-pagination-bullet {
-    background-color: white;
+    background-color: transparent;
     border: solid 2px rgb(146, 12, 187);
     height: 0.8rem;
     width: 0.8rem;
@@ -36,8 +36,8 @@ nav {
     opacity: 1;
 }
 
+
 .cont-notifications {
-    width: 25rem; /*13rem */
     height: 100%;
     position: relative;
     border-top-right-radius: 1rem;
@@ -46,17 +46,19 @@ nav {
     border: #000000;
 }
 
+
+
 .notification-panel {
     top: 0;
-    left: -40%;
+    left: -50rem;
     position: fixed;
-    z-index: 40;
+    z-index: 30;
     height: 100%;
     transition: left 0.3s ease;
 }
 
 .notification-panel.active {
-    left: 14rem;
+    left: 13.9rem;
 }
 
 .cont-notifications nav div {
@@ -76,44 +78,17 @@ nav {
     margin-left: 19rem;
 }
 
-.taskResume{
-    width:40rem;
-    overflow-x: hidden;
-}
-
-.tasksResume{
-    position: relative;
-    left: 16rem;
-    overflow-x: hidden;
-}
-
-.descriptionResume{
-    width: 16rem;
-}
-
-.timeResume{
+.configuration {
     position: relative;
 }
 
-.buttonFinished{
-    position: relative;
-}
-
-.configuration{
-    position: relative;
-}
-
-.theme{
+.theme {
     position: relative;
     left: 28%;
 }
- .img-arrow{
+.img-arrow {
     position: relative;
- }
-
-
-
-
+}
 
 /* Clases del Componente calendario */
 calendar-range {
@@ -126,13 +101,16 @@ calendar-month {
     width: 100%;
 }
 
-.MuiGauge-valueText {
+.MuiGauge-root text{
     color: white;
-    background: white;
 }
 
 .border-extra-thin {
     border: 0.5px solid black; /* Grosor del borde */
+}
+
+.MuiYearCalendar{
+    width: 100px;
 }
 
 @media (max-width: 768px) {
@@ -157,47 +135,18 @@ calendar-month {
         margin-left: 20rem;
     }
 
-    .notification-panel{
+    .notification-panel {
         left: -120%;
     }
 
-    .taskResume{
-        width: 24rem;
-        height: 12rem;
-    }
-
-    .tasksResume{
-        left: 4%;
-        width: 24rem;
-        
-    }
-
-    .timeResume{
-        right: 13rem;
-    }
-
-    .buttonFinished{
-        top:1.9rem;
-        right: 20rem;
-    }
-
-    .configuration{
-        right: 16rem;
-    }
-
-    .theme{
+    .theme {
         left: 5rem;
     }
 
-    .img-arrow{
+    .img-arrow {
         width: 24px;
         left: 2rem;
     }
-    
-    
-    
 }
-
-
 
 
