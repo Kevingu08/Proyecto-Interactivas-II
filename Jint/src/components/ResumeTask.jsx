@@ -2,14 +2,16 @@ import PropTypes from 'prop-types'
 import { Tag } from './Tag'
 
 export function ResumeTask({
-    img = 'https://unavatar.io/Kevingu08',
+    img = '/Los-6-mejores-cursos-gratuitos.jpg',
     taskName = 'Task name',
     description = 'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Libero dolores debitis perspiciatis non itaque deleniti vero est recusandae iste nesciunt magni, sed, aliquam provident, quibusdam tempora doloremque doloribus quis eius?',
     time = '23:59',
 }) {
     return (
-        <div className="flex max-w-[55rem] bg-white border border-zinc-400 rounded-2xl w-fit p-4 items-center gap-4 dark:bg-dark-secondary">
-            <img className="w-16 h-16 rounded-full" src={img} alt="#" />
+        <div className="flex flex-col max-w-[55rem] bg-white border border-zinc-400 rounded-2xl w-fit p-4 items-center gap-4 dark:bg-dark-secondary md:flex-row">
+            {/* <div>
+            <img className="max-w-[20rem] aspect-video cover h-full" src={img} alt="#" />
+            </div> */}
             <div className="flex flex-col gap-2">
                 <div className="flex flex-col justify-center gap-2">
                     <div className="flex justify-between">

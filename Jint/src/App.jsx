@@ -1,32 +1,22 @@
-import { Navigate, Route, Routes } from 'react-router-dom'
 import { Sidebar } from './components/Sidebar'
-import { AdminView } from './pages/AdminView'
-import { Home } from './pages/Home'
-import { TaskPage } from './pages/TaskPage'
-import { StatisticsPage } from './pages/StatisticsPage'
-import { ConfigurationPage } from './pages/ConfigurationPage'
 import { ModalContextProvider } from './context/modalContext'
 import { CardModal } from './components/CardModal'
-import { Login } from './pages/Login'
-import { SingUp } from './pages/SingUp'
-import { WelcomePage } from './pages/WelcomePage'
+import { Routes } from './routes/Routes'
+import { ROUTE_PATHS } from './routes'
 
 function App() {
     return (
         <ModalContextProvider>
-            <CardModal />
-            <Sidebar />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/task" element={<TaskPage />} />
-                <Route path="/statistics" element={<StatisticsPage />} />
-                <Route path="/AdminView" element={<AdminView />} />
-                <Route path="/configuration" element={<ConfigurationPage />} />
-                <Route path="/login" element={<Login />} />
-                <Route path="/singUp" element={<SingUp />} />
-                <Route path="/welcome" element={<WelcomePage />} />
-                <Route path="/*" element={<Navigate to="/" />} />
-            </Routes>
+            {![ROUTE_PATHS.LOGIN, ROUTE_PATHS.SIGN_UP, ROUTE_PATHS.WELCOME].some((path) =>
+                window.location.href.includes(path)
+            ) && (
+                <>
+                    <CardModal />
+                    <Sidebar />
+                </>
+            )}
+
+            <Routes />
         </ModalContextProvider>
     )
 }

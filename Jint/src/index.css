@@ -21,7 +21,7 @@ nav {
 }
 
 .pagination .swiper-pagination-bullet {
-    background-color: white;
+    background-color: transparent;
     border: solid 2px rgb(146, 12, 187);
     height: 0.8rem;
     width: 0.8rem;
@@ -58,7 +58,7 @@ nav {
 }
 
 .notification-panel.active {
-    left: 14rem;
+    left: 13.9rem;
 }
 
 .cont-notifications nav div {
@@ -101,7 +101,7 @@ calendar-month {
     width: 100%;
 }
 
-.MuiGauge-valueText{
+.MuiGauge-root text{
     color: white;
 }
 
@@ -112,8 +112,6 @@ calendar-month {
 .MuiYearCalendar{
     width: 100px;
 }
-
-
 
 @media (max-width: 768px) {
     .notification-panel {

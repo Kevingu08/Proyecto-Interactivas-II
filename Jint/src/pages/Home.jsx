@@ -2,6 +2,7 @@ import { Calendar } from '../components/Calendar'
 import { HorizontalCard } from '../components/HorizontalCard'
 import { Slider } from '../components/Slider'
 import { WelcomeCard } from '../components/WelcomeCard'
+import { InformationCard } from '../components/InformationCard'
 
 export function Home() {
     return (
@@ -31,32 +32,16 @@ export function Home() {
 
             <div className="flex flex-col mt-5 gap-4 lg:col-span-4 xl:col-auto">
                 <section className="grid grid-cols-[repeat(auto-fit,_minmax(200px,_1fr))] gap-5">
-                    <div className="shadow-main rounded-xl grid gap-4 p-4 dark:bg-dark-secondary dark:text-white">
-                        <h3 className="font-bold text-lg">
-                            Pendings of the week
-                        </h3>
-                        <p className="font-bold">
-                            Task:{' '}
-                            <span className="text-primary ml-4 text-xl">7</span>
-                        </p>
-                        <p className="font-bold">
-                            Event:{' '}
-                            <span className="text-primary ml-4 text-xl">2</span>
-                        </p>
-                    </div>
-                    <div className="shadow-main rounded-xl grid gap-4 p-4 dark:bg-dark-secondary dark:text-white">
-                        <h3 className="font-bold text-lg">
-                            Week{"'"}s tasks completed
-                        </h3>
-                        <p className="font-bold">
-                            Task:{' '}
-                            <span className="text-primary ml-4 text-xl">3</span>
-                        </p>
-                        <p className="font-bold">
-                            Event:{' '}
-                            <span className="text-primary ml-4 text-xl">0</span>
-                        </p>
-                    </div>
+                    <InformationCard
+                        title={"Pending of the week"}
+                        taskCompleted={7}
+                        eventCompleted={2}
+                    />
+                    <InformationCard
+                        title={"Week's tasks completed"}
+                        taskCompleted={7}
+                        eventCompleted={2}
+                    />
                 </section>
                 <Calendar />
             </div>

@@ -15,8 +15,6 @@ export function Calendar() {
             MuiDateCalendar: {
                 styleOverrides: {
                     root: {
-                        // margin: '0',
-                        // width: 'fit-content',
                         '@media (min-width:1919px)': {
                             width: 'auto',
                         },
@@ -27,9 +25,6 @@ export function Calendar() {
                             margin: 'auto',
                         },
                     },
-                    viewTransitionContainer:{
-                        margin: '0',
-                    }
                 },
             },
             MuiPickersFadeTransitionGroup:{
@@ -42,8 +37,8 @@ export function Calendar() {
             },
             MuiPickersCalendarHeader:{
                 styleOverrides: {
-                    root: {
-                        // margin: '0',
+                    switchViewIcon: {
+                        display: 'none',
                     },
                 },
             },
@@ -96,7 +91,7 @@ export function Calendar() {
         <div className="shadow-main rounded-xl dark:bg-dark-secondary dark:text-white w">
             <LocalizationProvider dateAdapter={AdapterDayjs}>
                 <ThemeProvider theme={componentTheme}>
-                    <DateCalendar />
+                    <DateCalendar view={'day'}/>
                 </ThemeProvider>
             </LocalizationProvider>
         </div>

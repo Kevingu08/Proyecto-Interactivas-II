@@ -10,6 +10,7 @@ import { StatisticsIcon } from './Icons/StatisticsIcon'
 import { ConfigurationIcon } from './Icons/ConfigurationIcon'
 import { LogOutIcon } from './Icons/LogOutIcon'
 import PropTypes from 'prop-types'
+import { ROUTE_PATHS } from '../routes/index.js'
 
 export function Sidebar({
     user = 'Kevin Guido',
@@ -20,13 +21,20 @@ export function Sidebar({
 
     const [showNotifications, setShowNotifications] = useState(false)
 
+    function toggleNavbars(){
+        setIsOpen(!isOpen)
+        if(showNotifications){
+            setShowNotifications(false)
+        }
+    }
+
     const toggleNotifications = () => {
         setShowNotifications(!showNotifications)
     }
 
     return (
         <>
-            <div className="flex px-8">
+            <div className="flex px-8 py-1 bg-white z-30 dark:bg-dark">
                 <div className="xl:hidden w-full flex justify-end">
                     <button
                         onClick={() => setShowNotifications(!showNotifications)}
@@ -44,10 +52,10 @@ export function Sidebar({
             </div>
 
             <div
-                onClick={() => setIsOpen(!isOpen)}
+                onClick={() => toggleNavbars()}
                 className={`${
                     isOpen ? 'block' : 'hidden'
-                } bg-black/30 h-screen w-screen fixed z-10 top-0 left-0 right-0 backdrop-blur-sm xl:hidden`}
+                } bg-black/30 h-screen w-screen fixed z-30 top-0 left-0 right-0 backdrop-blur-sm xl:hidden`}
             ></div>
 
             <nav
@@ -57,8 +65,8 @@ export function Sidebar({
             >
                 <div className="relative">
                     <button
-                        onClick={() => setIsOpen(!isOpen)}
-                        className="p-4 absolute translate-x-[14rem] md:hidden"
+                        onClick={() => toggleNavbars()}
+                        className="p-4 absolute translate-x-[11rem] xl:hidden"
                     >
                         <ExitIcon width="24" height="24" />
                     </button>
@@ -75,7 +83,7 @@ export function Sidebar({
                         <li>
                             <NavLink
                                 className="flex gap-6 px-8 py-5 hover:bg-gradient-light-li text-white"
-                                to="/"
+                                to={ROUTE_PATHS.HOME}
                             >
                                 <HomeIcon width="24" height="24" />
                                 Home
@@ -84,7 +92,7 @@ export function Sidebar({
                         <li>
                             <NavLink
                                 className="flex gap-6 px-8 py-5 hover:bg-gradient-light-li text-white"
-                                to="/task"
+                                to={ROUTE_PATHS.TASK}
                             >
                                 <TaskIcon width="24" height="24" />
                                 Task
@@ -105,7 +113,7 @@ export function Sidebar({
                         <li>
                             <NavLink
                                 className="flex gap-6 px-8 py-5 hover:bg-gradient-light-li text-white"
-                                to="/statistics"
+                                to={ROUTE_PATHS.STATISTICS}
                             >
                                 <StatisticsIcon width="24" height="24" />
                                 Statistics
@@ -114,7 +122,7 @@ export function Sidebar({
                         <li>
                             <NavLink
                                 className="flex gap-6 px-8 py-5 hover:bg-gradient-light-li text-white"
-                                to="/configuration"
+                                to={ROUTE_PATHS.CONFIGURATION}
                             >
                                 <ConfigurationIcon width="24" height="24" />
                                 Configuration
@@ -139,7 +147,7 @@ export function Sidebar({
             <div
                 className={`notification-panel ${showNotifications ? 'active' : ''}   `}
             >
-                <nav className="grid justify-center gap-6 cont-notifications bg-slate-50 dark:bg-dark-secondary overflow-y-auto p-4">
+                <nav className="grid gap-6 cont-notifications bg-slate-50 dark:bg-dark-secondary overflow-y-auto p-4">
                     <div className="flex items-center justify-between">
                         <h4 className="font-bold text-2xl  dark:text-white">
                             Notifications
@@ -148,23 +156,7 @@ export function Sidebar({
                             onClick={toggleNotifications}
                             className="cursor-pointer"
                         >
-                            <svg
-                                className="w-6 h-6 text-gray-800 dark:text-white"
-                                aria-hidden="true"
-                                xmlns="http://www.w3.org/2000/svg"
-                                width="24"
-                                height="24"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                            >
-                                <path
-                                    stroke="currentColor"
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    strokeWidth="2"
-                                    d="M6 18 17.94 6M18 18 6.06 6"
-                                />
-                            </svg>
+                            <ExitIcon width="24" height="24" />
                         </div>
                     </div>
                     <Notification />
