@@ -9,6 +9,7 @@ import { ModalContextProvider } from './context/modalContext'
 import { CardModal } from './components/CardModal'
 import { Login } from './pages/Login'
 import { SingUp } from './pages/SingUp'
+import { WelcomePage } from './pages/WelcomePage'
 
 function App() {
     return (
@@ -23,6 +24,7 @@ function App() {
                 <Route path="/configuration" element={<ConfigurationPage />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/singUp" element={<SingUp />} />
+                <Route path="/welcome" element={<WelcomePage />} />
                 <Route path="/*" element={<Navigate to="/" />} />
             </Routes>
         </ModalContextProvider>

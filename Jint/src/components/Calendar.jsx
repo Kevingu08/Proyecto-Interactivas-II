@@ -27,6 +27,9 @@ export function Calendar() {
                             margin: 'auto',
                         },
                     },
+                    viewTransitionContainer:{
+                        margin: '0',
+                    }
                 },
             },
             MuiPickersFadeTransitionGroup:{
@@ -40,7 +43,7 @@ export function Calendar() {
             MuiPickersCalendarHeader:{
                 styleOverrides: {
                     root: {
-
+                        // margin: '0',
                     },
                 },
             },
@@ -49,6 +52,7 @@ export function Calendar() {
                     root: {
                         fontWeight: 'bold',
                         color: theme === 'light' ? 'black' : 'white',
+                        with: '1rem',
                     },
                 },
             },

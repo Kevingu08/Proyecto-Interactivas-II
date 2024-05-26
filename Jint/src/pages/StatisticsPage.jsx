@@ -1,8 +1,9 @@
 import { StatisticsCard } from '../components/StatisticsCard.jsx'
+import { Resume } from './../components/Resume';
 
 export function StatisticsPage() {
     return (
-        <div className="xl:ml-[15rem] p-4">
+        <div className="xl:ml-[15rem] p-4 pb-8">
             <section>
                 <h2 className="font-bold text-xl dark:text-white">
                     Statistics
@@ -13,6 +14,9 @@ export function StatisticsPage() {
                     <StatisticsCard title="I-S-2024-PPU- Lectura en Inglés para Informática -001" percentageEvaluated={50} percentageObtained={40}/>
                     <StatisticsCard title="I-S-2024-PPU- Lectura en Inglés para Informática -001" percentageEvaluated={50} percentageObtained={40}/>
                 </div>
+            </section>
+            <section>
+                <Resume />
             </section>
         </div>
     )

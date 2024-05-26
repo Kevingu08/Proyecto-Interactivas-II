@@ -1,6 +1,7 @@
 import { modalContext } from '../context/modalContext'
 import { useContext } from 'react'
 import { ExitIcon } from './Icons/ExitIcon'
+import { Tag } from './Tag'
 
 export function CardModal() {
     const { isOpen, setIsOpen } = useContext(modalContext)
@@ -52,15 +53,9 @@ export function CardModal() {
                             Valor: 5%
                         </p>
                         <div className="grid grid-cols-[repeat(auto-fill,_minmax(90px,_1fr))] gap-2">
-                            <p className="bg-orange-400 rounded-lg p-1 ">
-                                etiqueta
-                            </p>
-                            <p className="bg-lime-300 rounded-lg p-1">
-                                etiqueta
-                            </p>
-                            <p className="bg-blue-300 rounded-lg p-1">
-                                etiqueta
-                            </p>
+                            <Tag title={'Curso'} bgColor={'bg-sky-500'}/>
+                            <Tag title={'Carrera'} bgColor={'bg-lime-500'}/>
+                            <Tag title={'Evento'} bgColor={'bg-orange-500'}/>
                         </div>
                         <div className="flex items-center gap-2 mt-4">
                             <label

@@ -3,9 +3,9 @@ import { PropTypes } from 'prop-types';
 
 export function StatisticsCard({title, percentageEvaluated, percentageObtained}) {
     return (
-        <div className="grid grid-cols-[repeat(auto-fit,_minmax(190px,_1fr))] p-4 shadow-main rounded-xl w-fit dark:bg-dark-secondary dark:text-white">
+        <div className="grid grid-cols-[repeat(auto-fit,_minmax(190px,_1fr))] p-4  border border-zinc-400 rounded-xl w-fit dark:bg-dark-secondary dark:text-white">
             <img
-                className="w-[50rem] aspect-video"
+                className="w-[50rem] aspect-video cover h-full"
                 src="/Los-6-mejores-cursos-gratuitos.jpg"
                 alt=""
             />
