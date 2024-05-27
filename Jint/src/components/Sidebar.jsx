@@ -132,13 +132,13 @@ export function Sidebar({
                 </div>
                 <div className="w-full">
                     <span className="block h-[1.2px] w-[80%] m-auto my-2 bg-white"></span>
-                    <a
+                    <NavLink
                         className="flex gap-6 px-8 py-5 hover:bg-gradient-light-li text-white rounded-br-xl"
-                        href="#"
+                        to={ROUTE_PATHS.WELCOME}
                     >
                         <LogOutIcon width="24" height="24" />
                         Log Out
-                    </a>
+                    </NavLink>
                 </div>
 
                 {/* NOTIFICATIONS */}
