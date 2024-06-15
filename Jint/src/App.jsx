@@ -9,6 +9,8 @@ import { ModalContextProvider } from './context/modalContext'
 import { CardModal } from './components/CardModal'
 import { Login } from './pages/Login';
 import { SingUp } from './pages/SingUp';
+import EmailConfirmation from './pages/EmailConfirmation'
+import ChangePassword from './pages/ChangePassword'
 
 function App() {
     return (
@@ -23,6 +25,8 @@ function App() {
                 <Route path="/configuration" element={<ConfigurationPage />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/singUp" element={<SingUp />} />
+                <Route path="/emailConfirmation" element={<EmailConfirmation />} />
+                <Route path="/changepassword" element={<ChangePassword />} />
                 <Route path="/*" element={<Navigate to="/" />} />
 
             </Routes>
