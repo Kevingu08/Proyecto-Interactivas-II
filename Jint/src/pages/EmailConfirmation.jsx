@@ -14,7 +14,7 @@ const EmailConfirmation = () => {
 
     const handleVerifyCode = () => {
         console.log('Código ingresado:', code)
-        navigate('/change-password')
+        navigate('/changepassword')
     }
 
     return (
