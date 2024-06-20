@@ -16,7 +16,7 @@ export function SignUp() {
                     Welcome! Come on and create your account{' '}
                 </p>
 
-                <form className="mt-4 flex flex-col gap-6 w-full mb-10">
+                <form  className="mt-4 flex flex-col gap-6 w-full mb-10">
                     <Input
                         title={'User'}
                         inputId={'userInput'}
