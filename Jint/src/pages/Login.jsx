@@ -3,13 +3,15 @@ import { ROUTE_PATHS } from '../routes'
 import { Input } from '../components/Input'
 import { UserIcon } from '../components/Icons/UserICon'
 import { LockIcon } from '../components/Icons/LockIcon'
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { modalContext } from './../context/modalContext';
 import axios from 'axios'
 
 export function Login() {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
+    const { setUser } = useContext(modalContext);
 
     const handleChange = (event) => {
         if (event.target.name === 'username') {
@@ -31,8 +33,13 @@ export function Login() {
                     password,
                 }
             )
+            const data = await response.data
+            const user = data.user;
+            if(user){
+                console.log(user);
+                setUser(user);
+            }
 
-            console.log('Login successful!', response.data)
         } catch (error) {
             console.error(
                 'Error logging in:',
