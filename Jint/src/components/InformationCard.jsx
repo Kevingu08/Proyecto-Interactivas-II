@@ -1,14 +1,14 @@
 import { PropTypes } from 'prop-types';
 
-export function InformationCard({title, taskCompleted, eventCompleted}) {
+export function InformationCard({title, tasks, events}) {
     return (
         <div className="shadow-main rounded-xl grid gap-4 p-4 dark:bg-dark-secondary dark:text-white">
             <h3 className="font-bold text-lg">{title}</h3>
             <p className="font-bold">
-                Task: <span className="text-primary ml-4 text-xl">{taskCompleted}</span>
+                Task: <span className="text-primary ml-4 text-xl">{tasks}</span>
             </p>
             <p className="font-bold">
-                Event: <span className="text-primary ml-4 text-xl">{eventCompleted}</span>
+                Event: <span className="text-primary ml-4 text-xl">{events}</span>
             </p>
         </div>
     )
@@ -16,6 +16,6 @@ export function InformationCard({title, taskCompleted, eventCompleted}) {
 
 InformationCard.propTypes = {
     title: PropTypes.string.isRequired,
-    taskCompleted: PropTypes.number.isRequired,
-    eventCompleted: PropTypes.number.isRequired,
+    tasks: PropTypes.number.isRequired,
+    events: PropTypes.number.isRequired,
 }

@@ -13,7 +13,6 @@ export const useFetchCategories = () => {
             const categories = await response.json();
             setData(categories);
             setIsLoadingCategories(false);
-            console.log('category: '+ categories);
         } catch (error) {
             console.log(error);
         }

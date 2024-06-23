@@ -7,7 +7,7 @@ export function WarningTag({ text }) {
         bgColor = 'bg-green-600/90';
         border = 'border-green-400';
     }
-    else if (text === 'Mid') {
+    else if (text === 'Med') {
         bgColor = 'bg-yellow-500/90';
         border = 'border-yellow-400';
     }

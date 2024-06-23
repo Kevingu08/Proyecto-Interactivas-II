@@ -5,17 +5,19 @@ import { useFetchEvents } from '../hooks/useFetchEvents'
 import { useFetchCategories } from '../hooks/useFetchCategories' 
 import { useFetchTags } from '../hooks/useFetchTags'
 import { SearchIcon } from '../components/Icons/SearchIcon'
+import { useState, useEffect } from 'react'
 
 export function TaskPage() {
     const { categories, isLoadingCategories } = useFetchCategories();
-    const { data, isLoading } = useFetchEvents();
+    let { data, isLoading } = useFetchEvents();
     const { tags, isLoadingTags } = useFetchTags(); 
-    // const csrfToken = document.querySelector('meta[name="csrf-token"]').getAttribute('content');
 
+    //testing
+    const [events, setEvents] = useState(data);
 
-    console.log(isLoadingCategories)
-    console.log('data:'  + data)
-    console.log('categories:' + categories)
+    useEffect(() => {
+        setEvents(data);
+    }, [isLoading])
 
     const createTask = (items) => {
         return items.map((item) => <Card
@@ -32,23 +34,46 @@ export function TaskPage() {
     const createFilter = (data, title, name) => {
         if (data && data.length > 0) {
             return <Filter title={title} data={data} name={name}/>;
-        } else {
-            return console.log('no'); 
         }
     }
 
+    const eventsSearch = async (e) => {
+        e.preventDefault();
+
+        let search_input = e.target.search_input.value;
+        if (search_input === '') {
+            search_input = 'null';
+        }
+        const category_id = e.target.category_id.value;
+        const tag_id = e.target.tag_id.value;
+
+        try {
+            const response = await fetch(
+                `http://jint_backend.test/api/search/event/${search_input}/${category_id}/${tag_id}`
+            );
+
+            const dataSearched = await response.json();
+            console.log(dataSearched)
+            if(dataSearched !== null){
+                setEvents(dataSearched);
+            }
+            
+        } catch (error) {
+            console.log(error);
+        }
+    }
  
     return (
         <section className="xl:ml-[15rem] p-4">
             <h2 className="font-bold text-xl dark:text-white">My Tasks</h2>
-            <form method='POST' action='http://jint_backend.test/api/search/event' className="flex flex-col sm:flex-row gap-4  mt-5">
+            <form onSubmit={eventsSearch}  className="flex flex-col sm:flex-row gap-4  mt-5">
                 <Search />
                 {isLoadingCategories ? <p>Loading...</p> : createFilter(categories, 'Category: ', 'category')}
                 {isLoadingTags ? <p>Loading...</p> : createFilter(tags, 'Tag: ', 'tag')}
                 <button type='submit' ><SearchIcon/></button>
             </form>
-            <div className="grid grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))] gap-5 mt-5 mb-8">
-                {isLoading ? <p>Loading...</p> : createTask(data)}
+            <div className="grid grid-cols-[repeat(auto-fill,_minmax(280px,_1fr))] gap-5 mt-8 mb-8">
+                {isLoading ? <p>Loading...</p> : createTask(events)}
             </div>
         </section>
     )

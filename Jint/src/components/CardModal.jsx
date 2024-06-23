@@ -1,24 +1,14 @@
 import { modalContext } from '../context/modalContext'
-import { useContext, useEffect } from 'react'
+import { useContext} from 'react'
 import { ExitIcon } from './Icons/ExitIcon'
 import { Tag } from './Tag'
 import { useFetchEvent } from '../hooks/useFetchEvent'
-import { useLocation } from "react-router-dom";
 
 export function CardModal() {
 
-    // const location = useLocation();
     const { setTaskId, taskId } = useContext(modalContext)
-    console.log("Id dentro del modal:" +  taskId)
-
     const { isOpen, setIsOpen } = useContext(modalContext)
-
-    // useEffect(() => {
-    //     setTaskId(taskId)
-    // },[isOpen])
-
     const { data, isLoading } = useFetchEvent(taskId);
-    // console.log(data[0].image)
 
     const showTaskDetails = (task) => {
         return (
@@ -50,7 +40,7 @@ export function CardModal() {
                     <p className="dark:text-white">
                         <strong>Hour:</strong> {task[0].time}
                     </p>
-                    {task[0].percentage ? <p className="font-semibold dark:text-white">Valor: 5%</p> : ""}
+                    {task[0].percentage ? <p className="font-semibold dark:text-white">Percentage: {task[0].percentage}%</p> : ""}
                     <div className="grid grid-cols-[repeat(auto-fill,_minmax(120px,_1fr))] gap-2">
                         <Tag title={task[0].tag} bgColor={'bg-sky-500'} />
                         <Tag title={task[0].category} bgColor={'bg-lime-500'} />
@@ -62,7 +52,6 @@ export function CardModal() {
                         </label>
                         <input
                             className="w-6 h-6 dark:bg-dark-secondary"
-                            // className="appearance-none w-6 h-6 cursor-pointer bg-white border-2 rounded border-primary outline outline-primary  checked:bg-red-500 checked:before:content-['✓']"
                             type="checkbox"
                             id="checkTask"
                         />

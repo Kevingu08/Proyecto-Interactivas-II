@@ -1,29 +1,28 @@
 import { useEffect, useState } from "react";
 
-export const useFetchTags = () => {
+export const useFetchCourses = () =>{
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
 
     const getData = async () => {
-        try {
+        try{
             const response = await fetch(
-                "http://jint_backend.test/api/tags/all"
+                "http://jint_backend.test/api/courses/all"
             );
-            //const data = await response.json();
-            const tags = await response.json();
-            setData(tags);
+            const courses = await response.json();
+            setData(courses);
             setIsLoading(false);
-        } catch (error) {
+        } catch(error){
             console.log(error);
         }
-    };
+    }
 
     useEffect(() => {
         getData();
     }, []);
 
-    return {
-        tags: data,
-        isLoadingTags: isLoading,
-    };
-};
+    return{
+        courses: data,
+        isLoadingCourses: isLoading,
+    }
+}

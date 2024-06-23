@@ -11,9 +11,7 @@ export function ModalContextProvider({ children }) {
     const [taskId, setTaskId] = useState(4)
 
     function handleTaskId(id) {
-        console.log("handole" + id);
         setTaskId(id)
-        console.log("Este es el nuevo ID:" + taskId);
     }
 
     return (
