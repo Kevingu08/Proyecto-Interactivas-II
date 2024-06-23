@@ -64,42 +64,36 @@ export function SignUp() {
                 <form method='POST' className="mt-4 flex flex-col gap-6 w-full mb-10" onSubmit={handleSignUp}>
                     <Input
                         title={'Name'}
-                        onChange={(e) => setName(e.target.value)}
                         inputId={'name'}
                         icon={<UserIcon />}
                         type={'text'}
                     />
                     <Input
                         title={'Last Name'}
-                        onChange={(e) => setLastName(e.target.value)}
                         inputId={'lastname'}
                         icon={<UserIcon />}
                         type={'text'}
                     />
                     <Input
                         title={'User'}
-                        onChange={(e) => setUser(e.target.value)}
                         inputId={'username'}
                         icon={<UserIcon />}
                         type={'text'}
                     />
                     <Input
                         title={'Email'}
-                        onChange={(e) => setEmail(e.target.value)}
                         inputId={'email'}
                         icon={<EmailIcon />}
                         type={'email'}
                     />
                     <Input
                         title={'Password'}
-                        onChange={(e) => setPassword(e.target.value)}
                         inputId={'password'}
                         icon={<LockIcon />}
                         type={'password'}
                     />
                     <Input
                         title={'Confirm Password'}
-                        onChange={(e) => setConfirmPassword(e.target.value)}
                         inputId={'confirmPassword'}
                         icon={<LockIcon />}
                         type={'password'}
