@@ -30,7 +30,7 @@ export function SignUp() {
         
         }
 
-        const profile_type_id = 1; 
+        const profile_type_id = 2; 
 
         try {
             const response = await axios.post('http://jint_backend.test/api/users/store', {
