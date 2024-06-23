@@ -27,6 +27,7 @@ export function Login() {
         const password = event.target.password.value;
         try {
             const response = await axios.post(
+                // 'http://127.0.0.1:8000/api/users/login',
                 'http://jint_backend.test/api/users/login',
                 {
                     username,

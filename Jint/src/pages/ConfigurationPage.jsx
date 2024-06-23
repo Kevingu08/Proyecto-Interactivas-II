@@ -5,11 +5,15 @@ import { Dropdown } from '../components/Dropdown'
 import { InputConfig } from '../components/InputConfig'
 import { modalContext } from '../context/modalContext'
 
+
+
+
 import { useEffect } from 'react'
 
 export function ConfigurationPage() {
     // const [theme, setTheme] = useState('light')
-    const {theme, setTheme} = useContext(modalContext)
+    const {theme, setTheme, user} = useContext(modalContext)
+    
 
     const handleThemeChange = (event) => {
         setTheme(event.target.value)
@@ -68,21 +72,25 @@ export function ConfigurationPage() {
                                     <InputConfig
                                         title="First Name"
                                         inputId="first-name-input"
-                                        type="text"
+                                        type="text" 
+                                        value={user.name}
+                                    
                                     />
                                     <InputConfig
                                         title="Last Name"
                                         inputId="last-name-input"
                                         type="text"
+                                        value={user.lastname}
+
                                     />
                                 </div>
-                                <div>
+                                {/* <div>
                                     <InputConfig
                                         title="Phone Number"
                                         inputId="phone-number-input"
                                         type="text"
                                     />
-                                </div>
+                                </div> */}
                             </div>
                         </section>
                     </div>
@@ -102,10 +110,11 @@ export function ConfigurationPage() {
                                     title="Email"
                                     inputId="email-input"
                                     type="email"
+                                    value={user.email}
                                 />
-                                <button className="w-48 h-7 rounded-lg border-[.12rem] border-primary text-xs font-semibold grid justify-center items-center transition-all duration-100  hover:bg-primary hover:text-white  dark:bg-dark-secondary">
+                                <a className="w-48 h-7 rounded-lg border-[.12rem] border-primary text-xs font-semibold grid justify-center items-center transition-all duration-100  hover:bg-primary hover:text-white  dark:bg-dark-secondary">
                                     Change Password
-                                </button>
+                                </a>
                             </div>
                         </div>
                     </div>
