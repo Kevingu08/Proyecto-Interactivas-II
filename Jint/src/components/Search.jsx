@@ -1,32 +1,14 @@
 export function Search() {
     return (
-        <form
-            className="w-full sm:w-fit flex gap-2 shadow-main px-4 py-2 rounded-xl items-center dark:bg-dark-secondary"
-            action=""
+        <div
+            className="w-full sm:w-fit flex gap-2 border border-zinc-400 px-4 rounded-md items-center dark:bg-dark-secondary"
         >
             <input
-                className="p-1 w-[90%] dark:bg-dark-secondary"
+                className="p-1 outline-none  dark:bg-dark-secondary dark:text-white"
                 type="text"
                 placeholder="Search..."
+                name="search_input"
             />
-            <button type="submit" className="w-fit">
-                <svg
-                    className="w-6 h-6 text-gray-800 dark:text-white"
-                    aria-hidden="true"
-                    xmlns="http://www.w3.org/2000/svg"
-                    width="24"
-                    height="24"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                >
-                    <path
-                        stroke="currentColor"
-                        strokeLinecap="round"
-                        strokeWidth="2"
-                        d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
-                    />
-                </svg>
-            </button>
-        </form>
+        </div>
     )
 }
