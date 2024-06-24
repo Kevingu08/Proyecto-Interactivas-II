@@ -10,6 +10,7 @@ export const useFetchEvents = () => {
         try {
             const response = await fetch(
                 `http://jint_backend.test/api/events/all/${user.id}`
+                // "http://127.0.0.1:8000/api/events/all"
             );
             //const data = await response.json();
             const events = await response.json();
