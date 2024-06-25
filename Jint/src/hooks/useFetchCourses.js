@@ -7,8 +7,8 @@ export const useFetchCourses = () =>{
     const getData = async () => {
         try{
             const response = await fetch(
-                // "http://127.0.0.1:8000/api/courses/all"
-                "http://jint_backend.test/api/courses/all"
+                "http://127.0.0.1:8000/api/courses/all"
+                // "http://jint_backend.test/api/courses/all"
             );
             const courses = await response.json();
             setData(courses);

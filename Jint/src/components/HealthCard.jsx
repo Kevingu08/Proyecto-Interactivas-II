@@ -1,4 +1,4 @@
-export function HealthCard({ healthTitle, healthText }) {
+export function HealthCard({ healthTitle, healthText, name, inputId }) {
     return (
         <>
             <section className="grid text-2xl gap-7 font-semibold">
@@ -12,6 +12,8 @@ export function HealthCard({ healthTitle, healthText }) {
                             </p>
                             <div className="grid gap-5">
                                 <select className="w-28 h-7 bg-slate-50 rounded-lg border border-slate-400 dark:bg-dark-secondary">
+                                    name={name}
+                                    id={inputId}
                                     <option value="" disabled selected>
                                         Pick time
                                     </option>
@@ -24,9 +26,6 @@ export function HealthCard({ healthTitle, healthText }) {
                             </div>
                         </div>
                     </div>
-                    <button className="w-48 h-7 bg-violet-400 rounded-lg border border-sky-600 text-xs font-semibold grid justify-center items-center text-white">
-                        Save Data
-                    </button>
                 </div>
             </section>
         </>

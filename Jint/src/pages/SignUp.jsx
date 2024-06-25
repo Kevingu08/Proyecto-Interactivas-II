@@ -27,14 +27,13 @@ export function SignUp() {
         if (password !== confirmPassword) {
             console.log('Passwords do not match');
             return;
-        
         }
 
         const profile_type_id = 2; 
 
         try {
-            const response = await axios.post('http://jint_backend.test/api/users/store', {
-            // const response = await axios.post('http://127.0.0.1:8000/api/users/store', {
+            // const response = await axios.post('http://jint_backend.test/api/users/store', {
+            const response = await axios.post('http://127.0.0.1:8000/api/users/store', {
                 username,
                 name,
                 email,
