@@ -1,16 +1,35 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { ROUTE_PATHS } from '../routes';
+import { Navigate, useParams } from 'react-router-dom';
+import axios from 'axios';
 
 const ChangePassword = () => {
-    const [password, setPassword] = useState('')
-    const [confirmPassword, setConfirmPassword] = useState('')
+    const { userId } = useParams();
+    const [password, setPassword] = useState('');
+    const [confirmPassword, setConfirmPassword] = useState('');
+    const [message, setMessage] = useState('');
+    const navigate = useNavigate();
 
-    const handleChangePassword = () => {
+    const handleChangePassword = async () => {
         if (password === confirmPassword) {
-            console.log('Contraseña cambiada a:', password)
+            try {
+                const response = await axios.post(`http://jint_backend.test/api/change-password/${userId}`, {
+                    password,
+                    password_confirmation: confirmPassword,
+                    
+                });
+                setMessage(response.data.message);
+
+                navigate(ROUTE_PATHS.LOGIN);
+                
+            } catch (error) {
+                setMessage(error.response ? error.response.data.message : 'An error occurred');
+            }
         } else {
-            console.log('Las contraseñas no coinciden')
+            setMessage('The passwords do not match');
         }
-    }
+    };
 
     return (
         <section className="flex flex-col justify-center items-center min-h-screen bg-primary p-4">
@@ -50,9 +69,12 @@ const ChangePassword = () => {
                         Cambiar Contraseña
                     </button>
                 </form>
+                {message && <p className="text-white mt-4">{message}</p>}
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default ChangePassword
+export default ChangePassword;
+
+
