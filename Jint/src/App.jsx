@@ -11,6 +11,8 @@ function App() {
         ROUTE_PATHS.LOGIN,
         ROUTE_PATHS.SIGN_UP,
         ROUTE_PATHS.WELCOME,
+        ROUTE_PATHS.EMAIL_CONFIRMATION,
+        ROUTE_PATHS.RESET_PASSWORD,
     ].some((path) => location.pathname.includes(path))
 
     return (

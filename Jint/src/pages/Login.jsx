@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom'
 import { ROUTE_PATHS } from '../routes'
 import { Input } from '../components/Input'
 import { UserIcon } from '../components/Icons/UserICon'
@@ -12,6 +13,7 @@ export function Login() {
     const [password, setPassword] = useState('')
     const [error, setError] = useState('')
     const { setUser } = useContext(modalContext);
+    const navigate = useNavigate()
 
     const handleChange = (event) => {
         if (event.target.name === 'username') {
@@ -38,6 +40,7 @@ export function Login() {
             if(user){
                 console.log(user);
                 setUser(user);
+                navigate(ROUTE_PATHS.HOME);
             }
 
         } catch (error) {
@@ -45,7 +48,11 @@ export function Login() {
                 'Error logging in:',
                 error.response ? error.response.data : error.message
             )
-            setError('Invalid username or password. Please try again.')
+            if (error.response && error.response.status === 401) {
+                setError('Username or password is incorrect.')
+            } else {
+                setError('Ocurrió un error inesperado. Por favor, inténtalo de nuevo.')
+            }
         }
     }
 
@@ -58,6 +65,8 @@ export function Login() {
                 <p className="text-center text-white">
                     Welcome! Enter your details to login into your account
                 </p>
+
+               
 
                 <form
                     onSubmit={handleSubmit}
@@ -82,6 +91,21 @@ export function Login() {
                         type={'password'}
                     />
 
+                {error && (
+                    <div className="bg-violet-400 text-white p-4 rounded-lg w-full text-center mt-2 -mb-1">
+                        {error}
+                        <p className="text-white font-semibold text-xs">
+                    forgot your password?{' '}
+                    <NavLink
+                        className="font-regular underline decoration-1"
+                        to={ROUTE_PATHS.EMAIL_CONFIRMATION}
+                    >
+                        click here
+                    </NavLink>
+                </p>
+                    </div>
+                )}
+
                     <input
                         className="w-full text-white bg-dark font-semibold rounded-xl px-8 py-2 cursor-pointer border-2 mt-2 border-dark hover:bg-white hover:text-dark transition-colors duration-200"
                         type="submit"
@@ -101,3 +125,4 @@ export function Login() {
         </section>
     )
 }
+

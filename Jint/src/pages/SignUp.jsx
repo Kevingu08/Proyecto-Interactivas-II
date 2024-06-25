@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'; 
 import { ROUTE_PATHS } from '../routes';
 import { NavLink } from 'react-router-dom';
 import { Input } from '../components/Input';
@@ -14,6 +15,7 @@ export function SignUp() {
     const [email, setEmail] = useState('');
     const [lastname, setLastName] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const navigate = useNavigate(); 
 
     const handleSignUp = async (e) => {
         e.preventDefault();
@@ -22,12 +24,11 @@ export function SignUp() {
         const lastname = e.target.lastname.value;
         const username = e.target.username.value;
         const password = e.target.password.value;
-        const confirmPassword= e.target.confirmPassword.value;
+        const confirmPassword = e.target.confirmPassword.value;
         console.log(name, email, lastname, username, password);
         if (password !== confirmPassword) {
             console.log('Passwords do not match');
             return;
-        
         }
 
         const profile_type_id = 2; 
@@ -47,13 +48,14 @@ export function SignUp() {
             });
 
             console.log('Usuario creado con éxito', response.data);
+            navigate(ROUTE_PATHS.LOGIN); 
         } catch (error) {
             console.log('Error al crear el usuario', error.response ? error.response.data : error.message);
         }
     };
 
     return (
-        <section className="flex flex-col justify-center items-center h-screen bg-primary">
+        <section className="flex flex-col justify-center items-center min-h-screen sm:p-10 bg-primary">
             <div className="flex flex-col items-center justify-center w-80">
                 <h2 className="font-bold text-3xl text-center text-white mb-2">
                     Sign Up
@@ -117,4 +119,5 @@ export function SignUp() {
         </section>
     );
 }
+
 
