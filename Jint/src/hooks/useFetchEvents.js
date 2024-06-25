@@ -1,13 +1,16 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext} from "react";
+import { modalContext } from "../context/modalContext";
 
 export const useFetchEvents = () => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
+    const {user} = useContext(modalContext);
 
     const getData = async () => {
         try {
             const response = await fetch(
-                "http://jint_backend.test/api/events/all"
+                `http://jint_backend.test/api/events/all/${user.id}`
+                // "http://127.0.0.1:8000/api/events/all"
             );
             //const data = await response.json();
             const events = await response.json();
