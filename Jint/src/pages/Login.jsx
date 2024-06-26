@@ -29,8 +29,8 @@ export function Login() {
         const password = event.target.password.value;
         try {
             const response = await axios.post(
-                "http://127.0.0.1:8000/api/users/login",
-                // 'http://jint_backend.test/api/users/login',
+                // "http://127.0.0.1:8000/api/users/login",
+                'http://jint_backend.test/api/users/login',
                 {
                     username,
                     password,
@@ -41,6 +41,7 @@ export function Login() {
             if(user){
                 console.log(user);
                 setUser(user);
+                window.localStorage.setItem('userLogged', JSON.stringify(user));
                 navigate(ROUTE_PATHS.HOME);
             }
 

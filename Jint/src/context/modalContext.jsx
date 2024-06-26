@@ -1,31 +1,34 @@
 import { createContext } from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { PropTypes } from 'prop-types'
-
+import { useLocalStorage } from '../hooks/useLocalStorage'
 
 export const modalContext = createContext()
 
 export function ModalContextProvider({ children }) {
-    const [isOpen, setIsOpen] = useState(false);
-    const [theme, setTheme] = useState('light');
-    const [taskId, setTaskId] = useState(4);
-    const [user, setUser] = useState('');
-    const [userData, setUserData] = useState({
-        age: '',
-        gender: '',
-        sleep_range: '',
-        exercise: '',
-        condition: ''
-    });
-    
-    
+    const [isOpen, setIsOpen] = useState(false)
+    const [taskId, setTaskId] = useState(4)
+    const [user, setUser] = useState('')
+    const [theme, setTheme] = useLocalStorage('theme', 'light')
 
     function handleTaskId(id) {
         setTaskId(id)
     }
 
     return (
-        <modalContext.Provider value={{ isOpen, setIsOpen, theme, setTheme, setTaskId, taskId, handleTaskId, user, setUser, userData, setUserData }}>
+        <modalContext.Provider
+            value={{
+                isOpen,
+                setIsOpen,
+                theme,
+                setTheme,
+                setTaskId,
+                taskId,
+                handleTaskId,
+                user,
+                setUser,
+            }}
+        >
             {children}
         </modalContext.Provider>
     )
