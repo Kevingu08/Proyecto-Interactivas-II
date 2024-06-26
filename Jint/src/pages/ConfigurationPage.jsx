@@ -10,10 +10,10 @@ import { modalContext } from '../context/modalContext'
 
 import { useEffect } from 'react'
 
+
 export function ConfigurationPage() {
     const {theme, setTheme, user} = useContext(modalContext)
-    console.log(theme)
-
+    
     const handleThemeChange = (event) => {
         setTheme(event.target.value)
     }

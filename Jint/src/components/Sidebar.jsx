@@ -11,6 +11,9 @@ import { ConfigurationIcon } from './Icons/ConfigurationIcon'
 import { LogOutIcon } from './Icons/LogOutIcon'
 import PropTypes from 'prop-types'
 import { ROUTE_PATHS } from '../routes/index.js'
+import { modalContext } from '../context/modalContext.jsx'
+import { useContext, useEffect } from 'react'
+import { useLocalStorage } from './../hooks/useLocalStorage';
 
 export function Sidebar({
     user = 'Kevin Guido',
@@ -20,6 +23,23 @@ export function Sidebar({
     const [isOpen, setIsOpen] = useState(false)
 
     const [showNotifications, setShowNotifications] = useState(false)
+    const { setUser, setTheme} = useContext(modalContext)
+    // const [theme, setTheme] = useLocalStorage('theme', 'light')
+
+    useEffect(() => {
+        const userLogged = window.localStorage.getItem('userLogged')
+        if (userLogged) {
+            setUser(JSON.parse(userLogged))
+        }
+    }, [])
+
+    // useEffect(() => {
+    //     const theme = window.localStorage.getItem('theme')
+    //     if (theme) {
+    //         setTheme(theme)
+    //     }
+    // })
+
 
     function toggleNavbars(){
         setIsOpen(!isOpen)
@@ -30,6 +50,11 @@ export function Sidebar({
 
     const toggleNotifications = () => {
         setShowNotifications(!showNotifications)
+    }
+
+    const handleLogout = () => {
+        setUser(null)
+        window.localStorage.removeItem('userLogged')
     }
 
     return (
@@ -134,6 +159,7 @@ export function Sidebar({
                     <span className="block h-[1.2px] w-[80%] m-auto my-2 bg-white"></span>
                     <NavLink
                         className="flex gap-6 px-8 py-5 hover:bg-gradient-light-li text-white rounded-br-xl"
+                        onClick={handleLogout}
                         to={ROUTE_PATHS.WELCOME}
                     >
                         <LogOutIcon width="24" height="24" />

@@ -11,25 +11,6 @@ export function ModalContextProvider({ children }) {
     const [user, setUser] = useState('')
     const [theme, setTheme] = useLocalStorage('theme', 'light')
 
-    // if (
-    //     window.matchMedia &&
-    //     window.matchMedia('(prefers-color-scheme: light)').matches
-    // ) {
-    //     setTheme('light')
-    //     // console.log('light');
-    // } else {
-    //     console.log('dark')
-    //     setTheme('dark')
-    // }
-
-    // useEffect(() => {
-    //     if (theme === 'light') {
-    //         document.querySelector('html').classList.remove('dark')
-    //     } else {
-    //         document.querySelector('html').classList.add('dark')
-    //     }
-    // }, [theme])
-
     function handleTaskId(id) {
         setTaskId(id)
     }
