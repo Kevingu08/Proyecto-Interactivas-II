@@ -7,8 +7,6 @@ export const useFetchCategories = () => {
     const getData = async () => {
         try {
             const response = await fetch(
-                // "http://127.0.0.1:8000/api/categories/all"
-                "http://jint_backend.test/api/categories/all"
             );
             //const data = await response.json();
             const categories = await response.json();
