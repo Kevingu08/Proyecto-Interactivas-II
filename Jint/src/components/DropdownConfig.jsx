@@ -1,6 +1,5 @@
 import { PropTypes } from 'prop-types'
 
-export function DropdownConfig({ options, onChangeFunction, selectedValue, name, inputId }) {
     return (
         <div className="flex gap-4 items-center font">
             <select

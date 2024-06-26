@@ -16,7 +16,6 @@ export function ModalContextProvider({ children }) {
     }
 
     return (
-        <modalContext.Provider value={{ isOpen, setIsOpen, theme, setTheme, setTaskId, taskId, handleTaskId, user, setUser }}>
             {children}
         </modalContext.Provider>
     )

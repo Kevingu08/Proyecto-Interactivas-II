@@ -13,7 +13,6 @@ const EmailConfirmation = () => {
 
     const handleSendCode = async () => {
         try {
-            const response = await axios.post('http://jint_backend.test/api/send-code', { email });
             console.log('Código enviado al email:', email);
             setIsCodeSent(true);
             setUserId(response.data.userId);
@@ -25,7 +24,6 @@ const EmailConfirmation = () => {
 
     const handleVerifyCode = async () => {
         try {
-            const response = await axios.post('http://jint_backend.test/api/verify-code', { email, code });
             console.log('Código ingresado:', code);
             console.log('Respuesta del servidor:', response.data);
             navigate(`${ROUTE_PATHS.RESET_PASSWORD}/${response.data.userId}`);

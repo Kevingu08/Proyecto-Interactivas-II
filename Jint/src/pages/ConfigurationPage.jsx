@@ -1,6 +1,4 @@
 import { useState, useContext } from 'react'
-import { HealthCard } from '../components/HealthCard'
-import { MedCard } from '../components/MedCard'
 import { Dropdown } from '../components/Dropdown'
 import { InputConfig } from '../components/InputConfig'
 import { modalContext } from '../context/modalContext'
@@ -9,7 +7,6 @@ import axios from 'axios';
 import { DropdownConfig } from '../components/DropdownConfig'
 
 
-import { Checkbox } from '../components/Checkbox'
 
 export function ConfigurationPage() {
     const {theme, setTheme, user} = useContext(modalContext)
@@ -31,20 +28,10 @@ export function ConfigurationPage() {
         const sleep_range = e.target.sleep_range.value;
         const exercise = e.target.exercise.value;
         const condition = e.target.condition.value;
-        const user_profile_id = e.target.user_profile_id.value;
         console.log(user_profile_id);
-        const userData = {
-            age,
-            gender,
-            sleep_range,
-            exercise,
-            condition,
-            user_profile_id
-        };
         
 
         try {
-            
             const response = await axios.post(`http://127.0.0.1:8000/api/usersData/store`, userData, {
          // const response = await axios.post(`http://jint_backend.test/api/usersData/store`, userData, {
                 headers: {
@@ -52,10 +39,8 @@ export function ConfigurationPage() {
                 }
             });
     
-            setMessage('Información registrada con éxito');
             setMessageType('success');
         } catch (error) {
-            setMessage('Error al registrar la información');
             setMessageType('error');
         }
     };
@@ -244,36 +229,19 @@ export function ConfigurationPage() {
                             
                             <div className='gap-2'>
                                 <span className='text-base font-bold'>Gender</span>
-                                <DropdownConfig options={genderOptions} name="gender" inputId="gender"/>
                             </div>
 
                             <div className="grid gap-2">
                                 <span className='text-base font-bold'>Sleep Range</span>
-                                <DropdownConfig options={sleepRangeOptions} name="sleep_range" inputId="sleep_range"/>
                             </div>
 
                             <div className="grid gap-2">
                                 <span className='text-base font-bold'>Exercise</span>
-                                <DropdownConfig options={exerciseOptions} name="exercise" inputId="exercise"/>
                             </div>
 
                             <div className="grid gap-2">
                                 <span className='text-base font-bold'>Condition</span>
-                                <DropdownConfig options={conditionOptions} name="condition" inputId="condition"/>
-                            </div>
-
-                            {/* <div className="grid">
-                                <span>Condition</span>
-                                <Checkbox
-                                    options={conditionOptions}
-                                    onChangeFunction={(selectedValues) => setCondition(selectedValues)} 
-                                    selectedValues={condition} 
-                                    name="condition"
                                 />
-                            </div> */}
-
-                            
-                            <input id='user_profile_id' type="hidden" value={user_profile_id} name='user_profile_id'/>
 
 
                             <button type='submit' className="w-48 h-7 bg-violet-400 rounded-lg border border-sky-600 text-xs font-semibold grid justify-center items-center text-white hover:bg-violet-500">
