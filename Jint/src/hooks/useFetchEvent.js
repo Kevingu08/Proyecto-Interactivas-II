@@ -11,7 +11,6 @@ export const useFetchEvent = (id) => {
         try {
             const response = await fetch(
                 // "http://127.0.0.1:8000/api/events/event/" + id
-
                 "http://jint_backend.test/api/events/event/" + id
             );
             //const data = await response.json();
