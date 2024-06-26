@@ -16,14 +16,14 @@ import { useContext, useEffect } from 'react'
 import { useLocalStorage } from './../hooks/useLocalStorage';
 
 export function Sidebar({
-    user = 'Kevin Guido',
-    email = 'kevinguidou@gmail.com',
+    userProfile = 'Kevin Guido',
+    emailProfile = 'kevinguidou@gmail.com',
     image = 'https://unavatar.io/Kevingu08',
 }) {
     const [isOpen, setIsOpen] = useState(false)
 
     const [showNotifications, setShowNotifications] = useState(false)
-    const { setUser, setTheme} = useContext(modalContext)
+    const { user, setUser, setTheme} = useContext(modalContext)
     // const [theme, setTheme] = useLocalStorage('theme', 'light')
 
     useEffect(() => {
@@ -101,8 +101,8 @@ export function Sidebar({
                             src={image}
                             alt=""
                         />
-                        <p className="text-white">{user}</p>
-                        <p className="text-xs text-white">{email}</p>
+                        <p className="text-white">{user.username} {}</p>
+                        <p className="text-xs text-white">{user.email}</p>
                     </div>
                     <ul className="flex flex-col m-auto text-start">
                         <li>
