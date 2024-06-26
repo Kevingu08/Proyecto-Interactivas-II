@@ -6,6 +6,7 @@ import { InformationCard } from '../components/InformationCard'
 import { useFetchCourses } from '../hooks/useFetchCourses'
 import { useFetchEventsWeek } from '../hooks/useFetchEventsWeek'
 
+
 export function Home() {
     const { courses, isLoadingCourses } = useFetchCourses()
     const { eventsWeek, isLoadingEventsWeek } = useFetchEventsWeek()
