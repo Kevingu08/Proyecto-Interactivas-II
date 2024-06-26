@@ -86,7 +86,7 @@ const EmailConfirmation = () => {
                         </button>
                     )}
                 </form>
-                {error && <p className="text-red-500 mt-4">{error}</p>}
+                {error && <p className="text-white mt-4">{error}</p>}
             </div>
         </section>
     );
