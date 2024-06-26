@@ -1,5 +1,6 @@
 import { PropTypes } from 'prop-types'
 
+export function DropdownConfig({ options, onChangeFunction, selectedValue, name, inputId, value }) {
     return (
         <div className="flex gap-4 items-center font">
             <select
@@ -7,6 +8,7 @@ import { PropTypes } from 'prop-types'
                 value={selectedValue}
                 name={name}
                 id={inputId}
+
                 className="w-full border border-gray border-opacity-90 px-4 py-2 rounded-md bg-input-bg bg-opacity-50 dark:bg-dark-secondary dark:text-white xl:w-96"
             >
                 {options.map((option) => (

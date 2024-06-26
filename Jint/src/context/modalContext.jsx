@@ -10,12 +10,22 @@ export function ModalContextProvider({ children }) {
     const [theme, setTheme] = useState('light');
     const [taskId, setTaskId] = useState(4);
     const [user, setUser] = useState('');
+    const [userData, setUserData] = useState({
+        age: '',
+        gender: '',
+        sleep_range: '',
+        exercise: '',
+        condition: ''
+    });
+    
+    
 
     function handleTaskId(id) {
         setTaskId(id)
     }
 
     return (
+        <modalContext.Provider value={{ isOpen, setIsOpen, theme, setTheme, setTaskId, taskId, handleTaskId, user, setUser, userData, setUserData }}>
             {children}
         </modalContext.Provider>
     )
