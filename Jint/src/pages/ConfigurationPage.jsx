@@ -219,7 +219,7 @@ export function ConfigurationPage() {
                     </div>
                 </section>
                 
-                <section className="grid gap-7 mt-24">
+                <section className="grid gap-7 mt-2">
                     <div className="grid gap-7">
                         <div>
                             <h3 className="text-xl font-semibold">
