@@ -11,6 +11,7 @@ import { DropdownConfig } from '../components/DropdownConfig'
 
 import { Checkbox } from '../components/Checkbox'
 
+
 export function ConfigurationPage() {
     const {theme, setTheme, user} = useContext(modalContext)
     const [age, setAge] = useState('');
@@ -61,7 +62,6 @@ export function ConfigurationPage() {
     };
     
     
-
     const handleThemeChange = (event) => {
         setTheme(event.target.value)
     }
@@ -69,8 +69,10 @@ export function ConfigurationPage() {
     useEffect(() => {
         if (theme === 'light') {
             document.querySelector('html').classList.remove('dark')
+            setTheme('light');
         } else {
             document.querySelector('html').classList.add('dark')
+            setTheme('dark');
         }
     }, [theme])
 

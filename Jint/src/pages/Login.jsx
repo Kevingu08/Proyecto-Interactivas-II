@@ -41,6 +41,7 @@ export function Login() {
             if(user){
                 console.log(user);
                 setUser(user);
+                window.localStorage.setItem('userLogged', JSON.stringify(user));
                 navigate(ROUTE_PATHS.HOME);
             }
 
