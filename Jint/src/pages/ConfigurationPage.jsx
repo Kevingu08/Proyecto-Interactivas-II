@@ -4,15 +4,62 @@ import { MedCard } from '../components/MedCard'
 import { Dropdown } from '../components/Dropdown'
 import { InputConfig } from '../components/InputConfig'
 import { modalContext } from '../context/modalContext'
-
-
-
-
 import { useEffect } from 'react'
+import axios from 'axios';
+import { DropdownConfig } from '../components/DropdownConfig'
+
+
+import { Checkbox } from '../components/Checkbox'
 
 export function ConfigurationPage() {
-    // const [theme, setTheme] = useState('light')
     const {theme, setTheme, user} = useContext(modalContext)
+    const [age, setAge] = useState('');
+    const [gender, setGender] = useState('');
+    const [sleep_range, setSleepRange] = useState('');
+    const [exercise, setExercise] = useState('');
+    const [condition, setCondition] = useState('');
+    const [message, setMessage] = useState('');
+    const [messageType, setMessageType] = useState('');
+
+    const user_profile_id = 2;
+
+
+    const handleUserData = async (e) => {
+        e.preventDefault();
+        const age = e.target.age.value;
+        const gender = e.target.gender.value;
+        const sleep_range = e.target.sleep_range.value;
+        const exercise = e.target.exercise.value;
+        const condition = e.target.condition.value;
+        const user_profile_id = e.target.user_profile_id.value;
+        console.log(user_profile_id);
+        const userData = {
+            age,
+            gender,
+            sleep_range,
+            exercise,
+            condition,
+            user_profile_id
+        };
+        
+
+        try {
+            
+            const response = await axios.post(`http://127.0.0.1:8000/api/usersData/store`, userData, {
+         // const response = await axios.post(`http://jint_backend.test/api/usersData/store`, userData, {
+                headers: {
+                    'Content-Type': 'application/json',
+                }
+            });
+    
+            setMessage('Información registrada con éxito');
+            setMessageType('success');
+        } catch (error) {
+            setMessage('Error al registrar la información');
+            setMessageType('error');
+        }
+    };
+    
     
 
     const handleThemeChange = (event) => {
@@ -45,6 +92,34 @@ export function ConfigurationPage() {
         { value: '6-8', label: '6-8 hour' },
         { value: '8-10', label: '8-10 hour' },
     ]
+
+    const exerciseOptions = [
+        { value: '0-2', label: '0-2 hour' },
+        { value: '2-4', label: '2-4 hour' },
+        { value: '4-6', label: '4-6 hour' },
+        { value: '6-8', label: '6-8 hour' },
+        { value: '8-10', label: '8-10 hour' },
+    ]
+    
+    const conditionOptions = [
+        { value: 'Hypertension', label: 'Hypertension' },
+        { value: 'Diabetes', label: 'Diabetes' },
+        { value: 'Asthma', label: 'Asthma' },
+        { value: 'Arthritis', label: 'Arthritis' },
+        { value: 'Depression', label: 'Depression' },
+        { value: 'Anxiety', label: 'Anxiety' },
+        { value: 'Anxiety', label: 'Anxiety' },
+        { value: 'Allergies', label: 'Allergies' },
+        { value: 'Obesity', label: 'Obesity' },
+        { value: 'Heart Disease', label: 'Heart Disease' },
+        { value: 'Chronic Pain', label: 'Chronic Pain' },
+        { value: 'None', label: 'None' },
+    ]
+
+
+
+
+    
 
     return (
         <>
@@ -141,8 +216,8 @@ export function ConfigurationPage() {
                         </div>
                     </div>
                 </section>
-
-                <section className="grid gap-7">
+                
+                <section className="grid gap-7 mt-24">
                     <div className="grid gap-7">
                         <div>
                             <h3 className="text-xl font-semibold">
@@ -150,41 +225,65 @@ export function ConfigurationPage() {
                             </h3>
                             <img className="mt-2" src="/line.png" alt="" />
                         </div>
-                        <div className="grid gap-6">
-                            <InputConfig
-                                title="Age"
-                                inputId="age-input"
-                                type="number"
-                            />
-                            <div>
-                                <span>Gender</span>
-                                <Dropdown options={genderOptions} />
+                        {message && (
+                            <div className={`p-4 w-5/12 rounded-md ${messageType === 'success' ? 'bg-green-200 text-green-800' : 'bg-red-200 text-red-800'}`}>
+                                {message}
+                            </div>
+                        )}
+                        <form className="grid gap-8" onSubmit={handleUserData}>
+                            <div className='grid gap-2'>
+                                <span className='text-base font-bold' >Age</span>
+                                <input 
+                                    id="age"
+                                    type="number"
+                                    name="age"
+                                    className="w-full h-10 border border-gray border-opacity-90 px-4 py-2 rounded-md bg-input-bg bg-opacity-50 dark:bg-dark-secondary dark:text-white xl:w-96"
+                                    placeholder='-'
+                                />
+                            </div>
+                            
+                            <div className='gap-2'>
+                                <span className='text-base font-bold'>Gender</span>
+                                <DropdownConfig options={genderOptions} name="gender" inputId="gender"/>
                             </div>
 
-                            <div className="grid">
-                                <span>Sleep Range</span>
-                                <Dropdown options={sleepRangeOptions} />
+                            <div className="grid gap-2">
+                                <span className='text-base font-bold'>Sleep Range</span>
+                                <DropdownConfig options={sleepRangeOptions} name="sleep_range" inputId="sleep_range"/>
                             </div>
-                        </div>
 
-                        <button className="w-48 h-7 bg-violet-400 rounded-lg border border-sky-600 text-xs font-semibold grid justify-center items-center text-white">
-                            Update Profile
-                        </button>
+                            <div className="grid gap-2">
+                                <span className='text-base font-bold'>Exercise</span>
+                                <DropdownConfig options={exerciseOptions} name="exercise" inputId="exercise"/>
+                            </div>
+
+                            <div className="grid gap-2">
+                                <span className='text-base font-bold'>Condition</span>
+                                <DropdownConfig options={conditionOptions} name="condition" inputId="condition"/>
+                            </div>
+
+                            {/* <div className="grid">
+                                <span>Condition</span>
+                                <Checkbox
+                                    options={conditionOptions}
+                                    onChangeFunction={(selectedValues) => setCondition(selectedValues)} 
+                                    selectedValues={condition} 
+                                    name="condition"
+                                />
+                            </div> */}
+
+                            
+                            <input id='user_profile_id' type="hidden" value={user_profile_id} name='user_profile_id'/>
+
+
+                            <button type='submit' className="w-48 h-7 bg-violet-400 rounded-lg border border-sky-600 text-xs font-semibold grid justify-center items-center text-white hover:bg-violet-500">
+                                Save Changes
+                            </button>
+
+
+                        </form>
                     </div>
                 </section>
-
-                <HealthCard
-                    healthTitle="Sleep Schedule"
-                    healthText="Input the number of hours slept, and save for daily monitoring of your sleep patterns"
-                />
-                <HealthCard
-                    healthTitle="Exercise"
-                    healthText="Log your exercise duration, and save to monitor your daily exercise regimen."
-                />
-                <MedCard
-                    medTitle="Medical Information"
-                    medText="Add your Medical Information here, and save to monitor your Conditions."
-                />
 
                 
             </div>

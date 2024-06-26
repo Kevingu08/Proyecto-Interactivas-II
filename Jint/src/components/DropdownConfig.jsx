@@ -1,8 +1,8 @@
 import { PropTypes } from 'prop-types'
 
-export function Dropdown({ options, onChangeFunction, selectedValue, name, inputId }) {
+export function DropdownConfig({ options, onChangeFunction, selectedValue, name, inputId }) {
     return (
-        <form className="flex gap-4 items-center">
+        <div className="flex gap-4 items-center font">
             <select
                 onChange={onChangeFunction}
                 value={selectedValue}
@@ -16,11 +16,11 @@ export function Dropdown({ options, onChangeFunction, selectedValue, name, input
                     </option>
                 ))}
             </select>
-        </form>
+        </div>
     )
 }
 
-Dropdown.propTypes = {
+DropdownConfig.propTypes = {
     options: PropTypes.array,
     onChangeFunction: PropTypes.func,
     name: PropTypes.string.isRequired,

@@ -1,4 +1,4 @@
-export function MedCard({ medTitle, medText }) {
+export function MedCard({ medTitle, medText, name, inputId }) {
     return (
         <>
             <section className="grid text-2xl gap-7 font-semibold">
@@ -11,7 +11,9 @@ export function MedCard({ medTitle, medText }) {
                                 {medText}
                             </p>
                             <div className="grid gap-5">
-                                <select className="w-48 h-7  rounded-lg border border-slate-400 dark:bg-dark-secondary">
+                                <select className="w-48 h-7 bg-slate-50 rounded-lg border border-slate-400 dark:bg-dark-secondary">
+                                    name={name}
+                                    id={inputId}
                                     <option value="" disabled selected>
                                         Select condition
                                     </option>
@@ -37,9 +39,6 @@ export function MedCard({ medTitle, medText }) {
                             </div>
                         </div>
                     </div>
-                    <button className="w-48 h-7 bg-violet-400 rounded-lg border border-sky-600 text-xs font-semibold grid justify-center items-center text-white">
-                        Add Condition
-                    </button>
                     <div className="mt-5">
                         <div className="p-4 bg-slate-100 rounded-lg border border-slate-300 mt-3 sm:w-1/2 dark:bg-dark-secondary">
                             Example Condition
