@@ -45,8 +45,8 @@ export function ConfigurationPage() {
 
         try {
             
-            const response = await axios.post(`http://127.0.0.1:8000/api/usersData/store`, userData, {
-         // const response = await axios.post(`http://jint_backend.test/api/usersData/store`, userData, {
+            // const response = await axios.post(`http://127.0.0.1:8000/api/usersData/store`, userData, {
+         const response = await axios.post(`http://jint_backend.test/api/usersData/store`, userData, {
                 headers: {
                     'Content-Type': 'application/json',
                 }
