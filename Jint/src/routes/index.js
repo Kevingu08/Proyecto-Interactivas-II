@@ -7,5 +7,7 @@ export const ROUTE_PATHS = {
     LOGIN: '/login',
     SIGN_UP: '/sign-up',
     ADMIN: '/admin',
+    EMAIL_CONFIRMATION: '/email-confirmation',
+    RESET_PASSWORD: '/reset-password',
     NOT_FOUND: '/*',
 }

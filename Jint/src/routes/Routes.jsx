@@ -7,7 +7,10 @@ import { ConfigurationPage } from '../pages/ConfigurationPage'
 import { Login } from '../pages/Login'
 import { SignUp } from '../pages/SignUp'
 import { WelcomePage } from '../pages/WelcomePage'
+import EmailConfirmation from '../pages/EmailConfirmation'
+import ChangePassword from '../pages/ChangePassword'
 import { ROUTE_PATHS } from '.'
+
 
 export function Routes() {
     return (
@@ -16,6 +19,8 @@ export function Routes() {
             <Route path={ROUTE_PATHS.HOME} element={<Home />} />
             <Route path={ROUTE_PATHS.TASK} element={<TaskPage />} />
             <Route path={ROUTE_PATHS.STATISTICS} element={<StatisticsPage />} />
+            <Route path={ROUTE_PATHS.EMAIL_CONFIRMATION} element={<EmailConfirmation/>}/>
+            <Route path={`${ROUTE_PATHS.RESET_PASSWORD}/:userId`} element={<ChangePassword />} />
             <Route
                 path={ROUTE_PATHS.CONFIGURATION}
                 element={<ConfigurationPage />}

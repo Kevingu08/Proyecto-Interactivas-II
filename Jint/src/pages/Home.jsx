@@ -10,7 +10,6 @@ import { useFetchEventsWeek } from '../hooks/useFetchEventsWeek'
 export function Home() {
     const { courses, isLoadingCourses } = useFetchCourses()
     const { eventsWeek, isLoadingEventsWeek } = useFetchEventsWeek()
-    console.log(eventsWeek)
 
     const createCourses = (items) => {
         return items.map((item) => {
