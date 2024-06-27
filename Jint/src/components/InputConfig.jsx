@@ -19,5 +19,5 @@ InputConfig.propTypes = {
     title: PropTypes.string.isRequired,
     inputId: PropTypes.string.isRequired,
     type: PropTypes.string.isRequired,
-    name: PropTypes.string.isRequired,
+    // name: PropTypes.string.isRequired,
 }

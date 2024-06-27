@@ -5,7 +5,7 @@ import { modalContext } from '../context/modalContext'
 import { useEffect } from 'react'
 import axios from 'axios';
 import { DropdownConfig } from '../components/DropdownConfig'
-
+import { ROUTE_PATHS } from '../routes'
 
 // import { Checkbox } from '../components/Checkbox'
 
@@ -20,17 +20,29 @@ export function ConfigurationPage() {
     const [message, setMessage] = useState('');
     const [messageType, setMessageType] = useState('');
 
-    // const user_profile_id = 2;
 
     useEffect(() => {
-        if (user) {
-            setAge(user.age || '');  
-            setGender(user.gender || '');
-            setSleepRange(user.sleep_range || '');
-            setExercise(user.exercise || '');
-            setCondition(user.condition || '');
-        }
+        const fetchUserData = async () => {
+            try {
+                if (user && user.id) {
+                    // const response = await axios.get(`http://127.0.0.1:8000/api/usersData/show/${user.id}`);
+                    const response = await axios.get(`http://jint_backend.test/api/usersData/show/${user.id}`);
+
+                    const userData = response.data;
+                    setAge(userData.age || '');
+                    setGender(userData.gender || '');
+                    setSleepRange(userData.sleep_range || '');
+                    setExercise(userData.exercise || '');
+                    setCondition(userData.condition || '');
+                }
+            } catch (error) {
+                console.error('Error showing the information:', error);
+            }
+        };
+        
+        fetchUserData();
     }, [user]);
+
 
 
     const handleUserData = async (e) => {
@@ -42,14 +54,14 @@ export function ConfigurationPage() {
         const condition = e.target.condition.value;
         const user_profile_id = user.id;
         console.log(user_profile_id);
-        // const userData = {
-        //     age,
-        //     gender,
-        //     sleep_range,
-        //     exercise,
-        //     condition,
-        //     user_profile_id
-        // };
+        const userData = {
+            age,
+            gender,
+            sleep_range: sleep_range,
+            exercise,
+            condition,
+            user_profile_id: user.id
+        };
         
 
         try {
@@ -61,8 +73,7 @@ export function ConfigurationPage() {
             });
     
             setMessage('Information successfully registered');
-            setMessageType('success');
-            // setUserData(updatedUserData); 
+            setMessageType('success'); 
         } catch (error) {
             setMessage('Error when registering the information');
             setMessageType('error');
@@ -92,44 +103,43 @@ export function ConfigurationPage() {
     ]
 
     const genderOptions = [
-        { value: '-', label: '-' },
         { value: 'male', label: 'Male' },
         { value: 'female', label: 'Female' },
         { value: 'unknown', label: 'Unknown' },
+        { value: '-', label: '-' },
     ]
 
     const sleepRangeOptions = [
-        { value: '-', label: '-' },
         { value: '0-2', label: '0-2 hour' },
         { value: '2-4', label: '2-4 hour' },
         { value: '4-6', label: '4-6 hour' },
         { value: '6-8', label: '6-8 hour' },
-        { value: '8-10', label: '8-10 hour' },
+        { value: '8-10', label: '8-10 hour' }, 
+        { value: '-', label: '-' },
     ]
 
     const exerciseOptions = [
-        { value: '-', label: '-' },
         { value: '0-2', label: '0-2 hour' },
         { value: '2-4', label: '2-4 hour' },
         { value: '4-6', label: '4-6 hour' },
         { value: '6-8', label: '6-8 hour' },
         { value: '8-10', label: '8-10 hour' },
+        { value: '-', label: '-' },
     ]
     
     const conditionOptions = [
-        { value: '-', label: '-' },
         { value: 'Hypertension', label: 'Hypertension' },
         { value: 'Diabetes', label: 'Diabetes' },
         { value: 'Asthma', label: 'Asthma' },
         { value: 'Arthritis', label: 'Arthritis' },
         { value: 'Depression', label: 'Depression' },
         { value: 'Anxiety', label: 'Anxiety' },
-        { value: 'Anxiety', label: 'Anxiety' },
         { value: 'Allergies', label: 'Allergies' },
         { value: 'Obesity', label: 'Obesity' },
         { value: 'Heart Disease', label: 'Heart Disease' },
         { value: 'Chronic Pain', label: 'Chronic Pain' },
         { value: 'None', label: 'None' },
+        { value: '-', label: '-' },
     ]
 
 
@@ -203,9 +213,10 @@ export function ConfigurationPage() {
                                     type="email"
                                     value={user.email}
                                 />
-                                <a className="w-48 h-7 rounded-lg border-[.12rem] border-primary text-xs font-semibold grid justify-center items-center transition-all duration-100  hover:bg-primary hover:text-white  dark:bg-dark-secondary">
+                                <a href={ROUTE_PATHS.EMAIL_CONFIRMATION} className="w-48 h-7 rounded-lg border-[.12rem] border-primary text-xs font-semibold grid justify-center items-center transition-all duration-100  hover:bg-primary hover:text-white  dark:bg-dark-secondary">
                                     Change Password
                                 </a>
+                                
                             </div>
                         </div>
                     </div>
@@ -254,9 +265,9 @@ export function ConfigurationPage() {
                                     type="number"
                                     name="age"
                                     className="w-full h-10 border border-gray border-opacity-90 px-4 py-2 rounded-md bg-input-bg bg-opacity-50 dark:bg-dark-secondary dark:text-white xl:w-96"
-                                    placeholder='-'
-                                    // value={age}
-                                    // onChange={(e) => setAge(e.target.value)}
+                                    // placeholder='-'
+                                    value={age}
+                                    onChange={(e) => setAge(e.target.value)}
                                     
                                 />
                             </div>
@@ -267,6 +278,9 @@ export function ConfigurationPage() {
                                     options={genderOptions} 
                                     name="gender" 
                                     inputId="gender" 
+                                    selectedValue={gender}
+                                    onChangeFunction={(e) => setGender(e.target.value)}
+
                                 />
                             </div>
 
@@ -276,6 +290,9 @@ export function ConfigurationPage() {
                                     options={sleepRangeOptions} 
                                     name="sleep_range" 
                                     inputId="sleep_range" 
+                                    selectedValue={sleep_range}
+                                    onChangeFunction={(e) => setSleepRange(e.target.value)}
+
                                 />
                             </div>
 
@@ -284,7 +301,10 @@ export function ConfigurationPage() {
                                 <DropdownConfig 
                                     options={exerciseOptions} 
                                     name="exercise" 
-                                    inputId="exercise" 
+                                    inputId="exercise"
+                                    selectedValue={exercise} 
+                                    onChangeFunction={(e) => setExercise(e.target.value)}
+                                    
                                 />
                             </div>
 
@@ -294,6 +314,9 @@ export function ConfigurationPage() {
                                     options={conditionOptions} 
                                     name="condition" 
                                     inputId="condition" 
+                                    selectedValue={condition}
+                                    onChangeFunction={(e) => setCondition(e.target.value)}
+                                    
                                 />
                             </div>
 
