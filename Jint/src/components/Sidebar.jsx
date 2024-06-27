@@ -82,7 +82,7 @@ export function Sidebar({
                     <div className="grid mb-6 gap-2 items-center text-center mt-8">
                         <img
                             className="w-16 m-auto rounded-full"
-                            src={image}
+                            src={user.user_image}
                             alt=""
                         />
                         <p className="text-white">{user.username} {}</p>

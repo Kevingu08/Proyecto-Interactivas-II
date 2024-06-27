@@ -36,8 +36,9 @@ export function Login() {
                     password,
                 }
             )
-            const data = await response.data
-            const user = data.user;
+            const fethData = await response.data
+            const user = fethData.user;
+            // return console.log(user);
             if(user){
                 console.log(user);
                 setUser(user);

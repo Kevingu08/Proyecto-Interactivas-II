@@ -1,4 +1,3 @@
-import { PropTypes } from 'prop-types'
 
 export function Dropdown({ options, onChangeFunction, selectedValue, name, inputId }) {
     return (
@@ -20,8 +19,3 @@ export function Dropdown({ options, onChangeFunction, selectedValue, name, input
     )
 }
 
-Dropdown.propTypes = {
-    options: PropTypes.array,
-    onChangeFunction: PropTypes.func,
-    name: PropTypes.string.isRequired,
-}
