@@ -65,7 +65,6 @@ export function ConfigurationPage() {
         
 
         try {
-        
             // const response = await axios.post(`http://127.0.0.1:8000/api/usersData/store`, userData, {
          const response = await axios.post(`http://jint_backend.test/api/usersData/store`, userData, {
                 headers: {
@@ -89,9 +88,11 @@ export function ConfigurationPage() {
     useEffect(() => {
         if (theme === 'light') {
             document.querySelector('html').classList.remove('dark')
+            window.localStorage.setItem('theme', 'light')
             setTheme('light');
         } else {
             document.querySelector('html').classList.add('dark')
+            window.localStorage.setItem('theme', 'dark')
             setTheme('dark');
         }
     }, [theme])

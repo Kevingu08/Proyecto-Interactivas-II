@@ -15,6 +15,7 @@ export function SignUp() {
     const [email, setEmail] = useState('');
     const [lastname, setLastName] = useState('');
     const [confirmPassword, setConfirmPassword] = useState('');
+    const [error, setError] = useState('');
     const navigate = useNavigate(); 
 
     const handleSignUp = async (e) => {
@@ -25,9 +26,29 @@ export function SignUp() {
         const username = e.target.username.value;
         const password = e.target.password.value;
         const confirmPassword = e.target.confirmPassword.value;
-        console.log(name, email, lastname, username, password);
+
+        if (!name || !email || !lastname || !username || !password || !confirmPassword) {
+            setError('Please fill in all fields');
+            return;
+        }
+
+        if (name.length < 4) {
+            setError('Name must be at least 4 characters');
+            return;
+        }
+
+        if (username.length < 4) {
+            setError('Username must be at least 4 characters');
+            return;
+        }
+
+        if (password.length < 8) {
+            setError('Password must be at least 8 characters');
+            return;
+        }
+
         if (password !== confirmPassword) {
-            console.log('Passwords do not match');
+            setError('Passwords do not match');
             return;
         }
 
@@ -51,7 +72,18 @@ export function SignUp() {
             console.log('Usuario creado con éxito', response.data);
             navigate(ROUTE_PATHS.LOGIN); 
         } catch (error) {
-            console.log('Error al crear el usuario', error.response ? error.response.data : error.message);
+            if (error.response) {
+                const errorMessage = error.response.data.message;
+                if (errorMessage.includes('username')) {
+                    setError('User already exists');
+                } else if (errorMessage.includes('email')) {
+                    setError('Email already exists');
+                } else {
+                    setError('Error creating user');
+                }
+            } else {
+                setError('Error creating user');
+            }
         }
     };
 
@@ -65,6 +97,7 @@ export function SignUp() {
                     Welcome! Come on and create your account{' '}
                 </p>
                 <form method='POST' className="mt-4 flex flex-col gap-6 w-full mb-10" onSubmit={handleSignUp}>
+                    {error && <p className="bg-violet-400 text-white p-4 rounded-lg w-full text-center">{error}</p>}
                     <Input
                         title={'Name'}
                         inputId={'name'}
@@ -120,5 +153,7 @@ export function SignUp() {
         </section>
     );
 }
+
+
 
 

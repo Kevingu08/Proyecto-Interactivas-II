@@ -2,7 +2,7 @@ import { PropTypes } from 'prop-types'
 export function ExitIcon({ width, height }) {
     return (
         <svg
-            className="w-[24px] h-[24px] text-gray-800 dark:text-white"
+            className="w-[24px] h-[24px] text-white dark:text-white"
             aria-hidden="true"
             xmlns="http://www.w3.org/2000/svg"
             width={width}
