@@ -46,16 +46,7 @@ export function CardModal() {
                         <Tag title={task[0].category} bgColor={'bg-lime-500'} />
                         {/* <Tag title={'Evento'} bgColor={'bg-orange-500'} /> */}
                     </div>
-                    <div className="flex items-center gap-2 mt-4">
-                        <label className="dark:text-white" htmlFor="checkTask">
-                            Done:{' '}
-                        </label>
-                        <input
-                            className="w-6 h-6 dark:bg-dark-secondary"
-                            type="checkbox"
-                            id="checkTask"
-                        />
-                    </div>
+                    
                 </div>
 
                 <div className="flex justify-center items-center p-6 order-1 sm:order-2">

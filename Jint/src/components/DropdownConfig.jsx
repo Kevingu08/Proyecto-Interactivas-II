@@ -25,7 +25,7 @@ DropdownConfig.propTypes = {
     // onChangeFunction: PropTypes.func,
     // name: PropTypes.string.isRequired,
     options: PropTypes.array.isRequired,
-    onChangeFunction: PropTypes.func.isRequired,
+    // onChangeFunction: PropTypes.func.isRequired,
     selectedValue: PropTypes.string.isRequired,
     name: PropTypes.string.isRequired,
     inputId: PropTypes.string.isRequired,
