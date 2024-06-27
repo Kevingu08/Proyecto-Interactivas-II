@@ -34,7 +34,6 @@ export function Routes() {
                 window.localStorage.setItem('theme', 'dark')
                 setTheme('dark');
             }
-            console.log('saco el tema')
         }
         setIsLoading(false)
     }, [])

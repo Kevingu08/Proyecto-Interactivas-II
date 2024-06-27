@@ -86,7 +86,7 @@ export function Sidebar({
                             alt=""
                         />
                         <p className="text-white">{user.username} {}</p>
-                        <p className="text-xs text-white">{user.email}</p>
+                        {/* <p className="text-xs text-white">{user.email}</p> */}
                     </div>
                     <ul className="flex flex-col m-auto text-start">
                         <li>
