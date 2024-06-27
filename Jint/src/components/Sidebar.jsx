@@ -23,24 +23,8 @@ export function Sidebar({
     const [isOpen, setIsOpen] = useState(false)
 
     const [showNotifications, setShowNotifications] = useState(false)
-    const { user, setUser, setTheme} = useContext(modalContext)
-    // const [theme, setTheme] = useLocalStorage('theme', 'light')
-
-    useEffect(() => {
-        const userLogged = window.localStorage.getItem('userLogged')
-        if (userLogged) {
-            setUser(JSON.parse(userLogged))
-        }
-    }, [])
-
-    // useEffect(() => {
-    //     const theme = window.localStorage.getItem('theme')
-    //     if (theme) {
-    //         setTheme(theme)
-    //     }
-    // })
-
-
+    const { user, setUser} = useContext(modalContext)
+ 
     function toggleNavbars(){
         setIsOpen(!isOpen)
         if(showNotifications){
@@ -91,7 +75,7 @@ export function Sidebar({
                 <div className="relative">
                     <button
                         onClick={() => toggleNavbars()}
-                        className="p-4 absolute translate-x-[11rem] xl:hidden"
+                        className="p-4 absolute translate-x-[10rem] xl:hidden"
                     >
                         <ExitIcon width="24" height="24" />
                     </button>

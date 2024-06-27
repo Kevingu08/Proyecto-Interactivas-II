@@ -9,10 +9,24 @@ export function ModalContextProvider({ children }) {
     const [isOpen, setIsOpen] = useState(false)
     const [taskId, setTaskId] = useState(4)
     const [user, setUser] = useState('')
-    const [theme, setTheme] = useLocalStorage('theme', 'light')
+    const [theme, setTheme] = useState('')
+    const [isLoadingTheme, setIsLoadingTheme] = useState(true)
 
     function handleTaskId(id) {
         setTaskId(id)
+    }
+
+
+    useEffect(() => {
+        const preferTheme = window.localStorage.getItem('theme')
+        if (preferTheme) {
+            setTheme(preferTheme)
+        }
+        setIsLoadingTheme(false)
+    }, [])
+
+    if (isLoadingTheme) {
+        return <div>Loading...</div>
     }
 
     return (

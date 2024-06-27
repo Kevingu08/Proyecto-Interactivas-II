@@ -9,6 +9,7 @@ export function ResumeTask({
     course,
     category,
     tag,
+    date
 }) {
     return (
         <div className="flex  bg-white border border-zinc-400 rounded-2xl w-full p-4 gap-4 dark:bg-dark-secondary md:flex-row">
@@ -16,15 +17,13 @@ export function ResumeTask({
             <img className="max-w-[20rem] aspect-video cover h-full" src={img} alt="#" />
             </div> */}
             <div className="flex flex-col gap-2 w-full justify-between">
-                <div>
+                <div className='flex flex-col gap-2'>
                     <div className="flex flex-col justify-center gap-2">
-                        <div className="flex justify-between">
-                            <h4 className="font-bold dark:text-white">
+                        <div className="flex justify-between gap-4">
+                            <h4 className="font-bold dark:text-white text-lg">
                                 {taskName}
                             </h4>
-                            <span className="font-semibold dark:text-white">
-                                {time}
-                            </span>
+                            <span className='dark:text-white'>{time}</span>
                         </div>
                         <p className="dark:text-white">{description}</p>
                         {course ? (
@@ -35,7 +34,10 @@ export function ResumeTask({
                             ''
                         )}
                     </div>
-                    <div className="flex gap-2 items-center mt-2">
+                    <div>
+                        <p className='dark:text-white'><strong>End date:</strong> {date}</p>
+                    </div>
+                    <div className="flex gap-2 items-center">
                         <Tag title={category} bgColor={'bg-lime-500'} />
                         <Tag title={tag} bgColor={'bg-sky-500'} />
                     </div>
